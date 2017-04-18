@@ -1,2 +1,2 @@
-# hasta_takip_sistemi
+# Hasta Takip Sistemi
 Bilişim Sistemleri Mühendisliği Proje A (2017 Bahar)

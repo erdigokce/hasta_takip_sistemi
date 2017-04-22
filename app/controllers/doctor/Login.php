@@ -11,7 +11,7 @@ class Login extends CI_Controller {
   public function index() {
     $this->load->helper('url');
 
-    $data['title'] = "HTS Yetkilendirme ve Giriş Sistemi";
+    $data['title'] = "Yetkilendirme ve Giriş Sistemi";
 
     $this->load->view("templates/content_top", $data);
     $this->load->view("templates/header");

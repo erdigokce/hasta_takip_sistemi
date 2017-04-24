@@ -53,5 +53,14 @@ $route['default_controller'] = 'welcomer';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
+/**
+ * PUBLIC
+ */
+$route['home'] = 'public/home';
+
+/**
+ * DOCTOR
+ */
 $route['login'] = 'doctor/login';
+$route['login/logout'] = 'doctor/login/logout';
 $route['dashboard'] = 'doctor/dashboard';

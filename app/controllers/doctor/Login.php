@@ -19,17 +19,21 @@ class Login extends CI_Controller {
     $this->form_validation->set_rules('username', 'Kullanıcı Adı', 'required');
     $this->form_validation->set_rules('password', 'Şifre', 'required');
     if ($this->form_validation->run() === FALSE) {
-      loadLogin($data);
+      $this->loadLogin($data);
     }
     else {
-      $this->user->
-      if () {
-        loadDashboard($data);
+      $row = $this->user->getUser($this->input->post('username'));
+      if (isset($row) && $row->PASSWORD === md5($this->input->post('password'))) {
+        $data['authorized'] = TRUE;
+        $data['name'] = $row->NAME;
+        $data['surname'] = $row->SURNAME;
+        $this->loadDashboard($data);
       } else {
-        loadLogin($data);
+        $data['authorized'] = FALSE;
+        $this->loadLogin($data);
+        // TODO: SHOW MESSAGE
       }
     }
-
   }
 
   /** PRIVATE FUNCTIONS **/
@@ -48,6 +52,12 @@ class Login extends CI_Controller {
     $this->load->view('doctor/dashboard');
     $this->load->view("templates/footer");
     $this->load->view("templates/content_bottom");
+  }
+
+  private function isAuthorized($password, $row) {
+    if(isset($password)){
+      return $row->password == md5($password);
+    }
   }
 }
 

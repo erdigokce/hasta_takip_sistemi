@@ -18,7 +18,7 @@ class HTS_Model extends CI_Model {
    * @return Object                 Gelen veri. (Eğer boş ise null döner.)
    */
   public function findByPrimaryKey($id){
-    $query = $this->db->get_where($this->table, array('id' => $id));
+    $query = $this->db->get_where($this->table, array('ID' => $id));
     $row = $query->row();
     if(isset($row)) {
       return $row;
@@ -73,6 +73,14 @@ class HTS_Model extends CI_Model {
     if(is_array($data) || is_object($data)) {
       return $this->db->delete($this->table, array('ID' => $id));
     }
+  }
+
+  public function getTable() {
+    return $this->table;
+  }
+
+  public function setTable($table) {
+    $this->table = $table;
   }
 
 }

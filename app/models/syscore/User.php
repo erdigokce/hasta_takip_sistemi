@@ -1,31 +1,32 @@
 <?php
 require_once 'dto.php';
+require_once 'intf.php';
 /**
  * User Model Page
  */
-class User extends HTS_Model {
+class User extends HTS_Model implements IUserModel {
 
   function __construct() {
     parent::__construct('hts_syscore.hts_users');
   }
 
-  public function getUser($id) {
-    return $this->findByPrimaryKey($id);
-  }
-
-  public function getUser($username, $email = NULL, $password) {
-    if(isset($password)){
-      if (isset($username)) {
-        $query = $this->get_where($this->table, array('USERNAME' => $username, 'PASSWORD' => md5($password)));
+  public function getUser($selector) {
+    if (isset($selector)) {
+      if(is_int($selector)){
+        return $this->findByPrimaryKey($selector);
       }
-      elseif (isset($email)) {
-        $query = $this->get_where($this->table, array('USER_EMAIL' => $username, 'PASSWORD' => md5($password)));
-      }
-      $row = $query->row();
-      if(isset($row)){
-        return $row;
-      } else {
-        return NULL;
+      elseif (is_string($selector)) {
+        if (!(strpos($selector, "@") === FALSE)) { // Is this string an email?
+          $query = $this->db->get_where($this->getTable(), array('USER_EMAIL' => $selector));
+        } else { // Or username?
+          $query = $this->db->get_where($this->getTable(), array('USERNAME' => $selector));
+        }
+        $row = $query->row();
+        if(isset($row)){
+          return $row;
+        } else {
+          return NULL;
+        }
       }
     }
   }

@@ -4,7 +4,7 @@
       <?php echo form_open('login', array('class' => 'form', 'name' => 'loginForm')); ?>
         <div class="input-group col-sm-offset-3 col-sm-6">
           <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-          <input class="form-control" type="text" name="username" placeholder="Kullanıcı Adı">
+          <input class="form-control" type="text" name="username" placeholder="Kullanıcı Adı veya E-Posta">
         </div>
         <br>
         <div class="input-group col-sm-offset-3 col-sm-6">

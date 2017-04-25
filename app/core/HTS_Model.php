@@ -17,7 +17,7 @@ class HTS_Model extends CI_Model {
    * @param  Integer(12)    $id     Seçici birincil anahtar
    * @return Object                 Gelen veri. (Eğer boş ise null döner.)
    */
-  public function findByPrimaryKey($id){
+  public function findByPrimaryKey(&$id){
     $query = $this->db->get_where($this->table, array('ID' => $id));
     $row = $query->row();
     if(isset($row)) {
@@ -46,7 +46,7 @@ class HTS_Model extends CI_Model {
    * @param  Object|Array   $data   Eklenecek veri
    * @return Boolean                Başarılı ise TRUE
    */
-  public function insertData($data) {
+  public function insertData(&$data) {
     if(is_array($data) || is_object($data)) {
       return $this->db->insert($this->table, $data);
     }
@@ -58,9 +58,10 @@ class HTS_Model extends CI_Model {
    * @param  Object|Array   $data   Yeni veri
    * @return Boolean                Başarılı ise TRUE
    */
-  public function updateData($id, $data) {
+  public function updateData(&$id, &$data) {
     if(is_array($data) || is_object($data)) {
-      return $this->db->update($this->table, $data, array('ID' => $id));
+      $this->db->where(array('ID' => $id));
+      return $this->db->update($this->table, $data);
     }
   }
 
@@ -69,7 +70,7 @@ class HTS_Model extends CI_Model {
    * @param  Integer(12)    $id     Silinecek kayıt seçici anahtarı
    * @return Boolean                Başarılı ise TRUE
    */
-  public function deleteData($id) {
+  public function deleteData(&$id) {
     if(is_array($data) || is_object($data)) {
       return $this->db->delete($this->table, array('ID' => $id));
     }
@@ -79,7 +80,7 @@ class HTS_Model extends CI_Model {
     return $this->table;
   }
 
-  public function setTable($table) {
+  public function setTable(&$table) {
     $this->table = $table;
   }
 

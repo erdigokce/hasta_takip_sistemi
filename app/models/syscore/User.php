@@ -1,5 +1,5 @@
 <?php
-require_once 'dto.php';
+require_once 'dao.php';
 require_once 'intf.php';
 /**
  * User Model Page
@@ -32,20 +32,21 @@ class User extends HTS_Model implements IUserModel {
   }
 
   public function insertUser($username, $password, $user_category, $user_email) {
-    $userDto = new HtsUserDTO(null,$username,md5($password),$user_category,$user_email);
-    $this->insertData($userDto);
+    // $HtsUserDAO['ID'] = NULL;
+    $HtsUserDAO['USERNAME'] = $username;
+    $HtsUserDAO['PASSWORD'] = md5($password);
+    $HtsUserDAO['USER_CATEGORY'] = $user_category;
+    $HtsUserDAO['USER_EMAIL'] = $user_email;
+    $this->insertData($HtsUserDAO);
   }
 
   public function updateUser($id, $data) {
-    $userDto = new HtsUserDTO();
     if (is_array($data)) {
-      $userDto->username = $data['username'];
-      $userDto->password = md5($data['password']);
-      $userDto->user_category = $data['user_category'];
-      $userDto->user_email = $data['user_email'];
-    }
-    if (is_object($data) && $data instanceof HtsUserDTO) {
-      return $this->updateData($id, $userDto);
+      $HtsUserDAO['USERNAME'] = $data['username'];
+      $HtsUserDAO['PASSWORD'] = md5($data['password']);
+      $HtsUserDAO['USER_CATEGORY'] = $data['user_category'];
+      $HtsUserDAO['USER_EMAIL'] = $data['user_email'];
+      return $this->updateData($id, $HtsUserDAO);
     }
   }
 

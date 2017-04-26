@@ -95,7 +95,7 @@ class Login extends CI_Controller {
         $data['surname'] = $row->SURNAME;
         $data['auth'] = $this->session->auth;
         $this->userlogs->setUserLoginLog($row->ID);
-        $this->loadDashboard($data);
+        redirect('dashboard', 'refresh');
       } else {
         $this->session->auth = FALSE;
         $data['auth'] = $this->session->auth;

@@ -113,7 +113,7 @@ class Login extends CI_Controller {
     } else {
       $this->htsutils->log_error("Kullanıcı loglarına ulaşılamadı! [Kullanıcı ID : ".$row->ID."], [Nesne : ".$userLog."]");
     }
-    $diff = $time2->getTimestamp() - $time->getTimestamp();
+    $diff = abs($time2->getTimestamp() - $time->getTimestamp());
     $timoutInSeconds = (int) $this->parameters->findParameterValue("HTS_PARAMS", "HTS_SESSION", "USER_SESSION_TIMEOUT")->PARAMETER_VALUE;
     if ($this->htsutils->isSetAndNotEmpty($timoutInSeconds)) {
       $timoutInTimestamp = $timoutInSeconds;

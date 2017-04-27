@@ -12,6 +12,10 @@ class UserLogs extends HTS_Model implements IUserLogsModel {
     date_default_timezone_set('Europe/Istanbul');
   }
 
+  public function getUserLog($userId) {
+    return $this->db->get_where($this->getTable(), array('USER_ID' => $userId))->row();
+  }
+
   public function setUserLoginLog($userId) {
     $HtsUserLogsDAO['DATE_LAST_LOGIN'] = date("Y-m-d H:i:s");
     $this->executeUpdate($HtsUserLogsDAO, $userId);

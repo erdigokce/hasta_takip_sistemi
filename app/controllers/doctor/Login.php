@@ -10,8 +10,10 @@ class Login extends CI_Controller {
     $this->load->helper('form');
     $this->load->library('form_validation');
     $this->load->library('session');
+    $this->load->library('htsutils'); // logging
     $this->load->model('syscore/user');
     $this->load->model('syscore/userlogs');
+    $this->load->model('live/parameters');
   }
 
   public function index() {
@@ -45,14 +47,6 @@ class Login extends CI_Controller {
     $this->load->view("templates/content_bottom");
   }
 
-  private function loadDashboard(&$data) {
-    $this->load->view("templates/content_top", $data);
-    $this->load->view("templates/header", $data);
-    $this->load->view('doctor/dashboard');
-    $this->load->view("templates/footer");
-    $this->load->view("templates/content_bottom");
-  }
-
   private function giveArrayOfUserSessionData(&$row) {
     return array(
       'auth' => TRUE ,
@@ -80,27 +74,19 @@ class Login extends CI_Controller {
   private function generateSession(&$data) {
     $this->form_validation->set_rules('username', 'Kullanıcı Adı/Email', 'required');
     $this->form_validation->set_rules('password', 'Şifre', 'required');
-    if ($this->form_validation->run() === FALSE) {
-      $data['name'] = "";
-      $data['surname'] = "";
-      $data['auth'] = FALSE;
+    $data['name'] = "";
+    $data['surname'] = "";
+    $data['auth'] = FALSE;
+    if ($this->form_validation->run() === FALSE) { // Form validation level
       $this->loadLogin($data);
-    }
-    else {
+    } else {
       $row = $this->user->getUser($this->input->post('username'));
-      if (isset($row) && $row->PASSWORD === md5($this->input->post('password'))) {
-        $session_data = $this->giveArrayOfUserSessionData($row);
-        $this->session->set_userdata($session_data);
-        $data['name'] = $row->NAME;
-        $data['surname'] = $row->SURNAME;
-        $data['auth'] = $this->session->auth;
-        $this->userlogs->setUserLoginLog($row->ID);
-        redirect('dashboard', 'refresh');
-      } else {
-        $this->session->auth = FALSE;
-        $data['auth'] = $this->session->auth;
+      $isUserOnline = $this->isUserOnline($row);
+      $isUserTimedOut = $this->isUserTimedOut($row);
+      if ($isUserOnline === "TRUE" && $isUserTimedOut === "FALSE") {
         $this->loadLogin($data);
-        // TODO: SHOW MESSAGE
+      } else {
+        $this->tryLogin($row);
       }
     }
   }
@@ -111,6 +97,52 @@ class Login extends CI_Controller {
     redirect('dashboard', 'refresh');
   }
 
-}
+  private function isUserOnline(&$row) {
+    $userLog = $this->userlogs->getUserLog($row->ID);
+    if($userLog->DATE_LAST_LOGOUT < $userLog->DATE_LAST_LOGIN) {
+      return "TRUE";
+    }
+    return "FALSE";
+  }
 
- ?>
+  private function isUserTimedOut(&$row) {
+    $userLog = $this->userlogs->getUserLog($row->ID);
+    if($this->htsutils->isSetAndNotEmpty($userLog)){
+      $time = new DateTime($userLog->DATE_LAST_LOGIN);
+      $time2 = new DateTime(date($this->htsutils->getDefaultTimeFormat()));
+    } else {
+      $this->htsutils->log_error("Kullanıcı loglarına ulaşılamadı! [Kullanıcı ID : ".$row->ID."], [Nesne : ".$userLog."]");
+    }
+    $diff = $time2->getTimestamp() - $time->getTimestamp();
+    $timoutInSeconds = (int) $this->parameters->findParameterValue("HTS_PARAMS", "HTS_SESSION", "USER_SESSION_TIMEOUT")->PARAMETER_VALUE;
+    if ($this->htsutils->isSetAndNotEmpty($timoutInSeconds)) {
+      $timoutInTimestamp = $timoutInSeconds;
+      $this->htsutils->console_log($diff);
+      $this->htsutils->console_log($timoutInTimestamp);
+      if($diff >= $timoutInTimestamp){
+        return "TRUE";
+      }
+    } else {
+      $this->htsutils->log_error("Parametre tablosunda timeout bilgisine ulaşılamadı! [Nesne : ".$timoutInSeconds."]");
+    }
+    return "FALSE";
+  }
+
+  private function tryLogin(&$row) {
+    if (isset($row) && $row->PASSWORD === md5($this->input->post('password'))) {
+      $session_data = $this->giveArrayOfUserSessionData($row);
+      $this->session->set_userdata($session_data);
+      $data['name'] = $row->NAME;
+      $data['surname'] = $row->SURNAME;
+      $data['auth'] = $this->session->auth;
+      $this->userlogs->setUserLoginLog($row->ID);
+      redirect('dashboard', 'refresh');
+    } else {
+      $this->session->auth = FALSE;
+      $data['auth'] = $this->session->auth;
+      $this->htsutils->log_error("Login işlemi başarısız oldu! Kullanıcı adı, e-posta veya parola geçersiz!");
+      $this->loadLogin($data);
+    }
+  }
+
+}

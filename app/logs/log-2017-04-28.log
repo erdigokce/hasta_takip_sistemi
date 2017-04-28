@@ -27,3 +27,8 @@ ERROR - 28-04-2017 23:52:50 --> Severity: Warning --> preg_match() expects param
 ERROR - 28-04-2017 23:52:50 --> Severity: Warning --> preg_match() expects parameter 2 to be string, array given C:\xampp\htdocs\hts\sys\core\Lang.php 109
 ERROR - 28-04-2017 23:52:51 --> Severity: Warning --> preg_match() expects parameter 2 to be string, array given C:\xampp\htdocs\hts\sys\core\Lang.php 109
 ERROR - 28-04-2017 23:52:51 --> Severity: Warning --> preg_match() expects parameter 2 to be string, array given C:\xampp\htdocs\hts\sys\core\Lang.php 109
+ERROR - 28-04-2017 23:35:48 --> 404 Page Not Found: Controller/method
+ERROR - 28-04-2017 23:37:48 --> 404 Page Not Found: Controller/method
+ERROR - 28-04-2017 23:37:51 --> 404 Page Not Found: Dashboard/board
+ERROR - 28-04-2017 23:39:49 --> 404 Page Not Found: Dashboard/board
+ERROR - 28-04-2017 23:41:35 --> 404 Page Not Found: doctor/Dashboard/device_informations

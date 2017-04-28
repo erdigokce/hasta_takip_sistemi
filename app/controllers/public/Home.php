@@ -5,13 +5,20 @@
  */
 class Home extends CI_Controller {
 
+  private $page_controller = 'home';
+
   function __construct() {
     parent::__construct();
     $this->load->library('session');
+    $this->load->library('htsutils');
   }
 
   public function index() {
-    $data['title'] = "Anasayfa";
+    $this->lang->load(array('navbar',$this->page_controller), $this->session->langauge);
+    $this->htsutils->loadNavbarLang($this, $data);
+    $data['title'] = $this->lang->line('home_title');
+    $data['page_controller'] = $this->page_controller;
+
     if($this->session->has_userdata('auth') && $this->session->auth === TRUE){
       $data['auth'] = $this->session->auth;
       $data['name'] = $this->session->name;

@@ -57,6 +57,7 @@ $route['translate_uri_dashes'] = FALSE;
  * PUBLIC
  */
 $route['home'] = 'public/home';
+$route['navbar/lang/(:any)/(:any)'] = 'public/navbar/lang/$1/$2';
 
 /**
  * DOCTOR

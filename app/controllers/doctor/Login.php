@@ -4,6 +4,8 @@
  */
 class Login extends CI_Controller {
 
+  private $page_controller = 'login';
+
   function __construct() {
     parent::__construct();
     $this->load->database('syscore');
@@ -17,8 +19,11 @@ class Login extends CI_Controller {
   }
 
   public function index() {
-    $data['title'] = "Yetkilendirme ve Giriş Sistemi";
-
+    $this->lang->load(array('navbar',$this->page_controller), $this->session->langauge);
+    $this->htsutils->loadNavbarLang($this, $data);
+    $data['title'] = $this->lang->line('login_title');
+    $data['page_controller'] = $this->page_controller;
+    $this->populatePageData($data);
     if($this->session->has_userdata('auth') && $this->session->auth === TRUE){
       $this->resumeSession($data);
     } else {
@@ -31,10 +36,10 @@ class Login extends CI_Controller {
     if(isset($this->session->user_id) && !empty($this->session->user_id)){
       $this->userlogs->setUserLogoutLog($this->session->user_id);
     }
-    $this->session->sess_destroy();
+    // $this->session->sess_destroy();
     $this->session->unset_userdata($this->wipeArrayOfUserSessionData());
     $this->session->auth = FALSE;
-    redirect('login', 'refresh');
+    redirect($this->page_controller, 'refresh');
   }
 
   /** PRIVATE FUNCTIONS **/
@@ -68,12 +73,13 @@ class Login extends CI_Controller {
       'user_category',
       'name',
       'surname'
+      // 'langauge'
     );
   }
 
   private function generateSession(&$data) {
-    $this->form_validation->set_rules('username', 'Kullanıcı Adı/Email', 'required');
-    $this->form_validation->set_rules('password', 'Şifre', 'required');
+    $this->form_validation->set_rules('username', $this->lang->line('login_username'), 'required');
+    $this->form_validation->set_rules('password', $this->lang->line('login_password'), 'required');
     $data['name'] = "";
     $data['surname'] = "";
     $data['auth'] = FALSE;
@@ -117,8 +123,6 @@ class Login extends CI_Controller {
     $timoutInSeconds = (int) $this->parameters->findParameterValue("HTS_PARAMS", "HTS_SESSION", "USER_SESSION_TIMEOUT")->PARAMETER_VALUE;
     if ($this->htsutils->isSetAndNotEmpty($timoutInSeconds)) {
       $timoutInTimestamp = $timoutInSeconds;
-      $this->htsutils->console_log($diff);
-      $this->htsutils->console_log($timoutInTimestamp);
       if($diff >= $timoutInTimestamp){
         return "TRUE";
       }
@@ -145,4 +149,11 @@ class Login extends CI_Controller {
     }
   }
 
+  private function populatePageData(&$data) {
+    $data['login_username'] = $this->lang->line('login_username');
+    $data['login_password'] = $this->lang->line('login_password');
+    $data['login_submit'] = $this->lang->line('login_submit');
+    $data['login_reset'] = $this->lang->line('login_reset');
+    $data['login_lost_password'] = $this->lang->line('login_lost_password');
+  }
 }

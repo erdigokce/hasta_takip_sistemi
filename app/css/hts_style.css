@@ -15,3 +15,15 @@ h1, h2, h3, h4, h5, h6, p {
   max-height: 200px;
   overflow: hidden;
 }
+
+/*
+  BOOTSTRAP CLASS OVERRIDES
+ */
+
+.row {
+  margin: 0;
+}
+
+p#footer_text {
+  margin: 0;
+}

@@ -28,7 +28,15 @@
   <div class="row">
     <br>
     <div class="col-sm-offset-4 col-sm-4 text-center">
-        <?php echo validation_errors(); ?>
+        <?php
+        echo validation_errors();
+        if ($is_user_online === TRUE) {
+          echo '<div class="alert alert-danger">'.$err_user_online.' </div>';
+        }
+        elseif(isset($auth_fail) && $auth_fail === TRUE) {
+          echo '<div class="alert alert-danger">'.$err_auth_fail.' </div>';
+        }
+        ?>
     </div>
     <div class="col-sm-4"></div>
   </div>

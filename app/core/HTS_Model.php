@@ -1,8 +1,5 @@
 <?php
 
-/**
- *
- */
 class HTS_Model extends CI_Model {
 
   private $table;

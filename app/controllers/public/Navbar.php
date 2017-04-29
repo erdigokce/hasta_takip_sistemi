@@ -3,10 +3,10 @@
  * Navbar Controller Page
  */
 
-class Navbar extends CI_Controller {
+class Navbar extends HTS_Controller {
 
   function __construct() {
-    parent::__construct();
+    parent::__construct('navbar');
     $this->load->library('session');
     $this->load->library('htsutils');
   }

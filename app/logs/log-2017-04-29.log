@@ -1,0 +1,86 @@
+ERROR - 29-04-2017 01:22:39 --> Severity: Notice --> Undefined variable: is_user_online C:\xampp\htdocs\hts\app\views\doctor\Login.php 33
+ERROR - 29-04-2017 18:35:45 --> Severity: Notice --> Trying to get property of non-object C:\xampp\htdocs\hts\app\controllers\doctor\Login.php 110
+ERROR - 29-04-2017 18:35:45 --> Severity: Notice --> Trying to get property of non-object C:\xampp\htdocs\hts\app\controllers\doctor\Login.php 110
+ERROR - 29-04-2017 18:35:45 --> Kullanıcı loglarına ulaşılamadı! [Kullanıcı ID : 4], [Nesne : ]
+ERROR - 29-04-2017 18:35:45 --> Severity: Notice --> Undefined variable: time2 C:\xampp\htdocs\hts\app\controllers\doctor\Login.php 124
+ERROR - 29-04-2017 18:35:45 --> Severity: Error --> Call to a member function getTimestamp() on null C:\xampp\htdocs\hts\app\controllers\doctor\Login.php 124
+ERROR - 29-04-2017 17:54:45 --> Severity: Parsing Error --> syntax error, unexpected ')' C:\xampp\htdocs\hts\app\models\syscore\UserLogs.php 22
+ERROR - 29-04-2017 18:55:04 --> Severity: Notice --> Trying to get property of non-object C:\xampp\htdocs\hts\app\controllers\doctor\Login.php 113
+ERROR - 29-04-2017 18:55:04 --> Severity: Notice --> Trying to get property of non-object C:\xampp\htdocs\hts\app\controllers\doctor\Login.php 113
+ERROR - 29-04-2017 18:55:04 --> Kullanıcı loglarına ulaşılamadı! [Kullanıcı ID : 4], [Nesne : ]
+ERROR - 29-04-2017 18:55:04 --> Severity: Notice --> Undefined variable: time2 C:\xampp\htdocs\hts\app\controllers\doctor\Login.php 127
+ERROR - 29-04-2017 18:55:04 --> Severity: Error --> Call to a member function getTimestamp() on null C:\xampp\htdocs\hts\app\controllers\doctor\Login.php 127
+ERROR - 29-04-2017 18:55:59 --> Severity: 4096 --> Object of class DateTime could not be converted to string C:\xampp\htdocs\hts\sys\database\DB_driver.php 1476
+ERROR - 29-04-2017 18:55:59 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 1 - Invalid query: INSERT INTO `hts_syscore`.`hts_user_logs` (`USER_ID`, `DATE_LAST_LOGIN`) VALUES ('4', )
+ERROR - 29-04-2017 18:57:22 --> Severity: 4096 --> Object of class DateTime could not be converted to string C:\xampp\htdocs\hts\app\models\syscore\UserLogs.php 21
+ERROR - 29-04-2017 18:57:22 --> Severity: Notice --> Trying to get property of non-object C:\xampp\htdocs\hts\app\controllers\doctor\Login.php 113
+ERROR - 29-04-2017 18:57:22 --> Severity: Notice --> Trying to get property of non-object C:\xampp\htdocs\hts\app\controllers\doctor\Login.php 113
+ERROR - 29-04-2017 18:39:44 --> Severity: Notice --> Undefined variable: user_category C:\xampp\htdocs\hts\app\views\doctor\Dashboard.php 4
+ERROR - 29-04-2017 19:02:31 --> Severity: Error --> Call to undefined method Dashboard::getPageController() C:\xampp\htdocs\hts\app\controllers\doctor\Dashboard.php 19
+ERROR - 29-04-2017 19:04:16 --> Severity: Error --> Call to undefined method Dashboard::getPageController() C:\xampp\htdocs\hts\app\controllers\doctor\Dashboard.php 19
+ERROR - 29-04-2017 19:10:42 --> Severity: Notice --> Undefined variable: page_controller C:\xampp\htdocs\hts\app\core\HTS_Controller.php 13
+ERROR - 29-04-2017 19:10:45 --> Severity: Notice --> Undefined variable: page_controller C:\xampp\htdocs\hts\app\core\HTS_Controller.php 13
+ERROR - 29-04-2017 20:11:49 --> Login işlemi başarısız oldu! Kullanıcı adı, e-posta veya parola geçersiz!
+ERROR - 29-04-2017 20:11:49 --> Severity: Notice --> Undefined variable: title C:\xampp\htdocs\hts\app\views\templates\content_top.php 5
+ERROR - 29-04-2017 20:11:49 --> Severity: Notice --> Undefined variable: nav_pro_login C:\xampp\htdocs\hts\app\views\templates\header.php 9
+ERROR - 29-04-2017 20:11:49 --> Severity: Notice --> Undefined variable: nav_lang C:\xampp\htdocs\hts\app\views\templates\header.php 29
+ERROR - 29-04-2017 20:11:49 --> Severity: Notice --> Undefined variable: page_controller C:\xampp\htdocs\hts\app\views\templates\header.php 33
+ERROR - 29-04-2017 20:11:49 --> Severity: Notice --> Undefined variable: nav_lang_en C:\xampp\htdocs\hts\app\views\templates\header.php 33
+ERROR - 29-04-2017 20:11:49 --> Severity: Notice --> Undefined variable: page_controller C:\xampp\htdocs\hts\app\views\templates\header.php 36
+ERROR - 29-04-2017 20:11:49 --> Severity: Notice --> Undefined variable: nav_lang_tr C:\xampp\htdocs\hts\app\views\templates\header.php 36
+ERROR - 29-04-2017 20:11:49 --> Severity: Notice --> Undefined variable: login_username C:\xampp\htdocs\hts\app\views\doctor\Login.php 7
+ERROR - 29-04-2017 20:11:49 --> Severity: Notice --> Undefined variable: login_password C:\xampp\htdocs\hts\app\views\doctor\Login.php 12
+ERROR - 29-04-2017 20:11:49 --> Severity: Notice --> Undefined variable: login_reset C:\xampp\htdocs\hts\app\views\doctor\Login.php 16
+ERROR - 29-04-2017 20:11:49 --> Severity: Notice --> Undefined variable: login_submit C:\xampp\htdocs\hts\app\views\doctor\Login.php 17
+ERROR - 29-04-2017 20:11:49 --> Severity: Notice --> Undefined variable: login_lost_password C:\xampp\htdocs\hts\app\views\doctor\Login.php 24
+ERROR - 29-04-2017 20:11:49 --> Severity: Notice --> Undefined variable: is_user_online C:\xampp\htdocs\hts\app\views\doctor\Login.php 33
+ERROR - 29-04-2017 20:12:10 --> Login işlemi başarısız oldu! Kullanıcı adı, e-posta veya parola geçersiz!
+ERROR - 29-04-2017 20:12:10 --> Severity: Notice --> Undefined variable: title C:\xampp\htdocs\hts\app\views\templates\content_top.php 5
+ERROR - 29-04-2017 20:12:10 --> Severity: Notice --> Undefined variable: nav_pro_login C:\xampp\htdocs\hts\app\views\templates\header.php 9
+ERROR - 29-04-2017 20:12:10 --> Severity: Notice --> Undefined variable: nav_lang C:\xampp\htdocs\hts\app\views\templates\header.php 29
+ERROR - 29-04-2017 20:12:10 --> Severity: Notice --> Undefined variable: page_controller C:\xampp\htdocs\hts\app\views\templates\header.php 33
+ERROR - 29-04-2017 20:12:10 --> Severity: Notice --> Undefined variable: nav_lang_en C:\xampp\htdocs\hts\app\views\templates\header.php 33
+ERROR - 29-04-2017 20:12:10 --> Severity: Notice --> Undefined variable: page_controller C:\xampp\htdocs\hts\app\views\templates\header.php 36
+ERROR - 29-04-2017 20:12:10 --> Severity: Notice --> Undefined variable: nav_lang_tr C:\xampp\htdocs\hts\app\views\templates\header.php 36
+ERROR - 29-04-2017 20:12:10 --> Severity: Notice --> Undefined variable: login_username C:\xampp\htdocs\hts\app\views\doctor\Login.php 7
+ERROR - 29-04-2017 20:12:10 --> Severity: Notice --> Undefined variable: login_password C:\xampp\htdocs\hts\app\views\doctor\Login.php 12
+ERROR - 29-04-2017 20:12:10 --> Severity: Notice --> Undefined variable: login_reset C:\xampp\htdocs\hts\app\views\doctor\Login.php 16
+ERROR - 29-04-2017 20:12:10 --> Severity: Notice --> Undefined variable: login_submit C:\xampp\htdocs\hts\app\views\doctor\Login.php 17
+ERROR - 29-04-2017 20:12:10 --> Severity: Notice --> Undefined variable: login_lost_password C:\xampp\htdocs\hts\app\views\doctor\Login.php 24
+ERROR - 29-04-2017 20:12:10 --> Severity: Notice --> Undefined variable: is_user_online C:\xampp\htdocs\hts\app\views\doctor\Login.php 33
+ERROR - 29-04-2017 20:12:52 --> Login işlemi başarısız oldu! Kullanıcı adı, e-posta veya parola geçersiz!
+ERROR - 29-04-2017 20:12:52 --> Severity: Notice --> Undefined variable: title C:\xampp\htdocs\hts\app\views\templates\content_top.php 5
+ERROR - 29-04-2017 20:12:52 --> Severity: Notice --> Undefined variable: nav_pro_login C:\xampp\htdocs\hts\app\views\templates\header.php 9
+ERROR - 29-04-2017 20:12:52 --> Severity: Notice --> Undefined variable: nav_lang C:\xampp\htdocs\hts\app\views\templates\header.php 29
+ERROR - 29-04-2017 20:12:52 --> Severity: Notice --> Undefined variable: page_controller C:\xampp\htdocs\hts\app\views\templates\header.php 33
+ERROR - 29-04-2017 20:12:52 --> Severity: Notice --> Undefined variable: nav_lang_en C:\xampp\htdocs\hts\app\views\templates\header.php 33
+ERROR - 29-04-2017 20:12:52 --> Severity: Notice --> Undefined variable: page_controller C:\xampp\htdocs\hts\app\views\templates\header.php 36
+ERROR - 29-04-2017 20:12:52 --> Severity: Notice --> Undefined variable: nav_lang_tr C:\xampp\htdocs\hts\app\views\templates\header.php 36
+ERROR - 29-04-2017 20:12:52 --> Severity: Notice --> Undefined variable: login_username C:\xampp\htdocs\hts\app\views\doctor\Login.php 7
+ERROR - 29-04-2017 20:12:52 --> Severity: Notice --> Undefined variable: login_password C:\xampp\htdocs\hts\app\views\doctor\Login.php 12
+ERROR - 29-04-2017 20:12:52 --> Severity: Notice --> Undefined variable: login_reset C:\xampp\htdocs\hts\app\views\doctor\Login.php 16
+ERROR - 29-04-2017 20:12:52 --> Severity: Notice --> Undefined variable: login_submit C:\xampp\htdocs\hts\app\views\doctor\Login.php 17
+ERROR - 29-04-2017 20:12:52 --> Severity: Notice --> Undefined variable: login_lost_password C:\xampp\htdocs\hts\app\views\doctor\Login.php 24
+ERROR - 29-04-2017 20:12:52 --> Severity: Notice --> Undefined variable: is_user_online C:\xampp\htdocs\hts\app\views\doctor\Login.php 33
+ERROR - 29-04-2017 20:13:28 --> Severity: 4096 --> Object of class DateTime could not be converted to string C:\xampp\htdocs\hts\app\models\syscore\UserLogs.php 21
+ERROR - 29-04-2017 20:15:16 --> Severity: 4096 --> Object of class DateTime could not be converted to string C:\xampp\htdocs\hts\app\models\syscore\UserLogs.php 21
+ERROR - 29-04-2017 20:19:43 --> Severity: Notice --> Trying to get property of non-object C:\xampp\htdocs\hts\app\models\syscore\UserLogs.php 44
+ERROR - 29-04-2017 19:26:01 --> Severity: Notice --> Undefined variable: username C:\xampp\htdocs\hts\app\views\doctor\Dashboard.php 13
+ERROR - 29-04-2017 19:54:14 --> Severity: Parsing Error --> syntax error, unexpected ';' C:\xampp\htdocs\hts\app\views\doctor\Dashboard.php 23
+ERROR - 29-04-2017 21:52:33 --> Severity: Notice --> Trying to get property of non-object C:\xampp\htdocs\hts\app\controllers\doctor\Login.php 108
+ERROR - 29-04-2017 21:52:33 --> Severity: Notice --> Trying to get property of non-object C:\xampp\htdocs\hts\app\controllers\doctor\Login.php 110
+ERROR - 29-04-2017 21:52:33 --> Query error: Column 'USER_ID' cannot be null - Invalid query: INSERT INTO `hts_syscore`.`hts_user_logs` (`USER_ID`, `DATE_LAST_LOGIN`, `DATE_LAST_LOGOUT`) VALUES (NULL, '2017-04-29 21:52:33', '2017-04-29 21:52:33')
+ERROR - 29-04-2017 21:53:25 --> Severity: Notice --> Trying to get property of non-object C:\xampp\htdocs\hts\app\controllers\doctor\Login.php 108
+ERROR - 29-04-2017 21:53:25 --> Severity: Notice --> Trying to get property of non-object C:\xampp\htdocs\hts\app\controllers\doctor\Login.php 110
+ERROR - 29-04-2017 21:53:25 --> Query error: Column 'USER_ID' cannot be null - Invalid query: INSERT INTO `hts_syscore`.`hts_user_logs` (`USER_ID`, `DATE_LAST_LOGIN`, `DATE_LAST_LOGOUT`) VALUES (NULL, '2017-04-29 21:53:25', '2017-04-29 21:53:25')
+ERROR - 29-04-2017 21:54:55 --> Severity: Notice --> Trying to get property of non-object C:\xampp\htdocs\hts\app\controllers\doctor\Login.php 108
+ERROR - 29-04-2017 21:54:55 --> Severity: Notice --> Trying to get property of non-object C:\xampp\htdocs\hts\app\controllers\doctor\Login.php 110
+ERROR - 29-04-2017 21:54:55 --> Query error: Column 'USER_ID' cannot be null - Invalid query: INSERT INTO `hts_syscore`.`hts_user_logs` (`USER_ID`, `DATE_LAST_LOGIN`, `DATE_LAST_LOGOUT`) VALUES (NULL, '2017-04-29 21:54:55', '2017-04-29 21:54:55')
+ERROR - 29-04-2017 22:10:09 --> Severity: Notice --> Undefined variable: err_auth_fail C:\xampp\htdocs\hts\app\views\doctor\Login.php 37
+ERROR - 29-04-2017 22:12:26 --> Severity: Notice --> Undefined variable: isUserOnline C:\xampp\htdocs\hts\app\controllers\doctor\Login.php 96
+ERROR - 29-04-2017 22:13:05 --> Severity: Notice --> Undefined variable: isUserOnline C:\xampp\htdocs\hts\app\controllers\doctor\Login.php 96
+ERROR - 29-04-2017 22:13:32 --> Severity: Notice --> Undefined variable: isUserOnline C:\xampp\htdocs\hts\app\controllers\doctor\Login.php 96
+ERROR - 29-04-2017 22:17:48 --> Severity: Notice --> Undefined index: auth_fail C:\xampp\htdocs\hts\app\controllers\doctor\Login.php 102
+ERROR - 29-04-2017 22:17:53 --> Severity: Notice --> Undefined variable: auth_fail C:\xampp\htdocs\hts\app\views\doctor\Login.php 36
+ERROR - 29-04-2017 22:18:59 --> Severity: Notice --> Undefined index: auth_fail C:\xampp\htdocs\hts\app\controllers\doctor\Login.php 102
+ERROR - 29-04-2017 22:25:29 --> Severity: Notice --> Undefined index: auth_fail C:\xampp\htdocs\hts\app\controllers\doctor\Login.php 102

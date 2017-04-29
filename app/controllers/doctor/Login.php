@@ -2,12 +2,10 @@
 /**
  * Login Controller Page
  */
-class Login extends CI_Controller {
-
-  private $page_controller = 'login';
+class Login extends HTS_Controller {
 
   function __construct() {
-    parent::__construct();
+    parent::__construct('login');
     $this->load->database('syscore');
     $this->load->helper('form');
     $this->load->library('form_validation');
@@ -19,11 +17,11 @@ class Login extends CI_Controller {
   }
 
   public function index() {
-    $this->lang->load(array('navbar',$this->page_controller), $this->session->langauge);
+    $this->lang->load(array('navbar','error',$this->getPage()), $this->session->langauge);
     $this->htsutils->loadNavbarLang($this, $data);
     $data['title'] = $this->lang->line('login_title');
-    $data['page_controller'] = $this->page_controller;
-    $this->populatePageData($data);
+    $data['page_controller'] = $this->getPage();
+    $this->populatePageLangData($data);
     if($this->session->has_userdata('auth') && $this->session->auth === TRUE){
       $this->resumeSession($data);
     } else {
@@ -39,7 +37,7 @@ class Login extends CI_Controller {
     // $this->session->sess_destroy();
     $this->session->unset_userdata($this->wipeArrayOfUserSessionData());
     $this->session->auth = FALSE;
-    redirect($this->page_controller, 'refresh');
+    redirect($this->getPage(), 'refresh');
   }
 
   /** PRIVATE FUNCTIONS **/
@@ -82,14 +80,26 @@ class Login extends CI_Controller {
     $this->form_validation->set_rules('password', $this->lang->line('login_password'), 'required');
     $data['name'] = "";
     $data['surname'] = "";
+    $data['user_category'] = "";
     $data['auth'] = FALSE;
+    $data['is_user_online'] = FALSE;
     if ($this->form_validation->run() === FALSE) { // Form validation level
       $this->loadLogin($data);
     } else {
       $row = $this->user->getUser($this->input->post('username'));
-      $isUserOnline = $this->isUserOnline($row);
-      $isUserTimedOut = $this->isUserTimedOut($row);
+      if($this->htsutils->isSetAndNotEmpty($row)) {
+        $isUserOnline = $this->isUserOnline($row);
+        $isUserTimedOut = $this->isUserTimedOut($row);
+      } else {
+        $isUserOnline = "FALSE";
+        $isUserTimedOut = "FALSE";
+        $data['auth_fail'] = TRUE;
+      }
       if ($isUserOnline === "TRUE" && $isUserTimedOut === "FALSE") {
+        $data['is_user_online'] = TRUE;
+        $this->loadLogin($data);
+      }
+      elseif (isset($data['auth_fail']) && $data['auth_fail'] === TRUE) {
         $this->loadLogin($data);
       } else {
         $this->tryLogin($row);
@@ -105,7 +115,10 @@ class Login extends CI_Controller {
 
   private function isUserOnline(&$row) {
     $userLog = $this->userlogs->getUserLog($row->ID);
-    if($userLog->DATE_LAST_LOGOUT < $userLog->DATE_LAST_LOGIN) {
+    if(!$this->htsutils->isSetAndNotEmpty($userLog)) {
+      $this->userlogs->createUserLog($row->ID);
+    }
+    elseif($userLog->DATE_LAST_LOGOUT < $userLog->DATE_LAST_LOGIN) {
       return "TRUE";
     }
     return "FALSE";
@@ -138,6 +151,7 @@ class Login extends CI_Controller {
       $this->session->set_userdata($session_data);
       $data['name'] = $row->NAME;
       $data['surname'] = $row->SURNAME;
+      $data['user_category'] = $row->USER_CATEGORY;
       $data['auth'] = $this->session->auth;
       $this->userlogs->setUserLoginLog($row->ID);
       redirect('dashboard', 'refresh');
@@ -149,11 +163,13 @@ class Login extends CI_Controller {
     }
   }
 
-  private function populatePageData(&$data) {
+  private function populatePageLangData(&$data) {
     $data['login_username'] = $this->lang->line('login_username');
     $data['login_password'] = $this->lang->line('login_password');
     $data['login_submit'] = $this->lang->line('login_submit');
     $data['login_reset'] = $this->lang->line('login_reset');
     $data['login_lost_password'] = $this->lang->line('login_lost_password');
+    $data['err_user_online'] = $this->lang->line('err_user_online');
+    $data['err_auth_fail'] = $this->lang->line('err_auth_fail');
   }
 }

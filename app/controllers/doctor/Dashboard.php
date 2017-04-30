@@ -9,7 +9,6 @@ class Dashboard extends HTS_Controller {
     $this->load->database('syscore');
     $this->load->model('syscore/user');
     $this->load->library('session');
-    $this->load->library('htsutils');
   }
 
   /**
@@ -17,7 +16,7 @@ class Dashboard extends HTS_Controller {
    */
   public function index() {
     $this->lang->load(array('navbar',$this->getPage()), $this->session->langauge);
-    $this->htsutils->loadNavbarLang($this, $data);
+    loadNavbarLang($this, $data);
     $this->loadMenuLeftLang($data);
     $data['title'] = $this->lang->line('dashboard_title');
     $data['page_controller'] = $this->getPage();
@@ -48,9 +47,10 @@ class Dashboard extends HTS_Controller {
   /**
    * Device Informatıons
    */
-  public function device_informations() {
+  public function deviceInformations() {
     if($this->session->has_userdata('auth') && $this->session->auth === TRUE){
-      $this->load->view("doctor/device_informations"); // DEVICE INFORMATIONS VIEW
+      $this->loadDeviceInformationsLang($data);
+      $this->load->view("doctor/DeviceInformations", $data); // DEVICE INFORMATIONS VIEW
     } else {
       redirect($this->getPage(), 'refresh');
     }
@@ -59,9 +59,9 @@ class Dashboard extends HTS_Controller {
   /**
    * Patient Informations
    */
-  public function patient_informations() {
+  public function patientInformations() {
     if($this->session->has_userdata('auth') && $this->session->auth === TRUE){
-      $this->load->view("doctor/patient_informations"); // PATIENT INFORMATIONS VIEW
+      $this->load->view("doctor/PatientInformations"); // PATIENT INFORMATIONS VIEW
     } else {
       redirect($this->getPage(), 'refresh');
     }
@@ -70,9 +70,9 @@ class Dashboard extends HTS_Controller {
   /**
    * Patient Logs
    */
-  public function patient_logs() {
+  public function patientLogs() {
     if($this->session->has_userdata('auth') && $this->session->auth === TRUE){
-      $this->load->view("doctor/patient_logs"); // PATIENT LOGS BOARD VIEW
+      $this->load->view("doctor/PatientLogs"); // PATIENT LOGS BOARD VIEW
     } else {
       redirect($this->getPage(), 'refresh');
     }
@@ -96,6 +96,16 @@ class Dashboard extends HTS_Controller {
      $data['menu_left_item_3'] = $this->lang->line('menu_left_item_3');
      $data['menu_left_item_4'] = $this->lang->line('menu_left_item_4');
      $data['dashboard_unauthorized_user'] = $this->lang->line('dashboard_unauthorized_user');
+   }
+
+   private function loadDeviceInformationsLang(&$data)
+   {
+     $data['device_infos_patient'] = $this->lang->line('device_infos_patient');
+     $data['device_infos_device_name'] = $this->lang->line('device_infos_device_name');
+     $data['device_infos_device_desc'] = $this->lang->line('device_infos_device_desc');
+     $data['device_infos_device_host'] = $this->lang->line('device_infos_device_host');
+     $data['device_infos_device_port'] = $this->lang->line('device_infos_device_port');
+     var_dump($data);
    }
 }
 

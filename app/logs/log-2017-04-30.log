@@ -1,0 +1,110 @@
+ERROR - 30-04-2017 00:57:56 --> Severity: Parsing Error --> syntax error, unexpected '}' C:\xampp\htdocs\hts\app\controllers\doctor\Dashboard.php 90
+ERROR - 30-04-2017 01:11:20 --> 404 Page Not Found: App/css
+ERROR - 30-04-2017 01:12:18 --> 404 Page Not Found: App/css
+ERROR - 30-04-2017 01:12:22 --> 404 Page Not Found: App/css
+ERROR - 30-04-2017 01:55:44 --> 404 Page Not Found: doctor/Dashboard/patient_information
+ERROR - 30-04-2017 01:57:28 --> 404 Page Not Found: Dashboard/app
+ERROR - 30-04-2017 01:57:28 --> 404 Page Not Found: Dashboard/app
+ERROR - 30-04-2017 01:57:28 --> 404 Page Not Found: Dashboard/app
+ERROR - 30-04-2017 01:57:28 --> 404 Page Not Found: Dashboard/app
+ERROR - 30-04-2017 01:57:28 --> 404 Page Not Found: Dashboard/app
+ERROR - 30-04-2017 01:58:19 --> 404 Page Not Found: Dashboard/board
+ERROR - 30-04-2017 01:58:21 --> 404 Page Not Found: Dashboard/device_informations
+ERROR - 30-04-2017 01:58:22 --> 404 Page Not Found: Dashboard/patient_informations
+ERROR - 30-04-2017 01:59:47 --> 404 Page Not Found: doctor/Dashboard/device-informations
+ERROR - 30-04-2017 02:01:22 --> 404 Page Not Found: doctor/Dashboard/deviceInformations
+ERROR - 30-04-2017 02:01:23 --> 404 Page Not Found: doctor/Dashboard/patientInformations
+ERROR - 30-04-2017 10:44:19 --> 404 Page Not Found: App/css
+ERROR - 30-04-2017 10:44:21 --> 404 Page Not Found: App/css
+ERROR - 30-04-2017 10:44:24 --> 404 Page Not Found: App/css
+ERROR - 30-04-2017 10:44:26 --> 404 Page Not Found: App/css
+ERROR - 30-04-2017 11:44:48 --> Login işlemi başarısız oldu! Kullanıcı adı, e-posta veya parola geçersiz!
+ERROR - 30-04-2017 11:44:48 --> Severity: Notice --> Undefined variable: title C:\xampp\htdocs\hts\app\views\templates\content_top.php 5
+ERROR - 30-04-2017 11:44:48 --> Severity: Notice --> Undefined variable: nav_pro_login C:\xampp\htdocs\hts\app\views\templates\header.php 9
+ERROR - 30-04-2017 11:44:48 --> Severity: Notice --> Undefined variable: nav_lang C:\xampp\htdocs\hts\app\views\templates\header.php 29
+ERROR - 30-04-2017 11:44:48 --> Severity: Notice --> Undefined variable: page_controller C:\xampp\htdocs\hts\app\views\templates\header.php 33
+ERROR - 30-04-2017 11:44:48 --> Severity: Notice --> Undefined variable: nav_lang_en C:\xampp\htdocs\hts\app\views\templates\header.php 33
+ERROR - 30-04-2017 11:44:48 --> Severity: Notice --> Undefined variable: page_controller C:\xampp\htdocs\hts\app\views\templates\header.php 36
+ERROR - 30-04-2017 11:44:48 --> Severity: Notice --> Undefined variable: nav_lang_tr C:\xampp\htdocs\hts\app\views\templates\header.php 36
+ERROR - 30-04-2017 11:44:48 --> Severity: Notice --> Undefined variable: login_username C:\xampp\htdocs\hts\app\views\doctor\Login.php 7
+ERROR - 30-04-2017 11:44:48 --> Severity: Notice --> Undefined variable: login_password C:\xampp\htdocs\hts\app\views\doctor\Login.php 12
+ERROR - 30-04-2017 11:44:48 --> Severity: Notice --> Undefined variable: login_reset C:\xampp\htdocs\hts\app\views\doctor\Login.php 16
+ERROR - 30-04-2017 11:44:48 --> Severity: Notice --> Undefined variable: login_submit C:\xampp\htdocs\hts\app\views\doctor\Login.php 17
+ERROR - 30-04-2017 11:44:48 --> Severity: Notice --> Undefined variable: login_lost_password C:\xampp\htdocs\hts\app\views\doctor\Login.php 24
+ERROR - 30-04-2017 11:44:48 --> Severity: Notice --> Undefined variable: is_user_online C:\xampp\htdocs\hts\app\views\doctor\Login.php 33
+ERROR - 30-04-2017 11:28:22 --> Severity: Parsing Error --> syntax error, unexpected 'public' (T_PUBLIC) C:\xampp\htdocs\hts\app\helpers\hts_helper.php 5
+ERROR - 30-04-2017 11:28:49 --> Severity: Parsing Error --> syntax error, unexpected 'if' (T_IF) C:\xampp\htdocs\hts\app\helpers\hts_helper.php 6
+ERROR - 30-04-2017 11:29:14 --> Severity: Parsing Error --> syntax error, unexpected '}' C:\xampp\htdocs\hts\app\helpers\hts_helper.php 42
+ERROR - 30-04-2017 11:29:28 --> Severity: Notice --> Undefined variable: device_infos_patient C:\xampp\htdocs\hts\app\views\doctor\DeviceInformations.php 4
+ERROR - 30-04-2017 11:29:28 --> Severity: Notice --> Undefined variable: device_infos_device_name C:\xampp\htdocs\hts\app\views\doctor\DeviceInformations.php 5
+ERROR - 30-04-2017 11:29:28 --> Severity: Notice --> Undefined variable: device_infos_device_desc C:\xampp\htdocs\hts\app\views\doctor\DeviceInformations.php 6
+ERROR - 30-04-2017 11:29:28 --> Severity: Notice --> Undefined variable: device_infos_device_host C:\xampp\htdocs\hts\app\views\doctor\DeviceInformations.php 7
+ERROR - 30-04-2017 11:29:28 --> Severity: Notice --> Undefined variable: device_infos_device_port C:\xampp\htdocs\hts\app\views\doctor\DeviceInformations.php 8
+ERROR - 30-04-2017 11:34:36 --> Could not find the language line "device_infos_patient"
+ERROR - 30-04-2017 11:34:36 --> Could not find the language line "device_infos_device_name"
+ERROR - 30-04-2017 11:34:36 --> Could not find the language line "device_infos_device_desc"
+ERROR - 30-04-2017 11:34:36 --> Could not find the language line "device_infos_device_host"
+ERROR - 30-04-2017 11:34:36 --> Could not find the language line "device_infos_device_port"
+ERROR - 30-04-2017 11:58:14 --> Severity: Notice --> Undefined variable: data C:\xampp\htdocs\hts\app\controllers\doctor\Dashboard.php 64
+ERROR - 30-04-2017 11:58:15 --> Severity: Notice --> Undefined variable: data C:\xampp\htdocs\hts\app\controllers\doctor\Dashboard.php 64
+ERROR - 30-04-2017 11:58:58 --> Could not find the language line "device_infos_patient"
+ERROR - 30-04-2017 11:58:58 --> Could not find the language line "device_infos_device_name"
+ERROR - 30-04-2017 11:58:58 --> Could not find the language line "device_infos_device_desc"
+ERROR - 30-04-2017 11:58:58 --> Could not find the language line "device_infos_device_host"
+ERROR - 30-04-2017 11:58:58 --> Could not find the language line "device_infos_device_port"
+ERROR - 30-04-2017 11:59:00 --> Could not find the language line "device_infos_patient"
+ERROR - 30-04-2017 11:59:00 --> Could not find the language line "device_infos_device_name"
+ERROR - 30-04-2017 11:59:00 --> Could not find the language line "device_infos_device_desc"
+ERROR - 30-04-2017 11:59:00 --> Could not find the language line "device_infos_device_host"
+ERROR - 30-04-2017 11:59:00 --> Could not find the language line "device_infos_device_port"
+ERROR - 30-04-2017 11:59:01 --> Could not find the language line "device_infos_patient"
+ERROR - 30-04-2017 11:59:01 --> Could not find the language line "device_infos_device_name"
+ERROR - 30-04-2017 11:59:01 --> Could not find the language line "device_infos_device_desc"
+ERROR - 30-04-2017 11:59:01 --> Could not find the language line "device_infos_device_host"
+ERROR - 30-04-2017 11:59:01 --> Could not find the language line "device_infos_device_port"
+ERROR - 30-04-2017 11:59:20 --> Could not find the language line "device_infos_patient"
+ERROR - 30-04-2017 11:59:20 --> Could not find the language line "device_infos_device_name"
+ERROR - 30-04-2017 11:59:20 --> Could not find the language line "device_infos_device_desc"
+ERROR - 30-04-2017 11:59:20 --> Could not find the language line "device_infos_device_host"
+ERROR - 30-04-2017 11:59:20 --> Could not find the language line "device_infos_device_port"
+ERROR - 30-04-2017 11:59:21 --> Could not find the language line "device_infos_patient"
+ERROR - 30-04-2017 11:59:21 --> Could not find the language line "device_infos_device_name"
+ERROR - 30-04-2017 11:59:21 --> Could not find the language line "device_infos_device_desc"
+ERROR - 30-04-2017 11:59:21 --> Could not find the language line "device_infos_device_host"
+ERROR - 30-04-2017 11:59:21 --> Could not find the language line "device_infos_device_port"
+ERROR - 30-04-2017 11:59:32 --> Could not find the language line "device_infos_patient"
+ERROR - 30-04-2017 11:59:32 --> Could not find the language line "device_infos_device_name"
+ERROR - 30-04-2017 11:59:32 --> Could not find the language line "device_infos_device_desc"
+ERROR - 30-04-2017 11:59:32 --> Could not find the language line "device_infos_device_host"
+ERROR - 30-04-2017 11:59:32 --> Could not find the language line "device_infos_device_port"
+ERROR - 30-04-2017 12:00:36 --> Could not find the language line "device_infos_patient"
+ERROR - 30-04-2017 12:00:36 --> Could not find the language line "device_infos_device_name"
+ERROR - 30-04-2017 12:00:36 --> Could not find the language line "device_infos_device_desc"
+ERROR - 30-04-2017 12:00:36 --> Could not find the language line "device_infos_device_host"
+ERROR - 30-04-2017 12:00:36 --> Could not find the language line "device_infos_device_port"
+ERROR - 30-04-2017 12:01:41 --> Could not find the language line "device_infos_patient"
+ERROR - 30-04-2017 12:01:41 --> Could not find the language line "device_infos_device_name"
+ERROR - 30-04-2017 12:01:41 --> Could not find the language line "device_infos_device_desc"
+ERROR - 30-04-2017 12:01:41 --> Could not find the language line "device_infos_device_host"
+ERROR - 30-04-2017 12:01:41 --> Could not find the language line "device_infos_device_port"
+ERROR - 30-04-2017 12:02:57 --> Unable to load the requested class: Htsutils
+ERROR - 30-04-2017 12:04:32 --> Could not find the language line "device_infos_patient"
+ERROR - 30-04-2017 12:04:32 --> Could not find the language line "device_infos_device_name"
+ERROR - 30-04-2017 12:04:32 --> Could not find the language line "device_infos_device_desc"
+ERROR - 30-04-2017 12:04:32 --> Could not find the language line "device_infos_device_host"
+ERROR - 30-04-2017 12:04:32 --> Could not find the language line "device_infos_device_port"
+ERROR - 30-04-2017 12:04:34 --> Could not find the language line "device_infos_patient"
+ERROR - 30-04-2017 12:04:34 --> Could not find the language line "device_infos_device_name"
+ERROR - 30-04-2017 12:04:34 --> Could not find the language line "device_infos_device_desc"
+ERROR - 30-04-2017 12:04:34 --> Could not find the language line "device_infos_device_host"
+ERROR - 30-04-2017 12:04:34 --> Could not find the language line "device_infos_device_port"
+ERROR - 30-04-2017 12:05:13 --> Could not find the language line "device_infos_patient"
+ERROR - 30-04-2017 12:05:13 --> Could not find the language line "device_infos_device_name"
+ERROR - 30-04-2017 12:05:13 --> Could not find the language line "device_infos_device_desc"
+ERROR - 30-04-2017 12:05:13 --> Could not find the language line "device_infos_device_host"
+ERROR - 30-04-2017 12:05:13 --> Could not find the language line "device_infos_device_port"
+ERROR - 30-04-2017 12:05:15 --> Could not find the language line "device_infos_patient"
+ERROR - 30-04-2017 12:05:15 --> Could not find the language line "device_infos_device_name"
+ERROR - 30-04-2017 12:05:15 --> Could not find the language line "device_infos_device_desc"
+ERROR - 30-04-2017 12:05:15 --> Could not find the language line "device_infos_device_host"
+ERROR - 30-04-2017 12:05:15 --> Could not find the language line "device_infos_device_port"

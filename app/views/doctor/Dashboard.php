@@ -4,9 +4,9 @@
       <?php if ($user_category === "DOCTOR") :?>
       <div id="menu_left" class="list-group">
         <?php echo anchor('#', $menu_left_item_1, 'class="list-group-item" data-nav="board"'); ?>
-        <?php echo anchor('#', $menu_left_item_2, 'class="list-group-item" data-nav="device_informations"'); ?>
-        <?php echo anchor('#', $menu_left_item_3, 'class="list-group-item" data-nav="patient_informations"'); ?>
-        <?php echo anchor('#', $menu_left_item_4, 'class="list-group-item" data-nav="patient_logs"'); ?>
+        <?php echo anchor('#', $menu_left_item_2, 'class="list-group-item" data-nav="deviceInformations"'); ?>
+        <?php echo anchor('#', $menu_left_item_3, 'class="list-group-item" data-nav="patientInformations"'); ?>
+        <?php echo anchor('#', $menu_left_item_4, 'class="list-group-item" data-nav="patientLogs"'); ?>
       </div>
       <?php endif; ?>
     </div>

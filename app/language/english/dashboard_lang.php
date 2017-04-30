@@ -13,3 +13,9 @@ $lang['menu_left_item_1'] = "Dashboard";
 $lang['menu_left_item_2'] = "Device Informations";
 $lang['menu_left_item_3'] = "Patient Informations";
 $lang['menu_left_item_4'] = "Patient Logs";
+
+$lang['device_infos_patient'] = "Holder Patient";
+$lang['device_infos_device_name'] = "Device Name";
+$lang['device_infos_device_desc'] = "Device Desription";
+$lang['device_infos_device_host'] = "Device Host";
+$lang['device_infos_device_port'] = "Device Port";

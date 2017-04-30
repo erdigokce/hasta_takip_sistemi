@@ -8,12 +8,11 @@ class Home extends HTS_Controller {
   function __construct() {
     parent::__construct('home');
     $this->load->library('session');
-    $this->load->library('htsutils');
   }
 
   public function index() {
     $this->lang->load(array('navbar',$this->getPage()), $this->session->langauge);
-    $this->htsutils->loadNavbarLang($this, $data);
+    loadNavbarLang($this, $data);
     $data['title'] = $this->lang->line('home_title');
     $data['page_controller'] = $this->getPage();
 

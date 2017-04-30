@@ -18,18 +18,18 @@ class UserLogs extends HTS_Model implements IUserLogsModel {
 
   public function createUserLog($userId) {
     $HtsUserLogsDAO['USER_ID'] = $userId;
-    $HtsUserLogsDAO['DATE_LAST_LOGIN'] = date($this->htsutils->getDefaultTimeFormat());
-    $HtsUserLogsDAO['DATE_LAST_LOGOUT'] = date($this->htsutils->getDefaultTimeFormat());
+    $HtsUserLogsDAO['DATE_LAST_LOGIN'] = date(getDefaultTimeFormat());
+    $HtsUserLogsDAO['DATE_LAST_LOGOUT'] = date(getDefaultTimeFormat());
     $this->db->insert($this->getTable(), $HtsUserLogsDAO);
   }
 
   public function setUserLoginLog($userId) {
-    $HtsUserLogsDAO['DATE_LAST_LOGIN'] = date($this->htsutils->getDefaultTimeFormat());
+    $HtsUserLogsDAO['DATE_LAST_LOGIN'] = date(getDefaultTimeFormat());
     $this->executeUpdate($HtsUserLogsDAO, $userId);
   }
 
   public function setUserLogoutLog($userId) {
-    $HtsUserLogsDAO['DATE_LAST_LOGOUT'] = date($this->htsutils->getDefaultTimeFormat());
+    $HtsUserLogsDAO['DATE_LAST_LOGOUT'] = date(getDefaultTimeFormat());
     $this->executeUpdate($HtsUserLogsDAO, $userId);
   }
 

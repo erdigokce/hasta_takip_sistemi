@@ -10,7 +10,6 @@ class Login extends HTS_Controller {
     $this->load->helper('form');
     $this->load->library('form_validation');
     $this->load->library('session');
-    $this->load->library('htsutils'); // logging
     $this->load->model('syscore/user');
     $this->load->model('syscore/userlogs');
     $this->load->model('live/parameters');
@@ -18,7 +17,7 @@ class Login extends HTS_Controller {
 
   public function index() {
     $this->lang->load(array('navbar','error',$this->getPage()), $this->session->langauge);
-    $this->htsutils->loadNavbarLang($this, $data);
+    loadNavbarLang($this, $data);
     $data['title'] = $this->lang->line('login_title');
     $data['page_controller'] = $this->getPage();
     $this->populatePageLangData($data);
@@ -87,7 +86,7 @@ class Login extends HTS_Controller {
       $this->loadLogin($data);
     } else {
       $row = $this->user->getUser($this->input->post('username'));
-      if($this->htsutils->isSetAndNotEmpty($row)) {
+      if(isSetAndNotEmpty($row)) {
         $isUserOnline = $this->isUserOnline($row);
         $isUserTimedOut = $this->isUserTimedOut($row);
       } else {
@@ -115,7 +114,7 @@ class Login extends HTS_Controller {
 
   private function isUserOnline(&$row) {
     $userLog = $this->userlogs->getUserLog($row->ID);
-    if(!$this->htsutils->isSetAndNotEmpty($userLog)) {
+    if(!isSetAndNotEmpty($userLog)) {
       $this->userlogs->createUserLog($row->ID);
     }
     elseif($userLog->DATE_LAST_LOGOUT < $userLog->DATE_LAST_LOGIN) {
@@ -126,21 +125,21 @@ class Login extends HTS_Controller {
 
   private function isUserTimedOut(&$row) {
     $userLog = $this->userlogs->getUserLog($row->ID);
-    if($this->htsutils->isSetAndNotEmpty($userLog)){
+    if(isSetAndNotEmpty($userLog)){
       $time = new DateTime($userLog->DATE_LAST_LOGIN);
-      $time2 = new DateTime(date($this->htsutils->getDefaultTimeFormat()));
+      $time2 = new DateTime(date(getDefaultTimeFormat()));
     } else {
-      $this->htsutils->log_error("Kullanıcı loglarına ulaşılamadı! [Kullanıcı ID : ".$row->ID."], [Nesne : ".$userLog."]");
+      log_error("Kullanıcı loglarına ulaşılamadı! [Kullanıcı ID : ".$row->ID."], [Nesne : ".$userLog."]");
     }
     $diff = abs($time2->getTimestamp() - $time->getTimestamp());
     $timoutInSeconds = (int) $this->parameters->findParameterValue("HTS_PARAMS", "HTS_SESSION", "USER_SESSION_TIMEOUT")->PARAMETER_VALUE;
-    if ($this->htsutils->isSetAndNotEmpty($timoutInSeconds)) {
+    if (isSetAndNotEmpty($timoutInSeconds)) {
       $timoutInTimestamp = $timoutInSeconds;
       if($diff >= $timoutInTimestamp){
         return "TRUE";
       }
     } else {
-      $this->htsutils->log_error("Parametre tablosunda timeout bilgisine ulaşılamadı! [Nesne : ".$timoutInSeconds."]");
+      log_error("Parametre tablosunda timeout bilgisine ulaşılamadı! [Nesne : ".$timoutInSeconds."]");
     }
     return "FALSE";
   }
@@ -158,7 +157,7 @@ class Login extends HTS_Controller {
     } else {
       $this->session->auth = FALSE;
       $data['auth'] = $this->session->auth;
-      $this->htsutils->log_error("Login işlemi başarısız oldu! Kullanıcı adı, e-posta veya parola geçersiz!");
+      log_error("Login işlemi başarısız oldu! Kullanıcı adı, e-posta veya parola geçersiz!");
       $this->loadLogin($data);
     }
   }

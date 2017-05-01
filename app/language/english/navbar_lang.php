@@ -16,3 +16,5 @@ $lang['nav_pro_dashboard'] = 'Dashboard';
 $lang['nav_lang'] = 'Langauge';
 $lang['nav_lang_en'] = 'English';
 $lang['nav_lang_tr'] = 'Turkish';
+
+$lang['footer_text'] = 'Patient Tracking System <em> <abbr title="Kocaeli University">KOU</abbr> - Information Systems Engineering &copy;';

@@ -16,13 +16,20 @@ class UserLogs extends HTS_Model implements IUserLogsModel {
     return $this->db->get_where($this->getTable(), array('USER_ID' => $userId))->row();
   }
 
+  public function createUserLog($userId) {
+    $HtsUserLogsDAO['USER_ID'] = $userId;
+    $HtsUserLogsDAO['DATE_LAST_LOGIN'] = date(getDefaultTimeFormat());
+    $HtsUserLogsDAO['DATE_LAST_LOGOUT'] = date(getDefaultTimeFormat());
+    $this->db->insert($this->getTable(), $HtsUserLogsDAO);
+  }
+
   public function setUserLoginLog($userId) {
-    $HtsUserLogsDAO['DATE_LAST_LOGIN'] = date("Y-m-d H:i:s");
+    $HtsUserLogsDAO['DATE_LAST_LOGIN'] = date(getDefaultTimeFormat());
     $this->executeUpdate($HtsUserLogsDAO, $userId);
   }
 
   public function setUserLogoutLog($userId) {
-    $HtsUserLogsDAO['DATE_LAST_LOGOUT'] = date("Y-m-d H:i:s");
+    $HtsUserLogsDAO['DATE_LAST_LOGOUT'] = date(getDefaultTimeFormat());
     $this->executeUpdate($HtsUserLogsDAO, $userId);
   }
 
@@ -43,8 +50,6 @@ class UserLogs extends HTS_Model implements IUserLogsModel {
       if(isset($row)) {
         $this->db->where('USER_ID', $userId);
         $this->db->update($this->getTable(), $HtsUserLogsDAO);
-      } else {
-        $this->insertData($HtsUserLogsDAO);
       }
     }
   }

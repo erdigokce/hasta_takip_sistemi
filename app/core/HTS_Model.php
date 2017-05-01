@@ -1,11 +1,9 @@
 <?php
 
-/**
- *
- */
 class HTS_Model extends CI_Model {
 
   private $table;
+  private $num_rows;
 
   function __construct($table) {
     parent::__construct();
@@ -20,6 +18,7 @@ class HTS_Model extends CI_Model {
   public function findByPrimaryKey(&$id){
     $query = $this->db->get_where($this->table, array('ID' => $id));
     $row = $query->row();
+    $this->num_rows = $query->num_rows();
     if(isset($row)) {
       return $row;
     } else {
@@ -34,7 +33,8 @@ class HTS_Model extends CI_Model {
   public function findAll(){
     $query = $this->db->get($this->table);
     $result = $query->result();
-    if($query->num_rows() > 0) {
+    $this->num_rows = $query->num_rows();
+    if($this->num_rows > 0) {
       return $result;
     } else {
       return NULL;
@@ -82,6 +82,13 @@ class HTS_Model extends CI_Model {
 
   public function setTable(&$table) {
     $this->table = $table;
+  }
+
+  /**
+   * @return int                    Sorgu sonucu dönen kayıtların sayısını verir.
+   */
+  public function getNumRows() {
+    return $this->num_rows;
   }
 
 }

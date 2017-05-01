@@ -15,6 +15,7 @@ class Home extends HTS_Controller {
     loadNavbarLang($this, $data);
     $data['title'] = $this->lang->line('home_title');
     $data['page_controller'] = $this->getPage();
+    $data['footer_text'] = $this->lang->line('footer_text');
 
     if($this->session->has_userdata('auth') && $this->session->auth === TRUE){
       $data['auth'] = $this->session->auth;
@@ -27,8 +28,8 @@ class Home extends HTS_Controller {
     }
     $this->load->view("templates/content_top", $data);
     $this->load->view("templates/header", $data);
-    $this->load->view("public/home");
-    $this->load->view("templates/footer");
+    $this->load->view("public/home", $data);
+    $this->load->view("templates/footer", $data);
     $this->load->view("templates/content_bottom");
   }
 

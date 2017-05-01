@@ -20,6 +20,7 @@ class Login extends HTS_Controller {
     loadNavbarLang($this, $data);
     $data['title'] = $this->lang->line('login_title');
     $data['page_controller'] = $this->getPage();
+    $data['footer_text'] = $this->lang->line('footer_text');
     $this->populatePageLangData($data);
     if($this->session->has_userdata('auth') && $this->session->auth === TRUE){
       $this->resumeSession($data);
@@ -44,8 +45,8 @@ class Login extends HTS_Controller {
   private function loadLogin(&$data) {
     $this->load->view("templates/content_top", $data);
     $this->load->view("templates/header", $data);
-    $this->load->view("doctor/login"); // MAIN LOGIN VIEW
-    $this->load->view("templates/footer");
+    $this->load->view("doctor/login", $data); // MAIN LOGIN VIEW
+    $this->load->view("templates/footer", $data);
     $this->load->view("templates/content_bottom");
   }
 
@@ -75,14 +76,8 @@ class Login extends HTS_Controller {
   }
 
   private function generateSession(&$data) {
-    $this->form_validation->set_rules('username', $this->lang->line('login_username'), 'required');
-    $this->form_validation->set_rules('password', $this->lang->line('login_password'), 'required');
-    $data['name'] = "";
-    $data['surname'] = "";
-    $data['user_category'] = "";
-    $data['auth'] = FALSE;
-    $data['is_user_online'] = FALSE;
-    if ($this->form_validation->run() === FALSE) { // Form validation level
+    $this->initData($data);
+    if ($this->form_validation->run('signin') === FALSE) { // Form validation level
       $this->loadLogin($data);
     } else {
       $row = $this->user->getUser($this->input->post('username'));
@@ -106,12 +101,25 @@ class Login extends HTS_Controller {
     }
   }
 
+  private function initData(&$data) {
+    $data['name'] = "";
+    $data['surname'] = "";
+    $data['user_category'] = "";
+    $data['auth'] = FALSE;
+    $data['is_user_online'] = FALSE;
+  }
+
   private function resumeSession(&$data) {
     $data['name'] = $this->session->name;
     $data['surname'] = $this->session->surname;
     redirect('dashboard', 'refresh');
   }
 
+  /**
+   * Kayıtlı kullanıcının etki̇n bi̇r oturumunun olup olmadiğini döndürür.
+   * @param  UserLogs  $row     Kullanıcının giriş çıkış loglarının tutulduğu tablo satırı.
+   * @return String             Online ise "TRUE"
+   */
   private function isUserOnline(&$row) {
     $userLog = $this->userlogs->getUserLog($row->ID);
     if(!isSetAndNotEmpty($userLog)) {
@@ -123,6 +131,11 @@ class Login extends HTS_Controller {
     return "FALSE";
   }
 
+  /**
+   * Kayıtlı kullanıcının otrumunun zaman aşımına uğrayıp uğramadığını döndürür.
+   * @param  UserLogs  $row     Kullanıcının giriş çıkış loglarının tutulduğu tablo satırı.
+   * @return String             Zaman aşımı ise "TRUE"
+   */
   private function isUserTimedOut(&$row) {
     $userLog = $this->userlogs->getUserLog($row->ID);
     if(isSetAndNotEmpty($userLog)){

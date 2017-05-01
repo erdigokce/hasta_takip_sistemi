@@ -62,7 +62,5 @@ $route['navbar/lang/(:any)/(:any)'] = 'public/navbar/lang/$1/$2';
 /**
  * DOCTOR
  */
-$route['login'] = 'doctor/login';
-$route['login/logout'] = 'doctor/login/logout';
-$route['dashboard'] = 'doctor/dashboard';
-$route['dashboard/([A-Za-z_-]+)'] = 'doctor/dashboard/$1';
+$route['(:any)'] = 'doctor/$1';
+$route['(:any)/(:any)'] = 'doctor/$1/$2';

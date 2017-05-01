@@ -16,3 +16,5 @@ $lang['nav_pro_dashboard'] = 'Panel';
 $lang['nav_lang'] = 'Dil';
 $lang['nav_lang_en'] = 'İngilizce';
 $lang['nav_lang_tr'] = 'Türkçe';
+
+$lang['footer_text'] = 'Hasta Takip Sistemi <em> <abbr title="Kocaeli Üniversitesi">KOÜ</abbr> - Bilişim Sistemleri Mühendisliği &copy;';

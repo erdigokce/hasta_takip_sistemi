@@ -6,5 +6,13 @@ interface IParametersModel {
 }
 
 interface IPatientsModel {
-  
+
+}
+
+interface IDevicesModel {
+  public function listDevicesInJson();
+}
+
+interface IPatientlogsModel {
+
 }

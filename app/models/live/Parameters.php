@@ -12,10 +12,10 @@ class Parameters extends HTS_Model implements IParametersModel {
 
   public function findParameterList($screenName, $fieldName) {
     if(isSetAndNotEmpty($screenName) && isSetAndNotEmpty($fieldName)) {
-      $query = $this->db->get_where($this->getTable(), array('SCREEN_NAME' => $screenName, 'FIELD_NAME' => $fieldName));
+      $this->setQuery($this->db->get_where($this->getTable(), array('SCREEN_NAME' => $screenName, 'FIELD_NAME' => $fieldName)));
     }
-    if(isSetAndNotEmpty($query)) {
-      return $query->result();
+    if(isSetAndNotEmpty($this->getQuery())) {
+      return $this->getQuery()->result();
     } else {
       return NULL;
     }
@@ -25,10 +25,10 @@ class Parameters extends HTS_Model implements IParametersModel {
     if(isSetAndNotEmpty($screenName) && isSetAndNotEmpty($fieldName) && isSetAndNotEmpty($parameterKey)) {
       $this->db->select('PARAMETER_VALUE');
       $this->db->where(array('SCREEN_NAME' => $screenName, 'FIELD_NAME' => $fieldName, 'PARAMETER_KEY' => $parameterKey));
-      $query = $this->db->get($this->getTable());
+      $this->setQuery($this->db->get($this->getTable()));
     }
-    if(isSetAndNotEmpty($query)) {
-      return $query->row();
+    if(isSetAndNotEmpty($this->getQuery())) {
+      return $this->getQuery()->row();
     } else {
       return NULL;
     }

@@ -15,7 +15,11 @@ class Login extends HTS_Controller {
     $this->load->model('live/parameters');
   }
 
-  public function index() {
+  public function index($status = 'normal') {
+    if ($status === 'session_expire') {
+      $data['status'] = $status;
+      $data['err_session_expire'] = $this->lang->line('err_session_expire');
+    }
     $this->lang->load(array('navbar','error',$this->getPage()), $this->session->langauge);
     loadNavbarLang($this, $data);
     $data['title'] = $this->lang->line('login_title');

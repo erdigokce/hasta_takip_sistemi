@@ -7,3 +7,4 @@
 
 $lang["err_user_online"] = "The user is online now in another device. <br>Please try again later.";
 $lang["err_auth_fail"] = "Invalid username/email or password.";
+$lang["err_session_expire"] = "Last session has been expired!";

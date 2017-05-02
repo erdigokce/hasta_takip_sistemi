@@ -30,7 +30,7 @@ class Dashboard extends HTS_Controller {
       $data['user_category'] = $this->user->getUser($this->session->username)->USER_CATEGORY;
       $this->loadDashboard($data);
     } else {
-      redirect('login', 'refresh');
+      redirect('login/session_expire', 'refresh');
     }
   }
 
@@ -41,33 +41,45 @@ class Dashboard extends HTS_Controller {
     if($this->session->has_userdata('auth') && $this->session->auth === TRUE){
       $this->load->view("doctor/board"); // BOARD VIEW
     } else {
-      redirect($this->getPage(), 'refresh');
+      redirect('login/session_expire', 'refresh');
     }
   }
 
   /**
    * Device Informatıons
    */
-  public function deviceInformations() {
+  public function deviceInformations($page_number = '1', $records_per_page = '10') {
     if($this->session->has_userdata('auth') && $this->session->auth === TRUE){
+      $this->load->model('live/devices');
+      $result = $this->devices->findAllWithFullPatientName();
       $this->loadDeviceInformationsLang($data);
-      $data['css_for_datagrid'] = TRUE;
-      $data['js_for_datagrid'] = TRUE;
+      $data['query'] = $this->devices->getQuery();
+      $data['result'] = $result;
+      $data['num_rows'] = $this->devices->getNumRows();
+      $data['page_number'] = $page_number;
+      $data['records_per_page'] = $records_per_page;
       $this->load->view("doctor/DeviceInformations", $data); // DEVICE INFORMATIONS VIEW
     } else {
-      redirect($this->getPage(), 'refresh');
+      redirect('login/session_expire', 'refresh');
     }
   }
 
   /**
    * Patient Informations
    */
-  public function patientInformations() {
+  public function patientInformations($page_number = '1', $records_per_page = '10') {
     if($this->session->has_userdata('auth') && $this->session->auth === TRUE){
       $this->load->model('live/patients');
-      $this->load->view("doctor/PatientInformations"); // PATIENT INFORMATIONS VIEW
+      $result = $this->patients->findAll();
+      $this->loadPatientInformationsLang($data);
+      $data['query'] = $this->patients->getQuery();
+      $data['result'] = $result;
+      $data['num_rows'] = $this->patients->getNumRows();
+      $data['page_number'] = $page_number;
+      $data['records_per_page'] = $records_per_page;
+      $this->load->view("doctor/PatientInformations", $data); // PATIENT INFORMATIONS VIEW
     } else {
-      redirect($this->getPage(), 'refresh');
+      redirect('login/session_expire', 'refresh');
     }
   }
 
@@ -79,17 +91,8 @@ class Dashboard extends HTS_Controller {
       $this->load->model('live/patientlogs');
       $this->load->view("doctor/PatientLogs"); // PATIENT LOGS BOARD VIEW
     } else {
-      redirect($this->getPage(), 'refresh');
+      redirect('login/session_expire', 'refresh');
     }
-  }
-
-  /**
-   * AJAX Request'ine cevap verir.
-   * @return [type] [description]
-   */
-  public function listDevicesInJson() {
-    $this->load->model('live/devices');
-    echo $this->devices->listDevicesInJson();
   }
 
   /**

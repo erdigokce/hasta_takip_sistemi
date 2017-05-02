@@ -10,9 +10,15 @@ class Devices extends HTS_Model implements IDevicesModel {
     parent::__construct('hts_live.hts_patient_tracking_devices');
   }
 
-  public function listDevicesInJson() {
-    $allDevices = $this->findAll();
-    return json_encode(array('total_rows' => (string) $this->getNumRows(), 'page_data' => $allDevices));
+  public function findAllWithFullPatientName() {
+    $this->setQuery($this->db->query("SELECT d.*, p.PATIENT_NAME, p.PATIENT_SURNAME FROM hts_live.hts_patient_tracking_devices d, hts_live.hts_patients p WHERE d.PATIENT_ID = p.ID ORDER BY p.PATIENT_NAME;"));
+    $result = $this->getQuery()->result();
+    $this->num_rows = $this->getQuery()->num_rows();
+    if($this->num_rows > 0) {
+      return $result;
+    } else {
+      return NULL;
+    }
   }
 
 }

@@ -1,0 +1,81 @@
+ERROR - 01-05-2017 16:08:25 --> Severity: Error --> Call to a member function data_seek() on array C:\xampp\htdocs\hts\app\views\doctor\DeviceInformations.php 14
+ERROR - 01-05-2017 16:08:27 --> Severity: Error --> Call to a member function data_seek() on array C:\xampp\htdocs\hts\app\views\doctor\DeviceInformations.php 14
+ERROR - 01-05-2017 16:08:28 --> Severity: Error --> Call to a member function data_seek() on array C:\xampp\htdocs\hts\app\views\doctor\DeviceInformations.php 14
+ERROR - 01-05-2017 16:08:43 --> Severity: Error --> Call to a member function data_seek() on array C:\xampp\htdocs\hts\app\views\doctor\DeviceInformations.php 14
+ERROR - 01-05-2017 16:09:33 --> Severity: Notice --> Undefined variable: page_count C:\xampp\htdocs\hts\app\views\templates\pagination.php 6
+ERROR - 01-05-2017 16:09:33 --> Severity: Notice --> Undefined variable: i C:\xampp\htdocs\hts\app\views\templates\pagination.php 11
+ERROR - 01-05-2017 16:28:04 --> Severity: Error --> Call to a member function data_seek() on array C:\xampp\htdocs\hts\app\views\doctor\DeviceInformations.php 15
+ERROR - 01-05-2017 16:59:48 --> Severity: Notice --> Undefined property: Dashboard::$devices C:\xampp\htdocs\hts\app\controllers\doctor\Dashboard.php 75
+ERROR - 01-05-2017 16:59:48 --> Severity: Error --> Call to a member function findAll() on null C:\xampp\htdocs\hts\app\controllers\doctor\Dashboard.php 75
+ERROR - 01-05-2017 16:59:51 --> Severity: Notice --> Undefined property: Dashboard::$devices C:\xampp\htdocs\hts\app\controllers\doctor\Dashboard.php 75
+ERROR - 01-05-2017 16:59:51 --> Severity: Error --> Call to a member function findAll() on null C:\xampp\htdocs\hts\app\controllers\doctor\Dashboard.php 75
+ERROR - 01-05-2017 17:00:00 --> Severity: Notice --> Undefined property: Dashboard::$devices C:\xampp\htdocs\hts\app\controllers\doctor\Dashboard.php 75
+ERROR - 01-05-2017 17:00:00 --> Severity: Error --> Call to a member function findAll() on null C:\xampp\htdocs\hts\app\controllers\doctor\Dashboard.php 75
+ERROR - 01-05-2017 17:07:21 --> Severity: Notice --> Undefined variable: i C:\xampp\htdocs\hts\app\views\templates\pagination.php 11
+ERROR - 01-05-2017 17:08:24 --> Severity: Notice --> Undefined variable: i C:\xampp\htdocs\hts\app\views\templates\pagination.php 11
+ERROR - 01-05-2017 17:08:33 --> Severity: Notice --> Undefined variable: i C:\xampp\htdocs\hts\app\views\templates\pagination.php 11
+ERROR - 01-05-2017 17:10:00 --> Severity: Notice --> Undefined property: Dashboard::$devices C:\xampp\htdocs\hts\app\controllers\doctor\Dashboard.php 75
+ERROR - 01-05-2017 17:10:00 --> Severity: Error --> Call to a member function findAll() on null C:\xampp\htdocs\hts\app\controllers\doctor\Dashboard.php 75
+ERROR - 01-05-2017 17:10:01 --> Severity: Notice --> Undefined property: Dashboard::$devices C:\xampp\htdocs\hts\app\controllers\doctor\Dashboard.php 75
+ERROR - 01-05-2017 17:10:01 --> Severity: Error --> Call to a member function findAll() on null C:\xampp\htdocs\hts\app\controllers\doctor\Dashboard.php 75
+ERROR - 01-05-2017 17:10:04 --> Severity: Notice --> Undefined property: Dashboard::$devices C:\xampp\htdocs\hts\app\controllers\doctor\Dashboard.php 75
+ERROR - 01-05-2017 17:10:04 --> Severity: Error --> Call to a member function findAll() on null C:\xampp\htdocs\hts\app\controllers\doctor\Dashboard.php 75
+ERROR - 01-05-2017 17:10:05 --> Severity: Notice --> Undefined property: Dashboard::$devices C:\xampp\htdocs\hts\app\controllers\doctor\Dashboard.php 75
+ERROR - 01-05-2017 17:10:05 --> Severity: Error --> Call to a member function findAll() on null C:\xampp\htdocs\hts\app\controllers\doctor\Dashboard.php 75
+ERROR - 01-05-2017 17:10:11 --> Severity: Notice --> Undefined property: Dashboard::$devices C:\xampp\htdocs\hts\app\controllers\doctor\Dashboard.php 75
+ERROR - 01-05-2017 17:10:11 --> Severity: Error --> Call to a member function findAll() on null C:\xampp\htdocs\hts\app\controllers\doctor\Dashboard.php 75
+ERROR - 01-05-2017 20:17:29 --> Severity: Runtime Notice --> Only variables should be passed by reference C:\xampp\htdocs\hts\app\models\live\Parameters.php 30
+ERROR - 01-05-2017 21:13:06 --> Severity: Runtime Notice --> Only variables should be passed by reference C:\xampp\htdocs\hts\app\models\live\Parameters.php 30
+ERROR - 01-05-2017 21:16:50 --> Severity: Runtime Notice --> Only variables should be passed by reference C:\xampp\htdocs\hts\app\models\live\Parameters.php 30
+ERROR - 01-05-2017 21:17:55 --> Severity: Runtime Notice --> Only variables should be passed by reference C:\xampp\htdocs\hts\app\models\live\Parameters.php 30
+ERROR - 01-05-2017 22:00:43 --> Severity: Runtime Notice --> Only variables should be passed by reference C:\xampp\htdocs\hts\app\models\live\Parameters.php 30
+ERROR - 01-05-2017 21:14:04 --> 404 Page Not Found: App/css
+ERROR - 01-05-2017 21:17:21 --> 404 Page Not Found: App/css
+ERROR - 01-05-2017 21:17:32 --> 404 Page Not Found: App/css
+ERROR - 01-05-2017 21:24:03 --> 404 Page Not Found: App/css
+ERROR - 01-05-2017 22:24:10 --> Severity: Runtime Notice --> Only variables should be passed by reference C:\xampp\htdocs\hts\app\models\live\Parameters.php 30
+ERROR - 01-05-2017 21:24:11 --> 404 Page Not Found: App/css
+ERROR - 01-05-2017 21:24:15 --> 404 Page Not Found: App/css
+ERROR - 01-05-2017 21:24:17 --> 404 Page Not Found: App/css
+ERROR - 01-05-2017 21:24:18 --> 404 Page Not Found: App/css
+ERROR - 01-05-2017 21:24:19 --> 404 Page Not Found: App/css
+ERROR - 01-05-2017 21:24:27 --> 404 Page Not Found: App/css
+ERROR - 01-05-2017 21:24:28 --> 404 Page Not Found: App/css
+ERROR - 01-05-2017 21:24:29 --> 404 Page Not Found: App/css
+ERROR - 01-05-2017 21:25:05 --> 404 Page Not Found: App/css
+ERROR - 01-05-2017 21:26:12 --> 404 Page Not Found: App/css
+ERROR - 01-05-2017 22:26:20 --> Severity: Runtime Notice --> Only variables should be passed by reference C:\xampp\htdocs\hts\app\models\live\Parameters.php 30
+ERROR - 01-05-2017 21:26:20 --> 404 Page Not Found: App/css
+ERROR - 01-05-2017 21:29:51 --> 404 Page Not Found: App/css
+ERROR - 01-05-2017 21:44:26 --> 404 Page Not Found: App/css
+ERROR - 01-05-2017 21:46:25 --> 404 Page Not Found: App/css
+ERROR - 01-05-2017 21:46:26 --> 404 Page Not Found: App/css
+ERROR - 01-05-2017 21:46:26 --> 404 Page Not Found: App/css
+ERROR - 01-05-2017 21:46:27 --> 404 Page Not Found: App/css
+ERROR - 01-05-2017 21:47:33 --> 404 Page Not Found: App/css
+ERROR - 01-05-2017 21:47:34 --> 404 Page Not Found: App/css
+ERROR - 01-05-2017 21:47:48 --> 404 Page Not Found: App/css
+ERROR - 01-05-2017 21:47:48 --> 404 Page Not Found: App/css
+ERROR - 01-05-2017 21:48:03 --> 404 Page Not Found: App/css
+ERROR - 01-05-2017 21:48:14 --> 404 Page Not Found: App/css
+ERROR - 01-05-2017 21:49:07 --> 404 Page Not Found: App/css
+ERROR - 01-05-2017 21:49:09 --> 404 Page Not Found: App/css
+ERROR - 01-05-2017 21:49:33 --> 404 Page Not Found: App/css
+ERROR - 01-05-2017 21:49:34 --> 404 Page Not Found: App/css
+ERROR - 01-05-2017 21:49:35 --> 404 Page Not Found: App/css
+ERROR - 01-05-2017 21:49:35 --> 404 Page Not Found: App/css
+ERROR - 01-05-2017 21:49:50 --> 404 Page Not Found: App/css
+ERROR - 01-05-2017 22:01:30 --> 404 Page Not Found: App/css
+ERROR - 01-05-2017 22:04:43 --> 404 Page Not Found: App/css
+ERROR - 01-05-2017 23:11:45 --> Severity: Runtime Notice --> Only variables should be passed by reference C:\xampp\htdocs\hts\app\models\live\Parameters.php 30
+ERROR - 01-05-2017 22:14:04 --> Severity: Parsing Error --> syntax error, unexpected end of file C:\xampp\htdocs\hts\app\views\templates\header.php 38
+ERROR - 01-05-2017 22:14:44 --> Severity: Parsing Error --> syntax error, unexpected end of file C:\xampp\htdocs\hts\app\views\templates\header.php 38
+ERROR - 01-05-2017 22:15:01 --> Severity: Parsing Error --> syntax error, unexpected end of file C:\xampp\htdocs\hts\app\views\templates\header.php 37
+ERROR - 01-05-2017 22:15:02 --> Severity: Parsing Error --> syntax error, unexpected end of file C:\xampp\htdocs\hts\app\views\templates\header.php 37
+ERROR - 01-05-2017 22:15:02 --> Severity: Parsing Error --> syntax error, unexpected end of file C:\xampp\htdocs\hts\app\views\templates\header.php 37
+ERROR - 01-05-2017 22:15:03 --> Severity: Parsing Error --> syntax error, unexpected end of file C:\xampp\htdocs\hts\app\views\templates\header.php 37
+ERROR - 01-05-2017 22:15:03 --> Severity: Parsing Error --> syntax error, unexpected end of file C:\xampp\htdocs\hts\app\views\templates\header.php 37
+ERROR - 01-05-2017 22:15:03 --> Severity: Parsing Error --> syntax error, unexpected end of file C:\xampp\htdocs\hts\app\views\templates\header.php 37
+ERROR - 01-05-2017 22:15:03 --> Severity: Parsing Error --> syntax error, unexpected end of file C:\xampp\htdocs\hts\app\views\templates\header.php 37
+ERROR - 01-05-2017 22:26:09 --> 404 Page Not Found: App/css
+ERROR - 01-05-2017 22:31:04 --> 404 Page Not Found: App/css

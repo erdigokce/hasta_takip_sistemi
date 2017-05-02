@@ -7,3 +7,4 @@
 
 $lang["err_user_online"] = "Kullanıcı bir başka cihaz üzerinde aktif. <br>Lütfen bir süre sonra tekrar deneyiniz.";
 $lang["err_auth_fail"] = "Kullanıcı adı/email veya şifre geçersizdir.";
+$lang["err_session_expire"] = "Son oturum sonlandırıldı!";

@@ -96,6 +96,25 @@ class Dashboard extends HTS_Controller {
   }
 
   /**
+   * Patient Log Schedules
+   */
+  public function patientLogSchedules($page_number = '1', $records_per_page = '10') {
+    if($this->session->has_userdata('auth') && $this->session->auth === TRUE){
+      $this->load->model('live/patientlogschedules');
+      $result = $this->patientlogschedules->findAllWithFullDeviceSocket();
+      $this->loadPatientLogSchedulesLang($data);
+      $data['query'] = $this->patientlogschedules->getQuery();
+      $data['result'] = $result;
+      $data['num_rows'] = $this->patientlogschedules->getNumRows();
+      $data['page_number'] = $page_number;
+      $data['records_per_page'] = $records_per_page;
+      $this->load->view("doctor/PatientLogSchedules", $data); // PATIENT LOG SCHEDULES BOARD VIEW
+    } else {
+      redirect('login/session_expire', 'refresh');
+    }
+  }
+
+  /**
    * PRIVATE FUNCTIONS
    */
 
@@ -112,6 +131,7 @@ class Dashboard extends HTS_Controller {
      $data['menu_left_item_2'] = $this->lang->line('menu_left_item_2');
      $data['menu_left_item_3'] = $this->lang->line('menu_left_item_3');
      $data['menu_left_item_4'] = $this->lang->line('menu_left_item_4');
+     $data['menu_left_item_5'] = $this->lang->line('menu_left_item_5');
      $data['dashboard_unauthorized_user'] = $this->lang->line('dashboard_unauthorized_user');
    }
 
@@ -120,6 +140,7 @@ class Dashboard extends HTS_Controller {
      $data['device_infos_patient'] = $this->lang->line('device_infos_patient');
      $data['device_infos_device_name'] = $this->lang->line('device_infos_device_name');
      $data['device_infos_device_desc'] = $this->lang->line('device_infos_device_desc');
+     $data['device_infos_device_mac'] = $this->lang->line('device_infos_device_mac');
      $data['device_infos_device_host'] = $this->lang->line('device_infos_device_host');
      $data['device_infos_device_port'] = $this->lang->line('device_infos_device_port');
    }
@@ -132,6 +153,16 @@ class Dashboard extends HTS_Controller {
      $data['patient_infos_phone1'] = $this->lang->line('patient_infos_phone1');
      $data['patient_infos_phone2'] = $this->lang->line('patient_infos_phone2');
      $data['patient_infos_email'] = $this->lang->line('patient_infos_email');
+     $data['patient_infos_apikey'] = $this->lang->line('patient_infos_apikey');
+   }
+
+   private function loadPatientLogSchedulesLang(&$data) {
+     $this->lang->load(array('navbar',$this->getPage()), $this->session->langauge);
+     $data['schedule_device_socket'] = $this->lang->line('schedule_device_socket');
+     $data['schedule_pattern'] = $this->lang->line('schedule_pattern');
+     $data['schedule_type'] = $this->lang->line('schedule_type');
+     $data['schedule_duration'] = $this->lang->line('schedule_duration');
+     $data['schedule_description'] = $this->lang->line('schedule_description');
    }
 
 }

@@ -7,7 +7,7 @@ require_once 'intf.php';
 class User extends HTS_Model implements IUserModel {
 
   function __construct() {
-    parent::__construct('hts_syscore.hts_users');
+    parent::__construct(HTS_SYSCORE.'.hts_users');
   }
 
   public function getUser($selector) {

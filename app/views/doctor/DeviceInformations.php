@@ -6,6 +6,7 @@
 			<th><?php echo get($device_infos_patient); ?></th>
 			<th><?php echo get($device_infos_device_name); ?></th>
 			<th><?php echo get($device_infos_device_desc); ?></th>
+			<th><?php echo get($device_infos_device_mac); ?></th>
 			<th><?php echo get($device_infos_device_host); ?></th>
 			<th><?php echo get($device_infos_device_port); ?></th>
 		</tr>
@@ -20,6 +21,7 @@
       <td class="di_patient" data-diPatient="<?php echo get($row->PATIENT_NAME)." ".get($row->PATIENT_SURNAME); ?>"><?php echo get($row->PATIENT_NAME)." ".get($row->PATIENT_SURNAME); ?></td>
       <td class="di_name" data-diName="<?php echo get($row->DEVICE_NAME); ?>"><?php echo get($row->DEVICE_NAME); ?></td>
       <td class="di_desc" data-diDesc="<?php echo get($row->DEVICE_DESCRIPTION); ?>"><?php echo get($row->DEVICE_DESCRIPTION); ?></td>
+      <td class="di_mac" data-diMac="<?php echo get($row->DEVICE_MAC); ?>"><?php echo get($row->DEVICE_MAC); ?></td>
       <td class="di_host" data-diHost="<?php echo get($row->DEVICE_HOST); ?>"><?php echo get($row->DEVICE_HOST); ?></td>
       <td class="di_port" data-diPort="<?php echo get($row->DEVICE_PORT); ?>"><?php echo get($row->DEVICE_PORT); ?></td>
       <td><button class="btn btn-sm btn-default" type="button" name="btnEditDevice"> <span class='glyphicon glyphicon-pencil'></span> </button></td>
@@ -35,6 +37,7 @@
       <td class="di_patient" data-diPatient=""></td>
       <td class="di_name" data-diName=""></td>
       <td class="di_desc" data-diDesc=""></td>
+      <td class="di_mac" data-diMac=""></td>
       <td class="di_host" data-diHost=""></td>
       <td class="di_port" data-diPort=""></td>
       <td><button class="btn btn-sm btn-default disabled" type="button" name="btnEditDevice"> <span class='glyphicon glyphicon-pencil'></span> </button></td>

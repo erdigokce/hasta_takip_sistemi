@@ -13,6 +13,10 @@ interface IDevicesModel {
   public function findAllWithFullPatientName();
 }
 
-interface IPatientlogsModel {
+interface IPatientLogsModel {
 
+}
+
+interface IPatientLogSchedulesModel {
+  public function findAllWithFullDeviceSocket();
 }

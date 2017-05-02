@@ -6,6 +6,7 @@
         <?php echo anchor('#', $menu_left_item_1, 'class="list-group-item" data-nav="board"'); ?>
         <?php echo anchor('#', $menu_left_item_2, 'class="list-group-item" data-nav="deviceInformations"'); ?>
         <?php echo anchor('#', $menu_left_item_3, 'class="list-group-item" data-nav="patientInformations"'); ?>
+        <?php echo anchor('#', $menu_left_item_5, 'class="list-group-item" data-nav="patientLogSchedules"'); ?>
         <?php echo anchor('#', $menu_left_item_4, 'class="list-group-item" data-nav="patientLogs"'); ?>
       </div>
       <?php endif; ?>

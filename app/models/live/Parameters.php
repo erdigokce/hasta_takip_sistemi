@@ -7,7 +7,7 @@ require_once 'intf.php';
 class Parameters extends HTS_Model implements IParametersModel {
 
   function __construct() {
-    parent::__construct('hts_live.hts_parameters');
+    parent::__construct(HTS_LIVE.'.hts_parameters');
   }
 
   public function findParameterList($screenName, $fieldName) {

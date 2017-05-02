@@ -6,11 +6,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     return isset($param) ? $param : "";
   }
 
-  function isSetAndNotEmpty(&$var) {
+  /**
+   * Gönderilen element tanımlı ve boş değilse TRUE döndürür.
+   * @param  mixed  $var      Kontrol edilecek element.
+   * @return boolean          Sonucu döndürür.
+   */
+  function isSetAndNotEmpty($var) {
     return isset($var) && !empty($var);
   }
 
-  function isNullOrEmpty(&$var) {
+  /**
+   * Gönderilen element null veya boş ise TRUE döndürür.
+   * @param  mixed  $var      Kontrol edilecek element.
+   * @return boolean          Sonucu döndürür.
+   */
+  function isNullOrEmpty($var) {
     return $var == NULL || empty($var);
   }
 

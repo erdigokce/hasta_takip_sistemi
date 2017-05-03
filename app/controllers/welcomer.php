@@ -13,9 +13,7 @@ class Welcomer extends CI_Controller {
   }
 
   public function index() {
-    require('public/home.php');
-    $h = new Home();
-    $h->index();
+    redirect('home','refresh');
   }
 
 }

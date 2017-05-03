@@ -1,16 +1,28 @@
 <div class="row">
   <div class="col-lg-2">
-    <div class="container-fluid">
-      <?php if ($user_category === "DOCTOR") :?>
-      <div id="menu_left" class="list-group">
-        <?php echo anchor('#', $menu_left_item_1, 'class="list-group-item" data-nav="board"'); ?>
-        <?php echo anchor('#', $menu_left_item_2, 'class="list-group-item" data-nav="deviceInformations"'); ?>
-        <?php echo anchor('#', $menu_left_item_3, 'class="list-group-item" data-nav="patientInformations"'); ?>
-        <?php echo anchor('#', $menu_left_item_5, 'class="list-group-item" data-nav="patientLogSchedules"'); ?>
-        <?php echo anchor('#', $menu_left_item_4, 'class="list-group-item" data-nav="patientLogs"'); ?>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid" style="height: 1px;padding-left: 0px;padding-right: 0px;">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#sideNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="sideNavbar" style="height: 1px;padding-left: 0px;padding-right: 0px;">
+          <?php if ($user_category === "DOCTOR") :?>
+          <ul id="menu_left" class="nav nav-pills nav-stacked">
+            <li><?php echo anchor('#', $menu_left_item_1, 'class="list-group-item" data-nav="board"'); ?></li>
+            <li><?php echo anchor('#', $menu_left_item_2, 'class="list-group-item" data-nav="deviceInformations"'); ?></li>
+            <li><?php echo anchor('#', $menu_left_item_3, 'class="list-group-item" data-nav="patientInformations"'); ?></li>
+            <li><?php echo anchor('#', $menu_left_item_5, 'class="list-group-item" data-nav="patientLogSchedules"'); ?></li>
+            <li><?php echo anchor('#', $menu_left_item_4, 'class="list-group-item" data-nav="patientLogs"'); ?></li>
+            <li><?php echo anchor('#', $menu_left_item_6, 'class="list-group-item" data-nav="streams"'); ?></li>
+          </ul>
+          <?php endif; ?>
+        </div>
       </div>
-      <?php endif; ?>
-    </div>
+    </nav>
   </div>
   <div class="col-lg-10">
     <div id="content" class="container">

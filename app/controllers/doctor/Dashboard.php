@@ -115,6 +115,25 @@ class Dashboard extends HTS_Controller {
   }
 
   /**
+   * Streams
+   */
+  public function streams($page_number = '1', $records_per_page = '10') {
+    if($this->session->has_userdata('auth') && $this->session->auth === TRUE) {
+      $this->load->model('live/streams');
+      $result = $this->streams->findAllWithFullPatientName();
+      $this->loadStreamLang($data);
+      $data['query'] = $this->streams->getQuery();
+      $data['result'] = $result;
+      $data['num_rows'] = $this->streams->getNumRows();
+      $data['page_number'] = $page_number;
+      $data['records_per_page'] = $records_per_page;
+      $this->load->view("doctor/streams", $data); // PATIENT LOG SCHEDULES BOARD VIEW
+    } else {
+      redirect('login/session_expire', 'refresh');
+    }
+  }
+
+  /**
    * PRIVATE FUNCTIONS
    */
 
@@ -132,6 +151,7 @@ class Dashboard extends HTS_Controller {
      $data['menu_left_item_3'] = $this->lang->line('menu_left_item_3');
      $data['menu_left_item_4'] = $this->lang->line('menu_left_item_4');
      $data['menu_left_item_5'] = $this->lang->line('menu_left_item_5');
+     $data['menu_left_item_6'] = $this->lang->line('menu_left_item_6');
      $data['dashboard_unauthorized_user'] = $this->lang->line('dashboard_unauthorized_user');
    }
 
@@ -153,7 +173,6 @@ class Dashboard extends HTS_Controller {
      $data['patient_infos_phone1'] = $this->lang->line('patient_infos_phone1');
      $data['patient_infos_phone2'] = $this->lang->line('patient_infos_phone2');
      $data['patient_infos_email'] = $this->lang->line('patient_infos_email');
-     $data['patient_infos_apikey'] = $this->lang->line('patient_infos_apikey');
    }
 
    private function loadPatientLogSchedulesLang(&$data) {
@@ -163,6 +182,12 @@ class Dashboard extends HTS_Controller {
      $data['schedule_type'] = $this->lang->line('schedule_type');
      $data['schedule_duration'] = $this->lang->line('schedule_duration');
      $data['schedule_description'] = $this->lang->line('schedule_description');
+   }
+
+   private function loadStreamLang(&$data) {
+     $this->lang->load(array('navbar',$this->getPage()), $this->session->langauge);
+     $data['stream_patient'] = $this->lang->line('stream_patient');
+     $data['stream_token'] = $this->lang->line('stream_token');
    }
 
 }

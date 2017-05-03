@@ -2,14 +2,14 @@
 require_once 'dao.php';
 require_once 'intf.php';
 /**
- * Patient Tracking Devices Model
+ * Streams Model
  */
-class Devices extends HTS_Model implements IDevicesModel {
+class Streams extends HTS_Model implements IStreamsModel {
 
   private $tablePatients = HTS_LIVE.'.hts_patients';
 
   function __construct() {
-    parent::__construct(HTS_LIVE.'.hts_patient_tracking_devices');
+    parent::__construct(HTS_LIVE.'.hts_streams');
   }
 
   public function findAllWithFullPatientName() {

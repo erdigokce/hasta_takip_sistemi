@@ -20,3 +20,7 @@ interface IPatientLogsModel {
 interface IPatientLogSchedulesModel {
   public function findAllWithFullDeviceSocket();
 }
+
+interface IStreamsModel {
+  
+}

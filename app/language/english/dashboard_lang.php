@@ -15,6 +15,7 @@ $lang['menu_left_item_2'] = "Device Informations";
 $lang['menu_left_item_3'] = "Patient Informations";
 $lang['menu_left_item_4'] = "Patient Logs";
 $lang['menu_left_item_5'] = "Logging Schedules";
+$lang['menu_left_item_6'] = "Streams";
 
 //DEVICE INFORMATIONS
 $lang['device_infos_patient'] = "Holder Patient";
@@ -31,7 +32,6 @@ $lang['patient_infos_address'] = "Address";
 $lang['patient_infos_phone1'] = "Phone (Primary)";
 $lang['patient_infos_phone2'] = "Phone (Secondary)";
 $lang['patient_infos_email'] = "e-mail";
-$lang['patient_infos_apikey'] = "API Anahtarı";
 
 //LOG SCHEDULES
 $lang['schedule_device_socket'] = "Device Socket";
@@ -39,3 +39,7 @@ $lang['schedule_pattern'] = "Pattern";
 $lang['schedule_type'] = "Type";
 $lang['schedule_duration'] = "Duration";
 $lang['schedule_description'] = "Description";
+
+//STREAMS
+$lang['stream_patient'] = "Streamer Patient";
+$lang['stream_token'] = "Token";

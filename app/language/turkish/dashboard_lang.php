@@ -15,6 +15,7 @@ $lang['menu_left_item_2'] = "Cihaz Bilgileri";
 $lang['menu_left_item_3'] = "Hasta Bilgileri";
 $lang['menu_left_item_4'] = "Hasta Günlükleri";
 $lang['menu_left_item_5'] = "Günlük Planlamaları";
+$lang['menu_left_item_6'] = "Akışlar";
 
 //DEVICE INFORMATIONS
 $lang['device_infos_patient'] = "Kullanan Hasta";
@@ -31,7 +32,6 @@ $lang['patient_infos_address'] = "Adres";
 $lang['patient_infos_phone1'] = "Telefon (Birincil)";
 $lang['patient_infos_phone2'] = "Telefon (İkincil)";
 $lang['patient_infos_email'] = "e-posta";
-$lang['patient_infos_apikey'] = "API Anahtarı";
 
 //LOG SCHEDULES
 $lang['schedule_device_socket'] = "Aygıt Soketi";
@@ -39,3 +39,7 @@ $lang['schedule_pattern'] = "Desen";
 $lang['schedule_type'] = "Plan Tipi";
 $lang['schedule_duration'] = "Süre";
 $lang['schedule_description'] = "Açıklama";
+
+//STREAMS
+$lang['stream_patient'] = "Yayınlayan Hasta";
+$lang['stream_token'] = "Yayın Jetonu";

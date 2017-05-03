@@ -9,7 +9,6 @@
 			<th><?php echo get($patient_infos_phone1); ?></th>
 			<th><?php echo get($patient_infos_phone2); ?></th>
 			<th><?php echo get($patient_infos_email); ?></th>
-			<th><?php echo get($patient_infos_apikey); ?></th>
 		</tr>
 	</thead>
   <tbody>
@@ -25,7 +24,6 @@
       <td class="pi_phone1" data-piPhone1="<?php echo get($row->PATIENT_PHONE); ?>"><?php echo get($row->PATIENT_PHONE); ?></td>
       <td class="pi_phone2" data-piPhone2="<?php echo get($row->PATIENT_PHONE2); ?>"><?php echo get($row->PATIENT_PHONE2); ?></td>
       <td class="pi_email" data-piEmail="<?php echo get($row->PATIENT_EMAIL); ?>"><?php echo get($row->PATIENT_EMAIL); ?></td>
-      <td class="pi_apikey" data-piApikey="<?php echo get($row->API_KEY); ?>"><?php echo get($row->API_KEY); ?></td>
       <td><button class="btn btn-sm btn-default" type="button" name="btnEditPatient"> <span class='glyphicon glyphicon-pencil'></span> </button></td>
       <td><button class="btn btn-sm btn-danger" type="button" name="btnDeletePatient"> <span class='glyphicon glyphicon-minus-sign'></span> </button></td>
       <td><button class="btn btn-sm btn-success disabled" type="button" name="btnOkPatient"> <span class='glyphicon glyphicon-ok'></span> </button></td>
@@ -42,7 +40,6 @@
       <td class="pi_phone1" data-piPhone1=""></td>
       <td class="pi_phone2" data-piPhone2=""></td>
       <td class="pi_email" data-piEmail=""></td>
-      <td class="pi_apikey" data-piApikey=""></td>
       <td><button class="btn btn-sm btn-default disabled" type="button" name="btnEditPatient"> <span class='glyphicon glyphicon-pencil'></span> </button></td>
       <td><button class="btn btn-sm btn-danger disabled" type="button" name="btnDeletePatient"> <span class='glyphicon glyphicon-minus-sign'></span> </button></td>
       <td><button class="btn btn-sm btn-success disabled" type="button" name="btnOkPatient"> <span class='glyphicon glyphicon-ok'></span> </button></td>

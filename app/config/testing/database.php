@@ -75,7 +75,7 @@ $query_builder = TRUE;
 
 $db['live'] = array(
 	'dsn'	=> '',
-	'hostname' => 'http://mysql.hostinger.web.tr',
+	'hostname' => 'mysql.hostinger.web.tr',
 	'username' => 'u850623557_live',
 	'password' => 'Bjarne!1983',
 	'database' => 'u850623557_live',
@@ -97,7 +97,7 @@ $db['live'] = array(
 
 $db['syscore'] = array(
 	'dsn'	=> '',
-	'hostname' => 'http://mysql.hostinger.web.tr',
+	'hostname' => 'mysql.hostinger.web.tr',
 	'username' => 'u850623557_sysco',
 	'password' => 'Bjarne!1983',
 	'database' => 'u850623557_sysco',

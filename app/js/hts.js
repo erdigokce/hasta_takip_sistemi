@@ -1,11 +1,11 @@
 $(document).ready(function() {
 
   // Navigation bussiness
-  $("#menu_left > a").click(function(e) {
+  $("#menu_left > li > a").click(function(e) {
     e.preventDefault();
-    $("#menu_left > a").removeClass("active");
+    $("#menu_left > li").removeClass("active");
     $("#content").load('dashboard/'+$(this).data('nav'));
-    $(this).addClass("active");
+    $(this).parent().addClass("active");
   });
 
 });

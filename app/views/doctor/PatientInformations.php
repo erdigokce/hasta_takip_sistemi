@@ -48,6 +48,8 @@
   </tbody>
 </table>
 
+<script src="app/js/hts_patient_informations.js" charset="utf-8"></script>
+
 <?php
   $data['page_count'] = ceil($num_rows / $records_per_page);
   $this->view('templates/pagination.php', $data);

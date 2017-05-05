@@ -15,7 +15,7 @@ class Dashboard extends HTS_Controller {
    * Index
    */
   public function index() {
-    $this->lang->load(array('navbar',$this->getPage()), $this->session->langauge);
+    $this->lang->load(array('navbar','messages',$this->getPage()), $this->session->langauge);
     loadNavbarLang($this, $data);
     $this->loadMenuLeftLang($data);
     $data['title'] = $this->lang->line('dashboard_title');
@@ -30,7 +30,7 @@ class Dashboard extends HTS_Controller {
       $data['user_category'] = $this->user->getUser($this->session->username)->USER_CATEGORY;
       $this->loadDashboard($data);
     } else {
-      redirect('login/session_expire', 'refresh');
+      redirect('login/index/session_expire', 'refresh');
     }
   }
 
@@ -41,7 +41,7 @@ class Dashboard extends HTS_Controller {
     if($this->session->has_userdata('auth') && $this->session->auth === TRUE){
       $this->load->view("doctor/board"); // BOARD VIEW
     } else {
-      redirect('login/session_expire', 'refresh');
+      redirect('login/index/session_expire', 'refresh');
     }
   }
 
@@ -60,7 +60,7 @@ class Dashboard extends HTS_Controller {
       $data['records_per_page'] = $records_per_page;
       $this->load->view("doctor/DeviceInformations", $data); // DEVICE INFORMATIONS VIEW
     } else {
-      redirect('login/session_expire', 'refresh');
+      redirect('login/index/session_expire', 'refresh');
     }
   }
 
@@ -79,7 +79,7 @@ class Dashboard extends HTS_Controller {
       $data['records_per_page'] = $records_per_page;
       $this->load->view("doctor/PatientInformations", $data); // PATIENT INFORMATIONS VIEW
     } else {
-      redirect('login/session_expire', 'refresh');
+      redirect('login/index/session_expire', 'refresh');
     }
   }
 
@@ -91,7 +91,7 @@ class Dashboard extends HTS_Controller {
       $this->load->model('live/patientlogs');
       $this->load->view("doctor/PatientLogs"); // PATIENT LOGS BOARD VIEW
     } else {
-      redirect('login/session_expire', 'refresh');
+      redirect('login/index/session_expire', 'refresh');
     }
   }
 
@@ -110,7 +110,7 @@ class Dashboard extends HTS_Controller {
       $data['records_per_page'] = $records_per_page;
       $this->load->view("doctor/PatientLogSchedules", $data); // PATIENT LOG SCHEDULES BOARD VIEW
     } else {
-      redirect('login/session_expire', 'refresh');
+      redirect('login/index/session_expire', 'refresh');
     }
   }
 
@@ -129,13 +129,48 @@ class Dashboard extends HTS_Controller {
       $data['records_per_page'] = $records_per_page;
       $this->load->view("doctor/streams", $data); // PATIENT LOG SCHEDULES BOARD VIEW
     } else {
-      redirect('login/session_expire', 'refresh');
+      redirect('login/index/session_expire', 'refresh');
     }
   }
 
-  /**
-   * PRIVATE FUNCTIONS
-   */
+  /*****************************************************************************
+   ******************** CONTROLLERS FOR DATA MANIPULATION **********************
+   ****************************************************************************/
+
+    /**
+     * Executes CRUD as given action and sets up the output messages for frontend.
+     *
+     * @param Object  $model       Model object.
+     */
+    public function processCRUD($model) {
+      // $xhrData = $this->input->post();
+      // var_dump($xhrData);
+      $this->load->model('live/'.$model);
+      switch ($action) {
+        case 'DELETE':
+          $success = $this->$model->deleteData($xhrData["ID"]);
+          $action_text = $this->lang->line('param_action_delete');
+          break;
+        case 'UPDATE':
+          $success = $this->$model->updateData($xhrData["ID"], $xhrData);
+          $action_text = $this->lang->line('param_action_update');
+          break;
+        case 'INSERT':
+          $success = $this->$model->insertData($xhrData);
+          $action_text = $this->lang->line('param_action_insert');
+          break;
+      }
+      if(isset($success) && $success) {
+        $data['action_success'] = $this->lang->line('action_success');
+      }
+      elseif(isset($success) && !$success) {
+        $data['action_fail'] = sprintf($this->lang->line('action_fail'), $action_text, $this->$model->error());
+      }
+    }
+
+  /*****************************************************************************
+   ***************************** PRIVATE FUNCTIONS *****************************
+   ****************************************************************************/
 
    private function loadDashboard(&$data) {
      $this->load->view("templates/content_top", $data);
@@ -156,7 +191,7 @@ class Dashboard extends HTS_Controller {
    }
 
    private function loadDeviceInformationsLang(&$data) {
-     $this->lang->load(array('navbar',$this->getPage()), $this->session->langauge);
+     $this->lang->load(array('navbar','messages',$this->getPage()), $this->session->langauge);
      $data['device_infos_patient'] = $this->lang->line('device_infos_patient');
      $data['device_infos_device_name'] = $this->lang->line('device_infos_device_name');
      $data['device_infos_device_desc'] = $this->lang->line('device_infos_device_desc');
@@ -166,7 +201,7 @@ class Dashboard extends HTS_Controller {
    }
 
    private function loadPatientInformationsLang(&$data) {
-     $this->lang->load(array('navbar',$this->getPage()), $this->session->langauge);
+     $this->lang->load(array('navbar','messages',$this->getPage()), $this->session->langauge);
      $data['patient_infos_name'] = $this->lang->line('patient_infos_name');
      $data['patient_infos_surname'] = $this->lang->line('patient_infos_surname');
      $data['patient_infos_address'] = $this->lang->line('patient_infos_address');
@@ -176,7 +211,7 @@ class Dashboard extends HTS_Controller {
    }
 
    private function loadPatientLogSchedulesLang(&$data) {
-     $this->lang->load(array('navbar',$this->getPage()), $this->session->langauge);
+     $this->lang->load(array('navbar','messages',$this->getPage()), $this->session->langauge);
      $data['schedule_device_socket'] = $this->lang->line('schedule_device_socket');
      $data['schedule_pattern'] = $this->lang->line('schedule_pattern');
      $data['schedule_type'] = $this->lang->line('schedule_type');
@@ -185,7 +220,7 @@ class Dashboard extends HTS_Controller {
    }
 
    private function loadStreamLang(&$data) {
-     $this->lang->load(array('navbar',$this->getPage()), $this->session->langauge);
+     $this->lang->load(array('navbar','messages',$this->getPage()), $this->session->langauge);
      $data['stream_patient'] = $this->lang->line('stream_patient');
      $data['stream_token'] = $this->lang->line('stream_token');
    }

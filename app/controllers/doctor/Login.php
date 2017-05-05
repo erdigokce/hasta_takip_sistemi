@@ -16,12 +16,12 @@ class Login extends HTS_Controller {
   }
 
   public function index($status = 'normal') {
+    $this->lang->load(array('navbar','error',$this->getPage()), $this->session->langauge);
+    loadNavbarLang($this, $data);
     if ($status === 'session_expire') {
       $data['status'] = $status;
       $data['err_session_expire'] = $this->lang->line('err_session_expire');
     }
-    $this->lang->load(array('navbar','error',$this->getPage()), $this->session->langauge);
-    loadNavbarLang($this, $data);
     $data['title'] = $this->lang->line('login_title');
     $data['page_controller'] = $this->getPage();
     $data['footer_text'] = $this->lang->line('footer_text');

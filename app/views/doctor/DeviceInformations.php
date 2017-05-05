@@ -17,12 +17,12 @@
       <?php if($i < ($page_number * $records_per_page)){ ?>
     <tr id="<?php echo get($row->ID); ?>">
       <td ><?php echo get($row->ID); ?></td>
-      <td class="di_patient" data-diPatient="<?php echo get($row->PATIENT_NAME)." ".get($row->PATIENT_SURNAME); ?>"><?php echo get($row->PATIENT_NAME)." ".get($row->PATIENT_SURNAME); ?></td>
-      <td class="di_name" data-diName="<?php echo get($row->DEVICE_NAME); ?>"><?php echo get($row->DEVICE_NAME); ?></td>
-      <td class="di_desc" data-diDesc="<?php echo get($row->DEVICE_DESCRIPTION); ?>"><?php echo get($row->DEVICE_DESCRIPTION); ?></td>
-      <td class="di_mac" data-diMac="<?php echo get($row->DEVICE_MAC); ?>"><?php echo get($row->DEVICE_MAC); ?></td>
-      <td class="di_host" data-diHost="<?php echo get($row->DEVICE_HOST); ?>"><?php echo get($row->DEVICE_HOST); ?></td>
-      <td class="di_port" data-diPort="<?php echo get($row->DEVICE_PORT); ?>"><?php echo get($row->DEVICE_PORT); ?></td>
+      <td class="di_patient" data-dipatient="<?php echo get($row->PATIENT_NAME)." ".get($row->PATIENT_SURNAME); ?>"><?php echo get($row->PATIENT_NAME)." ".get($row->PATIENT_SURNAME); ?></td>
+      <td class="di_name" data-diname="<?php echo get($row->DEVICE_NAME); ?>"><?php echo get($row->DEVICE_NAME); ?></td>
+      <td class="di_desc" data-didesc="<?php echo get($row->DEVICE_DESCRIPTION); ?>"><?php echo get($row->DEVICE_DESCRIPTION); ?></td>
+      <td class="di_mac" data-dimac="<?php echo get($row->DEVICE_MAC); ?>"><?php echo get($row->DEVICE_MAC); ?></td>
+      <td class="di_host" data-dihost="<?php echo get($row->DEVICE_HOST); ?>"><?php echo get($row->DEVICE_HOST); ?></td>
+      <td class="di_port" data-diport="<?php echo get($row->DEVICE_PORT); ?>"><?php echo get($row->DEVICE_PORT); ?></td>
       <td><button class="btn btn-sm btn-default" type="button" name="btnEditDevice"> <span class='glyphicon glyphicon-pencil'></span> </button></td>
       <td><button class="btn btn-sm btn-danger" type="button" name="btnDeleteDevice"> <span class='glyphicon glyphicon-minus-sign'></span> </button></td>
       <td><button class="btn btn-sm btn-success disabled" type="button" name="btnOkDevice"> <span class='glyphicon glyphicon-ok'></span> </button></td>
@@ -33,12 +33,12 @@
     <?php } ?>
     <tr id="temp">
       <td><button class="btn btn-sm btn-primary" type="button" name="btnAddDevice"> <span class='glyphicon glyphicon-plus-sign'></span> </button></td>
-      <td class="di_patient" data-diPatient=""></td>
-      <td class="di_name" data-diName=""></td>
-      <td class="di_desc" data-diDesc=""></td>
-      <td class="di_mac" data-diMac=""></td>
-      <td class="di_host" data-diHost=""></td>
-      <td class="di_port" data-diPort=""></td>
+      <td class="di_patient" data-dipatient=""></td>
+      <td class="di_name" data-diname=""></td>
+      <td class="di_desc" data-didesc=""></td>
+      <td class="di_mac" data-dimac=""></td>
+      <td class="di_host" data-dihost=""></td>
+      <td class="di_port" data-diport=""></td>
       <td><button class="btn btn-sm btn-default disabled" type="button" name="btnEditDevice"> <span class='glyphicon glyphicon-pencil'></span> </button></td>
       <td><button class="btn btn-sm btn-danger disabled" type="button" name="btnDeleteDevice"> <span class='glyphicon glyphicon-minus-sign'></span> </button></td>
       <td><button class="btn btn-sm btn-success disabled" type="button" name="btnOkDevice"> <span class='glyphicon glyphicon-ok'></span> </button></td>
@@ -46,6 +46,8 @@
     </tr>
   </tbody>
 </table>
+
+<script src="app/js/hts_device_informations.js" charset="utf-8"></script>
 
 <?php
   $data['page_count'] = ceil($num_rows / $records_per_page);

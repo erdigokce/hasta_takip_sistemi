@@ -15,12 +15,7 @@
     <!-- HTS Stylesheet -->
     <link rel="stylesheet" type="text/css" href="app/css/hts_style.css">
 
-    <!-- JQuery -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <!-- Bootstrap core JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <!-- HTS Main Javascript -->
-    <script type="text/javascript" src="app/js/hts.js"></script>
   </head>
 
   <body>
+    <div class="wait"></div>

@@ -30,6 +30,27 @@
     </div>
   </div>
 </div>
+<div class="row">
+  <div class="col-md-offset-4 col-md-4">
+    <div class="alert alert-danger alert-dismissable fade in" style="display:none">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <span id="alert_box_danger"></span>
+    </div>
+    <div class="alert alert-warning alert-dismissable fade in" style="display:none">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <span id="alert_box_warning"></span>
+    </div>
+    <div class="alert alert-info alert-dismissable fade in" style="display:none">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <span id="alert_box_info"></span>
+    </div>
+    <div class="alert alert-success alert-dismissable fade in" style="display:none">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <span id="alert_box_success"></span>
+    </div>
+  </div>
+  <div class="col-md-4"></div>
+</div>
 
 <?php if ($user_category === "TEST") : ?>
 <div class="alert alert-warning">

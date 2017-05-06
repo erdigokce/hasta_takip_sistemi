@@ -12,10 +12,11 @@
 		</tr>
 	</thead>
   <tbody>
-    <?php $i = ($page_number - 1) * $records_per_page;
-          $query->data_seek($i); ?>
+		<?php $offset = ($page_number - 1) * $records_per_page; ?>
+		<?php $limit = $offset + $records_per_page; ?>
+		<?php $i = 0; ?>
     <?php foreach($result as $row) { ?>
-      <?php if($i < ($page_number * $records_per_page)){ ?>
+    <?php if ($i >= $offset && $i < $limit) { ?>
     <tr id="<?php echo get($row->ID); ?>">
       <td ><?php echo get($row->ID); ?></td>
       <td class="pi_name" data-piName="<?php echo get($row->PATIENT_NAME);?>"><?php echo get($row->PATIENT_NAME); ?></td>

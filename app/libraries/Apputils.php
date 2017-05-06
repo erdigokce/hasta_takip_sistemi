@@ -10,70 +10,58 @@ class Apputils {
   private static $surname;
   private static $sessId;
   /**
-   * @return
+   * @return Username
    */
-  public function getUsername() {
-    return $this->username;
+  public static function getUsername() {
+    return self::$username;
   }
 
   /**
    * @param  $username
-   *
-   * @return static
    */
-  public function setUsername($username) {
-    $this->username = $username;
-    return $this;
+  public static function setUsername($username) {
+    self::$username = $username;
   }
 
   /**
-   * @return
+   * @return Name
    */
-  public function getName() {
-    return $this->name;
+  public static function getName() {
+    return self::$name;
   }
 
   /**
    * @param  $name
-   *
-   * @return static
    */
-  public function setName($name) {
-    $this->name = $name;
-    return $this;
+  public static function setName($name) {
+    self::$name = $name;
   }
 
   /**
-   * @return
+   * @return Surname
    */
-  public function getSurname() {
+  public static function getSurname() {
     return $this->surname;
   }
 
   /**
    * @param  $surname
-   *
-   * @return static
    */
-  public function setSurname($surname) {
-    $this->surname = $surname;
-    return $this;
+  public static function setSurname($surname) {
+    self::$surname = $surname;
   }
 
   /**
-   * @return
+   * @return Session Identifier
    */
-  public function getSessId() {
-    return $this->sessId;
+  public static function getSessId() {
+    return self::$sessId;
   }
 
   /**
    * @param  $sessId
-   *
-   * @return static
    */
-  public function setSessId($sessId) {
-    $this->sessId = $sessId;
-    return $this;
+  public static function setSessId($sessId) {
+    self::$sessId = $sessId;
   }
 }

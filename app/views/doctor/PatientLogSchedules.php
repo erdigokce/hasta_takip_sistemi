@@ -11,10 +11,11 @@
 		</tr>
 	</thead>
   <tbody>
-    <?php $i = ($page_number - 1) * $records_per_page;
-          $query->data_seek($i); ?>
-    <?php foreach($result as $row) { ?>
-      <?php if($i < ($page_number * $records_per_page)){ ?>
+		<?php $offset = ($page_number - 1) * $records_per_page; ?>
+		<?php $limit = $offset + $records_per_page; ?>
+		<?php $i = 0; ?>
+		<?php foreach($result as $row) { ?>
+		<?php if ($i >= $offset && $i < $limit) { ?>
     <tr id="<?php echo get($row->ID); ?>">
       <td ><?php echo get($row->ID); ?></td>
       <td class="sch_device_socket" data-schDeviceSocket="<?php echo get($row->DEVICE_HOST).":".get($row->DEVICE_PORT); ?>"><?php echo get($row->DEVICE_HOST).":".get($row->DEVICE_PORT); ?></td>

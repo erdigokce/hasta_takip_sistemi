@@ -15,7 +15,7 @@ class Dashboard extends HTS_Controller {
    * Index
    */
   public function index() {
-    $this->lang->load(array('navbar','messages',$this->getPage()), $this->session->langauge);
+    $this->fetchLang();
     loadNavbarLang($this, $data);
     $this->loadMenuLeftLang($data);
     $data['title'] = $this->lang->line('dashboard_title');
@@ -48,13 +48,14 @@ class Dashboard extends HTS_Controller {
   /**
    * Device Informatıons
    */
-  public function deviceInformations($page_number = '1', $records_per_page = '10') {
+  public function deviceInformations($page_number = '1', $records_per_page = '1') {
     if($this->session->has_userdata('auth') && $this->session->auth === TRUE){
-      $this->load->model('live/devices');
+      $this->load->model(array('live/devices', 'live/patients'));
       $result = $this->devices->findAllWithFullPatientName();
+      $result_patients = $this->patients->findAll();
       $this->loadDeviceInformationsLang($data);
-      $data['query'] = $this->devices->getQuery();
       $data['result'] = $result;
+      $data['result_patients'] = $result_patients;
       $data['num_rows'] = $this->devices->getNumRows();
       $data['page_number'] = $page_number;
       $data['records_per_page'] = $records_per_page;
@@ -72,7 +73,6 @@ class Dashboard extends HTS_Controller {
       $this->load->model('live/patients');
       $result = $this->patients->findAll();
       $this->loadPatientInformationsLang($data);
-      $data['query'] = $this->patients->getQuery();
       $data['result'] = $result;
       $data['num_rows'] = $this->patients->getNumRows();
       $data['page_number'] = $page_number;
@@ -103,7 +103,6 @@ class Dashboard extends HTS_Controller {
       $this->load->model('live/patientlogschedules');
       $result = $this->patientlogschedules->findAllWithFullDeviceSocket();
       $this->loadPatientLogSchedulesLang($data);
-      $data['query'] = $this->patientlogschedules->getQuery();
       $data['result'] = $result;
       $data['num_rows'] = $this->patientlogschedules->getNumRows();
       $data['page_number'] = $page_number;
@@ -122,7 +121,6 @@ class Dashboard extends HTS_Controller {
       $this->load->model('live/streams');
       $result = $this->streams->findAllWithFullPatientName();
       $this->loadStreamLang($data);
-      $data['query'] = $this->streams->getQuery();
       $data['result'] = $result;
       $data['num_rows'] = $this->streams->getNumRows();
       $data['page_number'] = $page_number;
@@ -143,28 +141,32 @@ class Dashboard extends HTS_Controller {
      * @param Object  $model       Model object.
      */
     public function processCRUD($model) {
-      // $xhrData = $this->input->post();
-      // var_dump($xhrData);
+      $this->fetchLang();
+      $xhrData = $this->input->post();
       $this->load->model('live/'.$model);
-      switch ($action) {
-        case 'DELETE':
-          $success = $this->$model->deleteData($xhrData["ID"]);
-          $action_text = $this->lang->line('param_action_delete');
-          break;
-        case 'UPDATE':
-          $success = $this->$model->updateData($xhrData["ID"], $xhrData);
-          $action_text = $this->lang->line('param_action_update');
-          break;
-        case 'INSERT':
+      if(isset($xhrData["action"]) && $xhrData["action"] == "delete" && isset($xhrData["ID"])) {
+        $success = $this->$model->deleteData($xhrData["ID"]);
+        $action_text = $this->lang->line('param_action_delete');
+      }
+      elseif(isset($xhrData["ID"])) {
+        if($xhrData["ID"] == "temp") {
+          unset($xhrData["ID"]);
           $success = $this->$model->insertData($xhrData);
           $action_text = $this->lang->line('param_action_insert');
-          break;
+        } else {
+          $update_id = $xhrData["ID"];
+          unset($xhrData["ID"]);
+          $success = $this->$model->updateData($update_id, $xhrData);
+          $action_text = $this->lang->line('param_action_update');
+        }
       }
       if(isset($success) && $success) {
-        $data['action_success'] = $this->lang->line('action_success');
+        $response = array('alert_box_success', sprintf($this->lang->line('action_success'), $action_text));
+        echo json_encode($response);
       }
       elseif(isset($success) && !$success) {
-        $data['action_fail'] = sprintf($this->lang->line('action_fail'), $action_text, $this->$model->error());
+        $response = array('alert_box_danger', sprintf($this->lang->line('action_fail'), $action_text, $this->$model->error()));
+        echo json_encode($response);
       }
     }
 
@@ -191,7 +193,7 @@ class Dashboard extends HTS_Controller {
    }
 
    private function loadDeviceInformationsLang(&$data) {
-     $this->lang->load(array('navbar','messages',$this->getPage()), $this->session->langauge);
+     $this->fetchLang();
      $data['device_infos_patient'] = $this->lang->line('device_infos_patient');
      $data['device_infos_device_name'] = $this->lang->line('device_infos_device_name');
      $data['device_infos_device_desc'] = $this->lang->line('device_infos_device_desc');
@@ -201,7 +203,7 @@ class Dashboard extends HTS_Controller {
    }
 
    private function loadPatientInformationsLang(&$data) {
-     $this->lang->load(array('navbar','messages',$this->getPage()), $this->session->langauge);
+     $this->fetchLang();
      $data['patient_infos_name'] = $this->lang->line('patient_infos_name');
      $data['patient_infos_surname'] = $this->lang->line('patient_infos_surname');
      $data['patient_infos_address'] = $this->lang->line('patient_infos_address');
@@ -211,7 +213,7 @@ class Dashboard extends HTS_Controller {
    }
 
    private function loadPatientLogSchedulesLang(&$data) {
-     $this->lang->load(array('navbar','messages',$this->getPage()), $this->session->langauge);
+     $this->fetchLang();
      $data['schedule_device_socket'] = $this->lang->line('schedule_device_socket');
      $data['schedule_pattern'] = $this->lang->line('schedule_pattern');
      $data['schedule_type'] = $this->lang->line('schedule_type');
@@ -220,9 +222,16 @@ class Dashboard extends HTS_Controller {
    }
 
    private function loadStreamLang(&$data) {
-     $this->lang->load(array('navbar','messages',$this->getPage()), $this->session->langauge);
+     $this->fetchLang();
      $data['stream_patient'] = $this->lang->line('stream_patient');
      $data['stream_token'] = $this->lang->line('stream_token');
+   }
+
+   /**
+    * Fetches required lang files.
+    */
+   private function fetchLang() {
+     $this->lang->load(array('navbar','messages',$this->getPage()), $this->session->langauge);
    }
 
 }

@@ -72,7 +72,7 @@ class HTS_Model extends CI_Model {
    * @return Boolean                Başarılı ise TRUE
    */
   public function deleteData(&$id) {
-    if(is_array($data) || is_object($data)) {
+    if(isset($id)) {
       return $this->db->delete($this->table, array('ID' => $id));
     }
   }

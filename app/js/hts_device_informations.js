@@ -1,7 +1,12 @@
 $(document).ready(function() {
 
   var model = 'devices';
-  var ajaxRequestHandler = "dashboard/processCRUD/"+model+"/";
+  var controller = 'dashboard';
+  var method = 'deviceInformations';
+  var ajaxRequestHandler = controller+"/processCRUD/"+model+"/";
+
+  var selectedPatientId;
+
   /**
    * DEVICE INFORMATIONS
    */
@@ -17,10 +22,19 @@ $(document).ready(function() {
     var di_host = $("tr#" + id + " > .di_host").data("dihost");
     var di_port = $("tr#" + id + " > .di_port").data("diport");
 
+    // AJAX Setup
+    $.ajaxSetup({
+      url : ajaxRequestHandler,
+      method : "POST",
+      cache : false,
+      dataType : "json"
+    });
+
     switch (name) {
       case "btnEditDevice":
         if (!$("tr#" + id + " > td > button[name='btnEditDevice']").hasClass("disabled")) {
-          $("tr#" + id + " > .di_patient").html("<input class='form-control' type='text' name='di_patient' value='" + di_patient + "' required>");
+          $("tr#" + id + " > .di_patient > span.txtPatient").css("display", "none");
+          $("tr#" + id + " > .di_patient > select[name='patient']").css("display", "block");
           $("tr#" + id + " > .di_name").html("<input class='form-control' type='text' name='di_name' value='" + di_name + "' required>");
           $("tr#" + id + " > .di_desc").html("<input class='form-control' type='text' name='di_desc' value='" + di_desc + "'>");
           $("tr#" + id + " > .di_mac").html("<input class='form-control' type='text' name='di_mac' value='" + di_mac + "'>");
@@ -32,34 +46,34 @@ $(document).ready(function() {
       case "btnDeleteDevice":
         if (!$("tr#" + id + " > td > button[name='btnDeleteDevice']").hasClass("disabled")) {
           if (confirm("Kayıdı gerçekten silmek istiyor musunuz? (Bu işlem geri alınamaz!)")) {
-            $.post(ajaxRequestHandler, {
-              delete_id: id
-            }, function(data, status) {
-
-            });
+            var dataToSendToServer = {
+              ID: id,
+              action : 'delete'
+            };
+            sendAjaxRequest(dataToSendToServer);
           }
         }
         break;
       case "btnOkDevice":
         if (!$("tr#" + id + " > td > button[name='btnOkDevice']").hasClass("disabled")) {
           if (confirm("Değişiklikleri onaylıyor musunuz?")) {
-            $.post(ajaxRequestHandler, {
-              ok_id: id,
-              ok_patient: $("input[name='di_patient']").val(),
-              ok_name: $("input[name='di_name']").val(),
-              ok_desc: $("input[name='di_desc']").val(),
-              ok_mac: $("input[name='di_mac']").val(),
-              ok_host: $("input[name='di_host']").val(),
-              ok_port: $("input[name='di_port']").val()
-            }, function(data, status) {
-              btnCancelClick(id);
-            });
+            var dataToSendToServer = {
+              ID: id,
+              PATIENT_ID: selectedPatientId,
+              DEVICE_NAME: $("input[name='di_name']").val(),
+              DEVICE_DESCRIPTION: $("input[name='di_desc']").val(),
+              DEVICE_MAC: $("input[name='di_mac']").val(),
+              DEVICE_HOST: $("input[name='di_host']").val(),
+              DEVICE_PORT: $("input[name='di_port']").val()
+            };
+            sendAjaxRequest(dataToSendToServer);
           }
         }
         break;
       case "btnCancelDevice":
         if (!$("tr#" + id + " > td > button[name='btnCancelDevice']").hasClass("disabled")) {
-          $("tr#" + id + " > .di_patient").html(di_patient);
+          $("tr#" + id + " > .di_patient > span.txtPatient").css("display", "block");
+          $("tr#" + id + " > .di_patient > select[name='patient']").css("display", "none");
           $("tr#" + id + " > .di_name").html(di_name);
           $("tr#" + id + " > .di_desc").html(di_desc);
           $("tr#" + id + " > .di_mac").html(di_mac);
@@ -70,7 +84,8 @@ $(document).ready(function() {
         break;
       case "btnAddDevice":
         if (!$("tr#" + id + " > td > button[name='btnAddDevice']").hasClass("disabled")) {
-          $("tr#" + id + " > .di_patient").html("<input class='form-control' type='text' name='di_patient' value=''>");
+          $("tr#" + id + " > .di_patient > span.txtPatient").css("display", "none");
+          $("tr#" + id + " > .di_patient > select[name='patient']").css("display", "block");
           $("tr#" + id + " > .di_name").html("<input class='form-control' type='text' name='di_name' value='' required>");
           $("tr#" + id + " > .di_desc").html("<input class='form-control' type='text' name='di_desc' value='' required>");
           $("tr#" + id + " > .di_mac").html("<input class='form-control' type='text' name='di_mac' value='' required>");
@@ -79,13 +94,27 @@ $(document).ready(function() {
           btnAddClick(id);
         }
         break;
-      default:
     }
+
+    $("select[name='patient']").click(function() {
+      selectedPatientId = $(this).val();
+    });
 
   });
 
   // Pagination
   $("ul.pagination > li > a").click(function() {
-    loadPage('dashboard/deviceInformations/' + $(this).data("pg") + "/");
+    paginate(controller, method, $(this).data("pg"));
   });
+
+  function sendAjaxRequest(dataToSend) {
+    var request = $.ajax({
+      data : dataToSend
+    });
+    request.always(function(data) {
+      $('#'+data[0]).html(data[1]);
+      $('#'+data[0]).parent().css("display", "block");
+      loadPage(controller + "/" + method + "/");
+    });
+  }
 });

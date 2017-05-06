@@ -21,11 +21,15 @@ $(document).ready(function() {
 
 });
 
+/*******************************************************************************
+********************************* AJAX Methods *********************************
+*******************************************************************************/
+
 function loadPage(path) {
   $("#content").load(path);
 }
 
-function paginate(page_no, controller, method) {
+function paginate(controller, method, page_no) {
   loadPage(controller + "/" + method + "/" + page_no + "/");
 }
 

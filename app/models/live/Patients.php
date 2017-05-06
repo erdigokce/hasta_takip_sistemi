@@ -7,7 +7,7 @@ require_once 'intf.php';
 class Patients extends HTS_Model implements IPatientsModel {
 
   function __construct() {
-    parent::__construct('hts_live.hts_patients');
+    parent::__construct(HTS_LIVE.'.hts_patients');
   }
 
 }

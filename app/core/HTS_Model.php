@@ -3,6 +3,7 @@
 class HTS_Model extends CI_Model {
 
   private $table;
+  private $query;
   private $num_rows;
 
   function __construct($table) {
@@ -16,9 +17,9 @@ class HTS_Model extends CI_Model {
    * @return Object                 Gelen veri. (Eğer boş ise null döner.)
    */
   public function findByPrimaryKey(&$id){
-    $query = $this->db->get_where($this->table, array('ID' => $id));
-    $row = $query->row();
-    $this->num_rows = $query->num_rows();
+    $this->query = $this->db->get_where($this->table, array('ID' => $id));
+    $row = $this->query->row();
+    $this->num_rows = $this->query->num_rows();
     if(isset($row)) {
       return $row;
     } else {
@@ -31,9 +32,9 @@ class HTS_Model extends CI_Model {
    * @return Object|Array            Gelen veriler. (Eğer boş ise null döner.)
    */
   public function findAll(){
-    $query = $this->db->get($this->table);
-    $result = $query->result();
-    $this->num_rows = $query->num_rows();
+    $this->query = $this->db->get($this->table);
+    $result = $this->query->result();
+    $this->num_rows = $this->query->num_rows();
     if($this->num_rows > 0) {
       return $result;
     } else {
@@ -71,7 +72,7 @@ class HTS_Model extends CI_Model {
    * @return Boolean                Başarılı ise TRUE
    */
   public function deleteData(&$id) {
-    if(is_array($data) || is_object($data)) {
+    if(isset($id)) {
       return $this->db->delete($this->table, array('ID' => $id));
     }
   }
@@ -89,6 +90,20 @@ class HTS_Model extends CI_Model {
    */
   public function getNumRows() {
     return $this->num_rows;
+  }
+
+  /**
+   * @return Query                  Oluşturulan sorguyu döndürür.
+   */
+  public function getQuery() {
+    return $this->query;
+  }
+
+  /**
+   * @param  $query                 Query'yi setler.
+   */
+  public function setQuery($query) {
+    $this->query = $query;
   }
 
 }

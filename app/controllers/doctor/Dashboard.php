@@ -15,7 +15,7 @@ class Dashboard extends HTS_Controller {
    * Index
    */
   public function index() {
-    $this->lang->load(array('navbar',$this->getPage()), $this->session->langauge);
+    $this->fetchLang();
     loadNavbarLang($this, $data);
     $this->loadMenuLeftLang($data);
     $data['title'] = $this->lang->line('dashboard_title');
@@ -30,7 +30,7 @@ class Dashboard extends HTS_Controller {
       $data['user_category'] = $this->user->getUser($this->session->username)->USER_CATEGORY;
       $this->loadDashboard($data);
     } else {
-      redirect('login', 'refresh');
+      redirect('login/index/session_expire', 'refresh');
     }
   }
 
@@ -41,33 +41,45 @@ class Dashboard extends HTS_Controller {
     if($this->session->has_userdata('auth') && $this->session->auth === TRUE){
       $this->load->view("doctor/board"); // BOARD VIEW
     } else {
-      redirect($this->getPage(), 'refresh');
+      redirect('login/index/session_expire', 'refresh');
     }
   }
 
   /**
    * Device Informatıons
    */
-  public function deviceInformations() {
+  public function deviceInformations($page_number = '1', $records_per_page = '10') {
     if($this->session->has_userdata('auth') && $this->session->auth === TRUE){
+      $this->load->model(array('live/devices', 'live/patients'));
+      $result = $this->devices->findAllWithFullPatientName();
+      $result_patients = $this->patients->findAll();
       $this->loadDeviceInformationsLang($data);
-      $data['css_for_datagrid'] = TRUE;
-      $data['js_for_datagrid'] = TRUE;
+      $data['result'] = $result;
+      $data['result_patients'] = $result_patients;
+      $data['num_rows'] = $this->devices->getNumRows();
+      $data['page_number'] = $page_number;
+      $data['records_per_page'] = $records_per_page;
       $this->load->view("doctor/DeviceInformations", $data); // DEVICE INFORMATIONS VIEW
     } else {
-      redirect($this->getPage(), 'refresh');
+      redirect('login/index/session_expire', 'refresh');
     }
   }
 
   /**
    * Patient Informations
    */
-  public function patientInformations() {
+  public function patientInformations($page_number = '1', $records_per_page = '10') {
     if($this->session->has_userdata('auth') && $this->session->auth === TRUE){
       $this->load->model('live/patients');
-      $this->load->view("doctor/PatientInformations"); // PATIENT INFORMATIONS VIEW
+      $result = $this->patients->findAll();
+      $this->loadPatientInformationsLang($data);
+      $data['result'] = $result;
+      $data['num_rows'] = $this->patients->getNumRows();
+      $data['page_number'] = $page_number;
+      $data['records_per_page'] = $records_per_page;
+      $this->load->view("doctor/PatientInformations", $data); // PATIENT INFORMATIONS VIEW
     } else {
-      redirect($this->getPage(), 'refresh');
+      redirect('login/index/session_expire', 'refresh');
     }
   }
 
@@ -79,22 +91,90 @@ class Dashboard extends HTS_Controller {
       $this->load->model('live/patientlogs');
       $this->load->view("doctor/PatientLogs"); // PATIENT LOGS BOARD VIEW
     } else {
-      redirect($this->getPage(), 'refresh');
+      redirect('login/index/session_expire', 'refresh');
     }
   }
 
   /**
-   * AJAX Request'ine cevap verir.
-   * @return [type] [description]
+   * Patient Log Schedules
    */
-  public function listDevicesInJson() {
-    $this->load->model('live/devices');
-    echo $this->devices->listDevicesInJson();
+  public function patientLogSchedules($page_number = '1', $records_per_page = '10') {
+    if($this->session->has_userdata('auth') && $this->session->auth === TRUE){
+      $this->load->model(array('live/devices','live/patientlogschedules'));
+      $result = $this->patientlogschedules->findAllWithFullDeviceSocket();
+      $result_devices = $this->devices->findAll();
+      $this->loadPatientLogSchedulesLang($data);
+      $data['result'] = $result;
+      $data['result_devices'] = $result_devices;
+      $data['num_rows'] = $this->patientlogschedules->getNumRows();
+      $data['page_number'] = $page_number;
+      $data['records_per_page'] = $records_per_page;
+      $this->load->view("doctor/PatientLogSchedules", $data); // PATIENT LOG SCHEDULES BOARD VIEW
+    } else {
+      redirect('login/index/session_expire', 'refresh');
+    }
   }
 
   /**
-   * PRIVATE FUNCTIONS
+   * Streams
    */
+  public function streams($page_number = '1', $records_per_page = '10') {
+    if($this->session->has_userdata('auth') && $this->session->auth === TRUE) {
+      $this->load->model('live/streams');
+      $result = $this->streams->findAllWithFullPatientName();
+      $this->loadStreamLang($data);
+      $data['result'] = $result;
+      $data['num_rows'] = $this->streams->getNumRows();
+      $data['page_number'] = $page_number;
+      $data['records_per_page'] = $records_per_page;
+      $this->load->view("doctor/streams", $data); // PATIENT LOG SCHEDULES BOARD VIEW
+    } else {
+      redirect('login/index/session_expire', 'refresh');
+    }
+  }
+
+  /*****************************************************************************
+   ******************** CONTROLLERS FOR DATA MANIPULATION **********************
+   ****************************************************************************/
+
+    /**
+     * Executes CRUD as given action and sets up the output messages for frontend.
+     *
+     * @param Object  $model       Model object.
+     */
+    public function processCRUD($model) {
+      $this->fetchLang();
+      $xhrData = $this->input->post();
+      $this->load->model('live/'.$model);
+      if(isset($xhrData["action"]) && $xhrData["action"] == "delete" && isset($xhrData["ID"])) {
+        $success = $this->$model->deleteData($xhrData["ID"]);
+        $action_text = $this->lang->line('param_action_delete');
+      }
+      elseif(isset($xhrData["ID"])) {
+        if($xhrData["ID"] == "temp") {
+          unset($xhrData["ID"]);
+          $success = $this->$model->insertData($xhrData);
+          $action_text = $this->lang->line('param_action_insert');
+        } else {
+          $update_id = $xhrData["ID"];
+          unset($xhrData["ID"]);
+          $success = $this->$model->updateData($update_id, $xhrData);
+          $action_text = $this->lang->line('param_action_update');
+        }
+      }
+      if(isset($success) && $success) {
+        $response = array('alert_box_success', sprintf($this->lang->line('action_success'), $action_text));
+        echo json_encode($response);
+      }
+      elseif(isset($success) && !$success) {
+        $response = array('alert_box_danger', sprintf($this->lang->line('action_fail'), $action_text, $this->$model->error()));
+        echo json_encode($response);
+      }
+    }
+
+  /*****************************************************************************
+   ***************************** PRIVATE FUNCTIONS *****************************
+   ****************************************************************************/
 
    private function loadDashboard(&$data) {
      $this->load->view("templates/content_top", $data);
@@ -109,26 +189,51 @@ class Dashboard extends HTS_Controller {
      $data['menu_left_item_2'] = $this->lang->line('menu_left_item_2');
      $data['menu_left_item_3'] = $this->lang->line('menu_left_item_3');
      $data['menu_left_item_4'] = $this->lang->line('menu_left_item_4');
+     $data['menu_left_item_5'] = $this->lang->line('menu_left_item_5');
+     $data['menu_left_item_6'] = $this->lang->line('menu_left_item_6');
      $data['dashboard_unauthorized_user'] = $this->lang->line('dashboard_unauthorized_user');
    }
 
    private function loadDeviceInformationsLang(&$data) {
-     $this->lang->load(array('navbar',$this->getPage()), $this->session->langauge);
+     $this->fetchLang();
      $data['device_infos_patient'] = $this->lang->line('device_infos_patient');
      $data['device_infos_device_name'] = $this->lang->line('device_infos_device_name');
      $data['device_infos_device_desc'] = $this->lang->line('device_infos_device_desc');
+     $data['device_infos_device_mac'] = $this->lang->line('device_infos_device_mac');
      $data['device_infos_device_host'] = $this->lang->line('device_infos_device_host');
      $data['device_infos_device_port'] = $this->lang->line('device_infos_device_port');
    }
 
    private function loadPatientInformationsLang(&$data) {
-     $this->lang->load(array('navbar',$this->getPage()), $this->session->langauge);
+     $this->fetchLang();
      $data['patient_infos_name'] = $this->lang->line('patient_infos_name');
      $data['patient_infos_surname'] = $this->lang->line('patient_infos_surname');
      $data['patient_infos_address'] = $this->lang->line('patient_infos_address');
      $data['patient_infos_phone1'] = $this->lang->line('patient_infos_phone1');
      $data['patient_infos_phone2'] = $this->lang->line('patient_infos_phone2');
      $data['patient_infos_email'] = $this->lang->line('patient_infos_email');
+   }
+
+   private function loadPatientLogSchedulesLang(&$data) {
+     $this->fetchLang();
+     $data['schedule_device_socket'] = $this->lang->line('schedule_device_socket');
+     $data['schedule_pattern'] = $this->lang->line('schedule_pattern');
+     $data['schedule_type'] = $this->lang->line('schedule_type');
+     $data['schedule_duration'] = $this->lang->line('schedule_duration');
+     $data['schedule_description'] = $this->lang->line('schedule_description');
+   }
+
+   private function loadStreamLang(&$data) {
+     $this->fetchLang();
+     $data['stream_patient'] = $this->lang->line('stream_patient');
+     $data['stream_token'] = $this->lang->line('stream_token');
+   }
+
+   /**
+    * Fetches required lang files.
+    */
+   private function fetchLang() {
+     $this->lang->load(array('navbar','messages',$this->getPage()), $this->session->langauge);
    }
 
 }

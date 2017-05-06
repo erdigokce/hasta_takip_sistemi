@@ -14,11 +14,14 @@ $lang['menu_left_item_1'] = "Dashboard";
 $lang['menu_left_item_2'] = "Device Informations";
 $lang['menu_left_item_3'] = "Patient Informations";
 $lang['menu_left_item_4'] = "Patient Logs";
+$lang['menu_left_item_5'] = "Logging Schedules";
+$lang['menu_left_item_6'] = "Streams";
 
 //DEVICE INFORMATIONS
 $lang['device_infos_patient'] = "Holder Patient";
 $lang['device_infos_device_name'] = "Device Name";
 $lang['device_infos_device_desc'] = "Device Desription";
+$lang['device_infos_device_mac'] = "Device MAC";
 $lang['device_infos_device_host'] = "Device Host";
 $lang['device_infos_device_port'] = "Device Port";
 
@@ -29,3 +32,14 @@ $lang['patient_infos_address'] = "Address";
 $lang['patient_infos_phone1'] = "Phone (Primary)";
 $lang['patient_infos_phone2'] = "Phone (Secondary)";
 $lang['patient_infos_email'] = "e-mail";
+
+//LOG SCHEDULES
+$lang['schedule_device_socket'] = "Device Socket";
+$lang['schedule_pattern'] = "Pattern";
+$lang['schedule_type'] = "Type";
+$lang['schedule_duration'] = "Duration (Min.)";
+$lang['schedule_description'] = "Description";
+
+//STREAMS
+$lang['stream_patient'] = "Streamer Patient";
+$lang['stream_token'] = "Token";

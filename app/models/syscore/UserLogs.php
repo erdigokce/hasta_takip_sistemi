@@ -7,7 +7,7 @@ require_once 'intf.php';
 class UserLogs extends HTS_Model implements IUserLogsModel {
 
   function __construct() {
-    parent::__construct('hts_syscore.hts_user_logs');
+    parent::__construct(HTS_SYSCORE.'.hts_user_logs');
     $this->load->model('syscore/user');
     date_default_timezone_set('Europe/Istanbul');
   }

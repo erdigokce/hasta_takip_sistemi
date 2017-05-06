@@ -64,3 +64,5 @@ $route['navbar/lang/(:any)/(:any)'] = 'public/navbar/lang/$1/$2';
  */
 $route['(:any)'] = 'doctor/$1';
 $route['(:any)/(:any)'] = 'doctor/$1/$2';
+$route['(:any)/(:any)/(:any)'] = 'doctor/$1/$2/$3';
+$route['(:any)/(:any)/(:any)/(:any)'] = 'doctor/$1/$2/$3/$4';

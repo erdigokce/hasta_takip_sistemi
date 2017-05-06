@@ -10,9 +10,17 @@ interface IPatientsModel {
 }
 
 interface IDevicesModel {
-  public function listDevicesInJson();
+  public function findAllWithFullPatientName();
 }
 
-interface IPatientlogsModel {
+interface IPatientLogsModel {
 
+}
+
+interface IPatientLogSchedulesModel {
+  public function findAllWithFullDeviceSocket();
+}
+
+interface IStreamsModel {
+  
 }

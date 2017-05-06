@@ -1,4 +1,3 @@
-
 <table class="table table-hover">
 	<thead>
 		<tr>
@@ -18,11 +17,18 @@
 		<?php if ($i >= $offset && $i < $limit) { ?>
     <tr id="<?php echo get($row->ID); ?>">
       <td ><?php echo get($row->ID); ?></td>
-      <td class="sch_device_socket" data-schDeviceSocket="<?php echo get($row->DEVICE_HOST).":".get($row->DEVICE_PORT); ?>"><?php echo get($row->DEVICE_HOST).":".get($row->DEVICE_PORT); ?></td>
-      <td class="sch_pattern" data-schPattern="<?php echo get($row->SCHEDULE_PATTERN); ?>"><?php echo get($row->SCHEDULE_PATTERN); ?></td>
-      <td class="sch_type" data-schType="<?php echo get($row->SCHEDULE_TYPE); ?>"><?php echo get($row->SCHEDULE_TYPE); ?></td>
-      <td class="sch_duration" data-schDuration="<?php echo get($row->DURATION); ?>"><?php echo get($row->DURATION); ?></td>
-      <td class="sch_description" data-schDescription="<?php echo get($row->DESCRIPTION); ?>"><?php echo get($row->DESCRIPTION); ?></td>
+      <td class="sch_device_socket" data-schdevicesocket="<?php echo get($row->DEVICE_HOST).":".get($row->DEVICE_PORT); ?>">
+				<span class="txtDevice"><?php echo get($row->DEVICE_HOST).":".get($row->DEVICE_PORT); ?></span>
+				<select class="form-control" name="device" style="display:none;">
+					<?php foreach($result_devices as $device) { ?>
+					<option value="<?php echo get($device->ID); ?>" <?php if($device->ID === $row->DEVICE_ID) echo "selected=\"selected\""; ?>><?php echo get($row->DEVICE_HOST).":".get($row->DEVICE_PORT)." [".get($row->DEVICE_NAME)."]"; ?></option>
+					<?php } ?>
+				</select>
+			</td>
+			<td class="sch_pattern" data-schpattern="<?php echo get($row->SCHEDULE_PATTERN); ?>"><?php echo get($row->SCHEDULE_PATTERN); ?></td>
+      <td class="sch_type" data-schtype="<?php echo get($row->SCHEDULE_TYPE); ?>"><?php echo get($row->SCHEDULE_TYPE); ?></td>
+      <td class="sch_duration" data-schduration="<?php echo get($row->DURATION); ?>"><?php echo get($row->DURATION); ?></td>
+      <td class="sch_description" data-schdescription="<?php echo get($row->DESCRIPTION); ?>" style="max-width: 200px;"><?php echo get($row->DESCRIPTION); ?></td>
       <td><button class="btn btn-sm btn-default" type="button" name="btnEditSchedule"> <span class='glyphicon glyphicon-pencil'></span> </button></td>
       <td><button class="btn btn-sm btn-danger" type="button" name="btnDeleteSchedule"> <span class='glyphicon glyphicon-minus-sign'></span> </button></td>
       <td><button class="btn btn-sm btn-success disabled" type="button" name="btnOkSchedule"> <span class='glyphicon glyphicon-ok'></span> </button></td>
@@ -33,11 +39,18 @@
     <?php } ?>
     <tr id="temp">
       <td><button class="btn btn-sm btn-primary" type="button" name="btnAddSchedule"> <span class='glyphicon glyphicon-plus-sign'></span> </button></td>
-      <td class="sch_name" data-schDeviceSocket=""></td>
-      <td class="sch_surname" data-schPattern=""></td>
-      <td class="sch_address" data-schType=""></td>
-      <td class="sch_phone1" data-schDuration=""></td>
-      <td class="sch_phone2" data-schDescription=""></td>
+      <td class="sch_device_socket" data-schdevicesocket="">
+				<span class="txtDevice"></span>
+				<select class="form-control" name="device" style="display:none;">
+					<?php foreach($result_devices as $device) { ?>
+					<option value="<?php echo get($device->ID); ?>"><?php echo get($device->DEVICE_HOST).":".get($device->DEVICE_PORT)." [".get($device->DEVICE_NAME)."]"; ?></option>
+					<?php } ?>
+				</select>
+      </td>
+      <td class="sch_pattern" data-schpattern=""></td>
+      <td class="sch_type" data-schtype=""></td>
+      <td class="sch_duration" data-schduration=""></td>
+      <td class="sch_description" data-schdescription=""></td>
       <td><button class="btn btn-sm btn-default disabled" type="button" name="btnEditSchedule"> <span class='glyphicon glyphicon-pencil'></span> </button></td>
       <td><button class="btn btn-sm btn-danger disabled" type="button" name="btnDeleteSchedule"> <span class='glyphicon glyphicon-minus-sign'></span> </button></td>
       <td><button class="btn btn-sm btn-success disabled" type="button" name="btnOkSchedule"> <span class='glyphicon glyphicon-ok'></span> </button></td>

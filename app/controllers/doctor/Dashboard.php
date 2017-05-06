@@ -48,7 +48,7 @@ class Dashboard extends HTS_Controller {
   /**
    * Device Informatıons
    */
-  public function deviceInformations($page_number = '1', $records_per_page = '1') {
+  public function deviceInformations($page_number = '1', $records_per_page = '10') {
     if($this->session->has_userdata('auth') && $this->session->auth === TRUE){
       $this->load->model(array('live/devices', 'live/patients'));
       $result = $this->devices->findAllWithFullPatientName();
@@ -100,10 +100,12 @@ class Dashboard extends HTS_Controller {
    */
   public function patientLogSchedules($page_number = '1', $records_per_page = '10') {
     if($this->session->has_userdata('auth') && $this->session->auth === TRUE){
-      $this->load->model('live/patientlogschedules');
+      $this->load->model(array('live/devices','live/patientlogschedules'));
       $result = $this->patientlogschedules->findAllWithFullDeviceSocket();
+      $result_devices = $this->devices->findAll();
       $this->loadPatientLogSchedulesLang($data);
       $data['result'] = $result;
+      $data['result_devices'] = $result_devices;
       $data['num_rows'] = $this->patientlogschedules->getNumRows();
       $data['page_number'] = $page_number;
       $data['records_per_page'] = $records_per_page;

@@ -1,8 +1,3 @@
-
-<?php
-echo $page_count.$page_number;
- ?>
-
 <div class="row">
   <div class="col-md-offset-3"></div>
   <div class="col-md-6 col-md-offset-3">

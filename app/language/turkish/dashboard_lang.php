@@ -37,7 +37,7 @@ $lang['patient_infos_email'] = "e-posta";
 $lang['schedule_device_socket'] = "Aygıt Soketi";
 $lang['schedule_pattern'] = "Desen";
 $lang['schedule_type'] = "Plan Tipi";
-$lang['schedule_duration'] = "Süre";
+$lang['schedule_duration'] = "Süre (Dk.)";
 $lang['schedule_description'] = "Açıklama";
 
 //STREAMS

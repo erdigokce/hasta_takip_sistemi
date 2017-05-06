@@ -37,7 +37,7 @@ $lang['patient_infos_email'] = "e-mail";
 $lang['schedule_device_socket'] = "Device Socket";
 $lang['schedule_pattern'] = "Pattern";
 $lang['schedule_type'] = "Type";
-$lang['schedule_duration'] = "Duration";
+$lang['schedule_duration'] = "Duration (Min.)";
 $lang['schedule_description'] = "Description";
 
 //STREAMS

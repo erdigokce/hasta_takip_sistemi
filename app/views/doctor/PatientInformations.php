@@ -19,12 +19,24 @@
     <?php if ($i >= $offset && $i < $limit) { ?>
     <tr id="<?php echo get($row->ID); ?>">
       <td ><?php echo get($row->ID); ?></td>
-      <td class="pi_name" data-piName="<?php echo get($row->PATIENT_NAME);?>"><?php echo get($row->PATIENT_NAME); ?></td>
-      <td class="pi_surname" data-piSurname="<?php echo get($row->PATIENT_SURNAME); ?>"><?php echo get($row->PATIENT_SURNAME); ?></td>
-      <td class="pi_address" data-piAddress="<?php echo get($row->PATIENT_ADDRESS); ?>"><?php echo get($row->PATIENT_ADDRESS); ?></td>
-      <td class="pi_phone1" data-piPhone1="<?php echo get($row->PATIENT_PHONE); ?>"><?php echo get($row->PATIENT_PHONE); ?></td>
-      <td class="pi_phone2" data-piPhone2="<?php echo get($row->PATIENT_PHONE2); ?>"><?php echo get($row->PATIENT_PHONE2); ?></td>
-      <td class="pi_email" data-piEmail="<?php echo get($row->PATIENT_EMAIL); ?>"><?php echo get($row->PATIENT_EMAIL); ?></td>
+      <td class="pi_name" data-piname="<?php echo get($row->PATIENT_NAME);?>">
+				<?php echo get($row->PATIENT_NAME); ?>
+			</td>
+      <td class="pi_surname" data-pisurname="<?php echo get($row->PATIENT_SURNAME); ?>">
+				<?php echo get($row->PATIENT_SURNAME); ?>
+			</td>
+      <td class="pi_address" data-piaddress="<?php echo get($row->PATIENT_ADDRESS); ?>">
+				<?php echo get($row->PATIENT_ADDRESS); ?>
+			</td>
+      <td class="pi_phone1" data-piphone1="<?php echo get($row->PATIENT_PHONE); ?>">
+				<a href="tel:<?php echo get($row->PATIENT_PHONE); ?>"><?php echo get($row->PATIENT_PHONE); ?></a>
+			</td>
+      <td class="pi_phone2" data-piphone2="<?php echo get($row->PATIENT_PHONE2); ?>">
+				<a href="tel:<?php echo get($row->PATIENT_PHONE2); ?>"><?php echo get($row->PATIENT_PHONE2); ?></a>
+			</td>
+      <td class="pi_email" data-piemail="<?php echo get($row->PATIENT_EMAIL); ?>">
+				<a href="mailto:<?php echo get($row->PATIENT_EMAIL); ?>"><?php echo get($row->PATIENT_EMAIL); ?></a>
+			</td>
       <td><button class="btn btn-sm btn-default" type="button" name="btnEditPatient"> <span class='glyphicon glyphicon-pencil'></span> </button></td>
       <td><button class="btn btn-sm btn-danger" type="button" name="btnDeletePatient"> <span class='glyphicon glyphicon-minus-sign'></span> </button></td>
       <td><button class="btn btn-sm btn-success disabled" type="button" name="btnOkPatient"> <span class='glyphicon glyphicon-ok'></span> </button></td>

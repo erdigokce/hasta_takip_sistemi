@@ -25,7 +25,7 @@
     </nav>
   </div>
   <div class="col-lg-10">
-    <div id="content" class="container">
+    <div id="content" class="container-fluid">
 
     </div>
   </div>

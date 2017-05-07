@@ -19,6 +19,7 @@ $(document).ready(function() {
     var pi_phone1 = $("tr#" + id + " > .pi_phone1").data("piphone1");
     var pi_phone2 = $("tr#" + id + " > .pi_phone2").data("piphone2");
     var pi_email = $("tr#" + id + " > .pi_email").data("piemail");
+    var pi_apikey = $("tr#" + id + " > .pi_apikey").data("piapikey");
 
     // AJAX Setup
     $.ajaxSetup({
@@ -37,6 +38,7 @@ $(document).ready(function() {
           $("tr#" + id + " > .pi_phone1").html("<input class='form-control' type='phone' name='pi_phone1' value='" + pi_phone1 + "' required>");
           $("tr#" + id + " > .pi_phone2").html("<input class='form-control' type='phone' name='pi_phone2' value='" + pi_phone2 + "'>");
           $("tr#" + id + " > .pi_email").html("<input class='form-control' type='email' name='pi_email' value='" + pi_email + "' required>");
+          $("tr#" + id + " > .pi_apikey").html("<input class='form-control' type='text' name='pi_apikey' value='" + pi_apikey + "' required>");
           btnEditClick(id);
         }
         break;
@@ -61,7 +63,8 @@ $(document).ready(function() {
               PATIENT_ADDRESS: $("input[name='pi_address']").val(),
               PATIENT_PHONE: $("input[name='pi_phone1']").val(),
               PATIENT_PHONE2: $("input[name='pi_phone2']").val(),
-              PATIENT_EMAIL: $("input[name='pi_email']").val()
+              PATIENT_EMAIL: $("input[name='pi_email']").val(),
+              PATIENT_APIKEY: $("input[name='pi_apikey']").val()
             };
             sendAjaxRequest(dataToSendToServer);
           }
@@ -75,6 +78,7 @@ $(document).ready(function() {
           $("tr#" + id + " > .pi_phone1").html(pi_phone1);
           $("tr#" + id + " > .pi_phone2").html(pi_phone2);
           $("tr#" + id + " > .pi_email").html(pi_email);
+          $("tr#" + id + " > .pi_apikey").html(pi_apikey);
           btnCancelClick(id);
         }
         break;
@@ -86,6 +90,7 @@ $(document).ready(function() {
           $("tr#" + id + " > .pi_phone1").html("<input class='form-control' type='phone' name='pi_phone1' value='' required>");
           $("tr#" + id + " > .pi_phone2").html("<input class='form-control' type='phone' name='pi_phone2' value='' >");
           $("tr#" + id + " > .pi_email").html("<input class='form-control' type='email' name='pi_email' value='' required>");
+          $("tr#" + id + " > .pi_apikey").html("<input class='form-control' type='text' name='pi_apikey' value='' required>");
           btnAddClick(id);
         }
         break;

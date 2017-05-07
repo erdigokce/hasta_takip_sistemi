@@ -67,5 +67,4 @@
 <?php
   $data['page_count'] = ceil(count($result) / $records_per_page);
   $this->view('templates/pagination.php', $data);
-
 ?>

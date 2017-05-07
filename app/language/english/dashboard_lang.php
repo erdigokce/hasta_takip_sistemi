@@ -32,6 +32,7 @@ $lang['patient_infos_address'] = "Address";
 $lang['patient_infos_phone1'] = "Phone (Primary)";
 $lang['patient_infos_phone2'] = "Phone (Secondary)";
 $lang['patient_infos_email'] = "e-mail";
+$lang['patient_infos_apikey'] = "API Key";
 
 //LOG SCHEDULES
 $lang['schedule_device_socket'] = "Device Socket";

@@ -84,10 +84,18 @@ class Dashboard extends HTS_Controller {
   /**
    * Patient Logs
    */
-  public function patientLogs() {
+  public function patientLogs($patientId = "") {
     if($this->session->has_userdata('auth') && $this->session->auth === TRUE){
-      $this->load->model('live/patientlogs');
-      $this->load->view("doctor/PatientLogs"); // PATIENT LOGS BOARD VIEW
+      $this->load->model(array('live/patientlogs', 'live/patients', 'live/streams'));
+      $this->loadPatientLogsLang($data);
+      if(!isNullOrEmpty($patientId)){
+        $data['patient_selected'] = TRUE;
+        $data['patient_id'] = $patientId;
+        $data['resultPatientLogs'] = $this->patientlogs->findListByPatientId($patientId);
+        $data['resultStreams'] = $this->streams->findListByPatientId($patientId);
+      }
+      $data['resultPatients'] = $this->patients->findAll();
+      $this->load->view("doctor/PatientLogs", $data); // PATIENT LOGS BOARD VIEW
     } else {
       redirect('login/index/session_expire', 'refresh');
     }
@@ -220,6 +228,14 @@ class Dashboard extends HTS_Controller {
      $data['schedule_type'] = $this->lang->line('schedule_type');
      $data['schedule_duration'] = $this->lang->line('schedule_duration');
      $data['schedule_description'] = $this->lang->line('schedule_description');
+   }
+
+   private function loadPatientLogsLang(&$data) {
+     $this->fetchLang();
+     $data['patient_logs_last_activity'] = $this->lang->line('patient_logs_last_activity');
+     $data['patient_logs_live'] = $this->lang->line('patient_logs_live');
+     $data['patient_logs_history'] = $this->lang->line('patient_logs_history');
+     $data['patient_logs_select_patient'] = $this->lang->line('patient_logs_select_patient');
    }
 
    private function loadStreamLang(&$data) {

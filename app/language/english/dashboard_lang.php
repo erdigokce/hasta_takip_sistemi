@@ -41,6 +41,12 @@ $lang['schedule_type'] = "Type";
 $lang['schedule_duration'] = "Duration (Min.)";
 $lang['schedule_description'] = "Description";
 
+//PATIENT LOGS
+$lang['patient_logs_last_activity'] = "Last Activity";
+$lang['patient_logs_live'] = "Live";
+$lang['patient_logs_history'] = "History";
+$lang['patient_logs_select_patient'] = "Please select a patient to display...";
+
 //STREAMS
 $lang['stream_patient'] = "Streamer Patient";
 $lang['stream_token'] = "Token";

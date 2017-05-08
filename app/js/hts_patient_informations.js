@@ -6,7 +6,7 @@ $(document).ready(function() {
   var ajaxRequestHandler = controller+"/processCRUD/"+model+"/";
 
   /**
-   * DEVICE INFORMATIONS
+   * PATIENT INFORMATIONS
    */
 
   $("button[name*='btn']").click(function() {

@@ -35,3 +35,272 @@ ERROR - 07-05-2017 17:26:40 --> 404 Page Not Found: doctor/App/js
 ERROR - 07-05-2017 17:56:39 --> 404 Page Not Found: doctor/App/js
 ERROR - 07-05-2017 17:56:52 --> 404 Page Not Found: doctor/App/js
 ERROR - 07-05-2017 17:56:53 --> 404 Page Not Found: doctor/App/js
+ERROR - 07-05-2017 18:22:21 --> 404 Page Not Found: doctor/App/js
+ERROR - 07-05-2017 18:52:16 --> 404 Page Not Found: doctor/App/js
+ERROR - 07-05-2017 18:55:36 --> 404 Page Not Found: doctor/App/js
+ERROR - 07-05-2017 18:56:15 --> 404 Page Not Found: doctor/App/js
+ERROR - 07-05-2017 18:57:52 --> 404 Page Not Found: doctor/App/js
+ERROR - 07-05-2017 19:16:28 --> 404 Page Not Found: doctor/App/js
+ERROR - 07-05-2017 19:16:52 --> 404 Page Not Found: doctor/App/js
+ERROR - 07-05-2017 19:16:56 --> 404 Page Not Found: doctor/App/js
+ERROR - 07-05-2017 19:16:59 --> 404 Page Not Found: doctor/App/js
+ERROR - 07-05-2017 19:24:09 --> 404 Page Not Found: doctor/App/js
+ERROR - 07-05-2017 20:24:53 --> Severity: Notice --> Undefined variable: resultStreams C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 9
+ERROR - 07-05-2017 20:24:53 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 9
+ERROR - 07-05-2017 20:24:53 --> Severity: Notice --> Undefined variable: patient_selected C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 22
+ERROR - 07-05-2017 20:25:22 --> Severity: Notice --> Undefined variable: resultStreams C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 9
+ERROR - 07-05-2017 20:25:22 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 9
+ERROR - 07-05-2017 20:27:39 --> Severity: Notice --> Undefined variable: resultStreams C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 9
+ERROR - 07-05-2017 20:27:39 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 9
+ERROR - 07-05-2017 20:27:47 --> Severity: Notice --> Undefined variable: resultStreams C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 9
+ERROR - 07-05-2017 20:27:47 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 9
+ERROR - 07-05-2017 20:33:38 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:38 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:38 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:38 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:38 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:38 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:38 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:38 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:38 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:38 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:38 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:38 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:38 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:38 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:38 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:38 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:38 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:38 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:38 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:38 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:38 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:38 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:38 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:38 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:38 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:38 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:38 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:38 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:38 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:38 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:38 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:38 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:38 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:38 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:38 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:38 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:39 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:39 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:39 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:39 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:39 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:39 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:39 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:39 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:39 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:39 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:39 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:39 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:39 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:39 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:39 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:39 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:39 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:39 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:39 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:39 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:39 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:39 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:39 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:39 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:39 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:39 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:39 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:39 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:39 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:39 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:39 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:39 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:39 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:40 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:40 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:40 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:43 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:43 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:43 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:43 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:43 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:43 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:43 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:43 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:43 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:43 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:43 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:43 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:43 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:43 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:43 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:43 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:43 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:43 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:43 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:43 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:43 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:43 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:43 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:43 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:43 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:43 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:43 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:43 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:43 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:43 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:43 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:43 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:43 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:43 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:43 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:43 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:47 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:47 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:47 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:47 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:47 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:47 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:47 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:47 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:47 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:47 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:47 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:47 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:47 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:47 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:47 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:47 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:47 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:47 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:47 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:47 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:47 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:47 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:47 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:47 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:47 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:47 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:47 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:47 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:47 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:47 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:47 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:47 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:47 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:47 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:47 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:33:47 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:24 --> Severity: Notice --> Undefined variable: patient_selected C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 8
+ERROR - 07-05-2017 20:34:26 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:26 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:26 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:26 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:26 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:26 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:26 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:26 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:26 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:26 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:26 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:26 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:26 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:26 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:26 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:26 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:26 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:26 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:26 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:26 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:26 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:26 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:26 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:26 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:26 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:26 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:26 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:26 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:26 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:26 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:26 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:26 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:26 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:26 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:26 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:26 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:26 --> Severity: Notice --> Undefined variable: patient_selected C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 8
+ERROR - 07-05-2017 20:34:27 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:27 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:27 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:27 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:27 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:27 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:27 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:27 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:27 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:27 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:27 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:27 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:27 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:27 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:27 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:27 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:27 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:27 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:27 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:27 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:27 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:27 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:27 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:27 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:27 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:27 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:27 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:27 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:27 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:27 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:27 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:27 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:27 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:27 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:27 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:27 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:27 --> Severity: Notice --> Undefined variable: patient_selected C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 8
+ERROR - 07-05-2017 20:34:28 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:28 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:28 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:28 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:28 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:28 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:28 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:28 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:28 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:28 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:28 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:28 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:28 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:28 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:28 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:28 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:28 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:28 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:28 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:28 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:28 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:28 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:28 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:28 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:28 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:28 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:28 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:28 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:28 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:28 --> Severity: Warning --> Attempt to modify property of non-object C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 5
+ERROR - 07-05-2017 20:34:28 --> Severity: Notice --> Undefined variable: patient_selected C:\xampp\htdocs\hts\app\views\doctor\PatientLogs.php 8

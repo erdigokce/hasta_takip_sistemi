@@ -8,7 +8,7 @@ $(document).ready(function() {
   var selectedPatientId;
 
   /**
-   * DEVICE INFORMATIONS
+   * STREAMS
    */
 
   $("button[name*='btn']").click(function() {

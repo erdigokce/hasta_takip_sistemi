@@ -48,7 +48,7 @@ class Dashboard extends HTS_Controller {
   /**
    * Device Informatıons
    */
-  public function deviceInformations($page_number = '1', $records_per_page = '10') {
+  public function deviceInformations($page_number = '1', $records_per_page = '5') {
     if($this->session->has_userdata('auth') && $this->session->auth === TRUE){
       $this->load->model(array('live/devices', 'live/patients'));
       $result = $this->devices->findAllWithFullPatientName();
@@ -56,7 +56,6 @@ class Dashboard extends HTS_Controller {
       $this->loadDeviceInformationsLang($data);
       $data['result'] = $result;
       $data['result_patients'] = $result_patients;
-      $data['num_rows'] = $this->devices->getNumRows();
       $data['page_number'] = $page_number;
       $data['records_per_page'] = $records_per_page;
       $this->load->view("doctor/DeviceInformations", $data); // DEVICE INFORMATIONS VIEW
@@ -68,13 +67,12 @@ class Dashboard extends HTS_Controller {
   /**
    * Patient Informations
    */
-  public function patientInformations($page_number = '1', $records_per_page = '10') {
+  public function patientInformations($page_number = '1', $records_per_page = '5') {
     if($this->session->has_userdata('auth') && $this->session->auth === TRUE){
       $this->load->model('live/patients');
       $result = $this->patients->findAll();
       $this->loadPatientInformationsLang($data);
       $data['result'] = $result;
-      $data['num_rows'] = $this->patients->getNumRows();
       $data['page_number'] = $page_number;
       $data['records_per_page'] = $records_per_page;
       $this->load->view("doctor/PatientInformations", $data); // PATIENT INFORMATIONS VIEW
@@ -86,10 +84,18 @@ class Dashboard extends HTS_Controller {
   /**
    * Patient Logs
    */
-  public function patientLogs() {
+  public function patientLogs($patientId = "") {
     if($this->session->has_userdata('auth') && $this->session->auth === TRUE){
-      $this->load->model('live/patientlogs');
-      $this->load->view("doctor/PatientLogs"); // PATIENT LOGS BOARD VIEW
+      $this->load->model(array('live/patientlogs', 'live/patients', 'live/streams'));
+      $this->loadPatientLogsLang($data);
+      if(!isNullOrEmpty($patientId)){
+        $data['patient_selected'] = TRUE;
+        $data['patient_id'] = $patientId;
+        $data['resultPatientLogs'] = $this->patientlogs->findListByPatientId($patientId);
+        $data['resultStreams'] = $this->streams->findListByPatientId($patientId);
+      }
+      $data['resultPatients'] = $this->patients->findAll();
+      $this->load->view("doctor/PatientLogs", $data); // PATIENT LOGS BOARD VIEW
     } else {
       redirect('login/index/session_expire', 'refresh');
     }
@@ -98,7 +104,7 @@ class Dashboard extends HTS_Controller {
   /**
    * Patient Log Schedules
    */
-  public function patientLogSchedules($page_number = '1', $records_per_page = '10') {
+  public function patientLogSchedules($page_number = '1', $records_per_page = '5') {
     if($this->session->has_userdata('auth') && $this->session->auth === TRUE){
       $this->load->model(array('live/devices','live/patientlogschedules'));
       $result = $this->patientlogschedules->findAllWithFullDeviceSocket();
@@ -106,7 +112,6 @@ class Dashboard extends HTS_Controller {
       $this->loadPatientLogSchedulesLang($data);
       $data['result'] = $result;
       $data['result_devices'] = $result_devices;
-      $data['num_rows'] = $this->patientlogschedules->getNumRows();
       $data['page_number'] = $page_number;
       $data['records_per_page'] = $records_per_page;
       $this->load->view("doctor/PatientLogSchedules", $data); // PATIENT LOG SCHEDULES BOARD VIEW
@@ -118,13 +123,14 @@ class Dashboard extends HTS_Controller {
   /**
    * Streams
    */
-  public function streams($page_number = '1', $records_per_page = '10') {
+  public function streams($page_number = '1', $records_per_page = '5') {
     if($this->session->has_userdata('auth') && $this->session->auth === TRUE) {
-      $this->load->model('live/streams');
+      $this->load->model(array('live/streams','live/patients'));
       $result = $this->streams->findAllWithFullPatientName();
+      $result_patients = $this->patients->findAll();
       $this->loadStreamLang($data);
       $data['result'] = $result;
-      $data['num_rows'] = $this->streams->getNumRows();
+      $data['result_patients'] = $result_patients;
       $data['page_number'] = $page_number;
       $data['records_per_page'] = $records_per_page;
       $this->load->view("doctor/streams", $data); // PATIENT LOG SCHEDULES BOARD VIEW
@@ -212,6 +218,7 @@ class Dashboard extends HTS_Controller {
      $data['patient_infos_phone1'] = $this->lang->line('patient_infos_phone1');
      $data['patient_infos_phone2'] = $this->lang->line('patient_infos_phone2');
      $data['patient_infos_email'] = $this->lang->line('patient_infos_email');
+     $data['patient_infos_apikey'] = $this->lang->line('patient_infos_apikey');
    }
 
    private function loadPatientLogSchedulesLang(&$data) {
@@ -221,6 +228,14 @@ class Dashboard extends HTS_Controller {
      $data['schedule_type'] = $this->lang->line('schedule_type');
      $data['schedule_duration'] = $this->lang->line('schedule_duration');
      $data['schedule_description'] = $this->lang->line('schedule_description');
+   }
+
+   private function loadPatientLogsLang(&$data) {
+     $this->fetchLang();
+     $data['patient_logs_last_activity'] = $this->lang->line('patient_logs_last_activity');
+     $data['patient_logs_live'] = $this->lang->line('patient_logs_live');
+     $data['patient_logs_history'] = $this->lang->line('patient_logs_history');
+     $data['patient_logs_select_patient'] = $this->lang->line('patient_logs_select_patient');
    }
 
    private function loadStreamLang(&$data) {

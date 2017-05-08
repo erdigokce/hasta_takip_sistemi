@@ -14,7 +14,7 @@ interface IDevicesModel {
 }
 
 interface IPatientLogsModel {
-
+  public function findListByPatientId($patientId);
 }
 
 interface IPatientLogSchedulesModel {
@@ -22,5 +22,6 @@ interface IPatientLogSchedulesModel {
 }
 
 interface IStreamsModel {
-  
+  public function findAllWithFullPatientName();
+  public function findListByPatientId($patientId);
 }

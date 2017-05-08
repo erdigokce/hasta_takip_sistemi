@@ -8,7 +8,7 @@ $(document).ready(function() {
   var selectedDeviceId;
 
   /**
-   * DEVICE INFORMATIONS
+   * LOG SCHEDULES
    */
 
   $("button[name*='btn']").click(function() {

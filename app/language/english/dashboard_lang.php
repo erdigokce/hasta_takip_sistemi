@@ -32,6 +32,7 @@ $lang['patient_infos_address'] = "Address";
 $lang['patient_infos_phone1'] = "Phone (Primary)";
 $lang['patient_infos_phone2'] = "Phone (Secondary)";
 $lang['patient_infos_email'] = "e-mail";
+$lang['patient_infos_apikey'] = "API Key";
 
 //LOG SCHEDULES
 $lang['schedule_device_socket'] = "Device Socket";
@@ -39,6 +40,12 @@ $lang['schedule_pattern'] = "Pattern";
 $lang['schedule_type'] = "Type";
 $lang['schedule_duration'] = "Duration (Min.)";
 $lang['schedule_description'] = "Description";
+
+//PATIENT LOGS
+$lang['patient_logs_last_activity'] = "Last Activity";
+$lang['patient_logs_live'] = "Live";
+$lang['patient_logs_history'] = "History";
+$lang['patient_logs_select_patient'] = "Please select a patient to display...";
 
 //STREAMS
 $lang['stream_patient'] = "Streamer Patient";

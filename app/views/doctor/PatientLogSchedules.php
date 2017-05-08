@@ -34,8 +34,8 @@
       <td><button class="btn btn-sm btn-success disabled" type="button" name="btnOkSchedule"> <span class='glyphicon glyphicon-ok'></span> </button></td>
       <td><button class="btn btn-sm btn-warning disabled" type="button" name="btnCancelSchedule"> <span class='glyphicon glyphicon-remove'></span> </button></td>
     </tr>
-      <?php $i = $i + 1; ?>
       <?php } ?>
+			<?php $i = $i + 1; ?>
     <?php } ?>
     <tr id="temp">
       <td><button class="btn btn-sm btn-primary" type="button" name="btnAddSchedule"> <span class='glyphicon glyphicon-plus-sign'></span> </button></td>
@@ -62,7 +62,6 @@
 <script src="app/js/hts_log_schedules.js" charset="utf-8"></script>
 
 <?php
-  $data['page_count'] = ceil($num_rows / $records_per_page);
+  $data['page_count'] = ceil(count($result) / $records_per_page);
   $this->view('templates/pagination.php', $data);
-
 ?>

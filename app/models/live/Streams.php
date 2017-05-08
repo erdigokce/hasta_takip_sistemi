@@ -23,4 +23,17 @@ class Streams extends HTS_Model implements IStreamsModel {
     }
   }
 
+  public function findListByPatientId($patientId) {
+    if(isSetAndNotEmpty($patientId)) {
+      $this->db->where(array('PATIENT_ID' => $patientId));
+      $this->db->where("STREAM_NAME IS NOT NULL");
+      $this->setQuery($this->db->get($this->getTable()));
+    }
+    if(isSetAndNotEmpty($this->getQuery())) {
+      return $this->getQuery()->result();
+    } else {
+      return NULL;
+    }
+  }
+
 }

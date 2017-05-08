@@ -9,6 +9,7 @@
 			<th><?php echo get($patient_infos_phone1); ?></th>
 			<th><?php echo get($patient_infos_phone2); ?></th>
 			<th><?php echo get($patient_infos_email); ?></th>
+			<th><?php echo get($patient_infos_apikey); ?></th>
 		</tr>
 	</thead>
   <tbody>
@@ -37,22 +38,26 @@
       <td class="pi_email" data-piemail="<?php echo get($row->PATIENT_EMAIL); ?>">
 				<a href="mailto:<?php echo get($row->PATIENT_EMAIL); ?>"><?php echo get($row->PATIENT_EMAIL); ?></a>
 			</td>
+      <td class="pi_apikey" data-piapikey="<?php echo get($row->PATIENT_APIKEY); ?>">
+				<?php echo get($row->PATIENT_APIKEY); ?>
+			</td>
       <td><button class="btn btn-sm btn-default" type="button" name="btnEditPatient"> <span class='glyphicon glyphicon-pencil'></span> </button></td>
       <td><button class="btn btn-sm btn-danger" type="button" name="btnDeletePatient"> <span class='glyphicon glyphicon-minus-sign'></span> </button></td>
       <td><button class="btn btn-sm btn-success disabled" type="button" name="btnOkPatient"> <span class='glyphicon glyphicon-ok'></span> </button></td>
       <td><button class="btn btn-sm btn-warning disabled" type="button" name="btnCancelPatient"> <span class='glyphicon glyphicon-remove'></span> </button></td>
     </tr>
-      <?php $i = $i + 1; ?>
-      <?php } ?>
-    <?php } ?>
+      <?php } //if ?>
+			<?php $i = $i + 1; ?>
+    <?php } //foreach ?>
     <tr id="temp">
       <td><button class="btn btn-sm btn-primary" type="button" name="btnAddPatient"> <span class='glyphicon glyphicon-plus-sign'></span> </button></td>
-      <td class="pi_name" data-piName=""></td>
-      <td class="pi_surname" data-piSurname=""></td>
-      <td class="pi_address" data-piAddress=""></td>
-      <td class="pi_phone1" data-piPhone1=""></td>
-      <td class="pi_phone2" data-piPhone2=""></td>
-      <td class="pi_email" data-piEmail=""></td>
+      <td class="pi_name" data-piname=""></td>
+      <td class="pi_surname" data-pisurname=""></td>
+      <td class="pi_address" data-piaddress=""></td>
+      <td class="pi_phone1" data-piphone1=""></td>
+      <td class="pi_phone2" data-piphone2=""></td>
+      <td class="pi_email" data-piemail=""></td>
+      <td class="pi_apikey" data-piapikey=""></td>
       <td><button class="btn btn-sm btn-default disabled" type="button" name="btnEditPatient"> <span class='glyphicon glyphicon-pencil'></span> </button></td>
       <td><button class="btn btn-sm btn-danger disabled" type="button" name="btnDeletePatient"> <span class='glyphicon glyphicon-minus-sign'></span> </button></td>
       <td><button class="btn btn-sm btn-success disabled" type="button" name="btnOkPatient"> <span class='glyphicon glyphicon-ok'></span> </button></td>
@@ -62,9 +67,7 @@
 </table>
 
 <script src="app/js/hts_patient_informations.js" charset="utf-8"></script>
-
 <?php
-  $data['page_count'] = ceil($num_rows / $records_per_page);
+  $data['page_count'] = ceil(count($result) / $records_per_page);
   $this->view('templates/pagination.php', $data);
-
 ?>

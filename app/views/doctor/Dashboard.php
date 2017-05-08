@@ -16,8 +16,8 @@
             <li><?php echo anchor('#', $menu_left_item_2, 'class="list-group-item" data-nav="deviceInformations"'); ?></li>
             <li><?php echo anchor('#', $menu_left_item_3, 'class="list-group-item" data-nav="patientInformations"'); ?></li>
             <li><?php echo anchor('#', $menu_left_item_5, 'class="list-group-item" data-nav="patientLogSchedules"'); ?></li>
-            <li><?php echo anchor('#', $menu_left_item_4, 'class="list-group-item" data-nav="patientLogs"'); ?></li>
             <li><?php echo anchor('#', $menu_left_item_6, 'class="list-group-item" data-nav="streams"'); ?></li>
+            <li><?php echo anchor('#', $menu_left_item_4, 'class="list-group-item" data-nav="patientLogs"'); ?></li>
           </ul>
           <?php endif; ?>
         </div>
@@ -25,7 +25,7 @@
     </nav>
   </div>
   <div class="col-lg-10">
-    <div id="content" class="container">
+    <div id="content" class="container-fluid">
 
     </div>
   </div>

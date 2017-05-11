@@ -13,9 +13,9 @@ $lang['dashboard_unauthorized_user'] = " is logged in and its warrants are restr
 $lang['menu_left_item_1'] = "Dashboard";
 $lang['menu_left_item_2'] = "Device Informations";
 $lang['menu_left_item_3'] = "Patient Informations";
-$lang['menu_left_item_4'] = "Patient Logs";
+$lang['menu_left_item_4'] = "Patient Streams";
 $lang['menu_left_item_5'] = "Logging Schedules";
-$lang['menu_left_item_6'] = "Streams";
+$lang['menu_left_item_6'] = "Stream Configurations";
 
 //DEVICE INFORMATIONS
 $lang['device_infos_patient'] = "Holder Patient";
@@ -46,6 +46,7 @@ $lang['patient_logs_last_activity'] = "Last Activity";
 $lang['patient_logs_live'] = "Live";
 $lang['patient_logs_history'] = "History";
 $lang['patient_logs_select_patient'] = "Please select a patient to display...";
+$lang['patient_logs_select_stream'] = "Please select a stream to trace...";
 
 //STREAMS
 $lang['stream_patient'] = "Streamer Patient";

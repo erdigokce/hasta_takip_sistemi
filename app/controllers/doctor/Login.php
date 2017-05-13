@@ -8,15 +8,12 @@ class Login extends HTS_Controller {
     parent::__construct('login');
     $this->load->database('syscore');
     $this->load->helper('form');
-    $this->load->library('form_validation');
-    $this->load->library('session');
-    $this->load->model('syscore/user');
-    $this->load->model('syscore/userlogs');
-    $this->load->model('live/parameters');
+    $this->load->library(array('form_validation'));
+    $this->load->model(array('syscore/user','syscore/userlogs','live/parameters'));
   }
 
   public function index($status = 'normal') {
-    $this->lang->load(array('navbar','error',$this->getPage()), $this->session->langauge);
+    $this->lang->load(array($this->getPage()), $this->session->langauge);
     loadNavbarLang($this, $data);
     if ($status === 'session_expire') {
       $data['status'] = $status;

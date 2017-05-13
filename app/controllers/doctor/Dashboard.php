@@ -8,7 +8,6 @@ class Dashboard extends HTS_Controller {
     parent::__construct('dashboard');
     $this->load->database('syscore');
     $this->load->model('syscore/user');
-    $this->load->library('session');
   }
 
   /**
@@ -84,16 +83,24 @@ class Dashboard extends HTS_Controller {
   /**
    * Patient Logs
    */
-  public function patientLogs($patientId = "") {
+  public function patientLogs($patientId = "", $patientUsername = "" , $streamId = "", $streamName = "", $streamShareKey = "", $streamNumber = "", $displayStatus = "none") {
     if($this->session->has_userdata('auth') && $this->session->auth === TRUE){
       $this->load->model(array('live/patientlogs', 'live/patients', 'live/streams'));
       $this->loadPatientLogsLang($data);
-      if(!isNullOrEmpty($patientId)){
+      if(!isNullOrEmpty($patientId)) {
         $data['patient_selected'] = TRUE;
         $data['patient_id'] = $patientId;
+        $data['stream_id'] = $streamId;
         $data['resultPatientLogs'] = $this->patientlogs->findListByPatientId($patientId);
         $data['resultStreams'] = $this->streams->findListByPatientId($patientId);
+        if(!isNullOrEmpty($streamId)) {
+          $data['patientUsername'] = $patientUsername;
+          $data['streamName'] = $streamName;
+          $data['streamShareKey'] = $streamShareKey;
+          $data['streamNumber'] = $streamNumber;
+        }
       }
+      $data['displayStatus'] = $displayStatus;
       $data['resultPatients'] = $this->patients->findAll();
       $this->load->view("doctor/PatientLogs", $data); // PATIENT LOGS BOARD VIEW
     } else {
@@ -218,6 +225,7 @@ class Dashboard extends HTS_Controller {
      $data['patient_infos_phone1'] = $this->lang->line('patient_infos_phone1');
      $data['patient_infos_phone2'] = $this->lang->line('patient_infos_phone2');
      $data['patient_infos_email'] = $this->lang->line('patient_infos_email');
+     $data['patient_infos_username'] = $this->lang->line('patient_infos_username');
      $data['patient_infos_apikey'] = $this->lang->line('patient_infos_apikey');
    }
 
@@ -236,6 +244,7 @@ class Dashboard extends HTS_Controller {
      $data['patient_logs_live'] = $this->lang->line('patient_logs_live');
      $data['patient_logs_history'] = $this->lang->line('patient_logs_history');
      $data['patient_logs_select_patient'] = $this->lang->line('patient_logs_select_patient');
+     $data['patient_logs_select_stream'] = $this->lang->line('patient_logs_select_stream');
    }
 
    private function loadStreamLang(&$data) {
@@ -248,7 +257,7 @@ class Dashboard extends HTS_Controller {
     * Fetches required lang files.
     */
    private function fetchLang() {
-     $this->lang->load(array('navbar','messages',$this->getPage()), $this->session->langauge);
+     $this->lang->load(array($this->getPage()), $this->session->langauge);
    }
 
 }

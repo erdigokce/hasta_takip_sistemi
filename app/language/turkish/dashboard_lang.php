@@ -13,9 +13,9 @@ $lang['dashboard_unauthorized_user'] = " ile giriş yapmıştır ve yetkileri k�
 $lang['menu_left_item_1'] = "Pano";
 $lang['menu_left_item_2'] = "Cihaz Bilgileri";
 $lang['menu_left_item_3'] = "Hasta Bilgileri";
-$lang['menu_left_item_4'] = "Hasta Günlükleri";
+$lang['menu_left_item_4'] = "Hasta Yayınları";
 $lang['menu_left_item_5'] = "Günlük Planlamaları";
-$lang['menu_left_item_6'] = "Yayınlar";
+$lang['menu_left_item_6'] = "Yayın Ayarları";
 
 //DEVICE INFORMATIONS
 $lang['device_infos_patient'] = "Kullanan Hasta";
@@ -32,6 +32,7 @@ $lang['patient_infos_address'] = "Adres";
 $lang['patient_infos_phone1'] = "Telefon (Birincil)";
 $lang['patient_infos_phone2'] = "Telefon (İkincil)";
 $lang['patient_infos_email'] = "e-posta";
+$lang['patient_infos_username'] = "Kullanıcı Adı";
 $lang['patient_infos_apikey'] = "API Anahtarı";
 
 //LOG SCHEDULES
@@ -46,6 +47,7 @@ $lang['patient_logs_last_activity'] = "Son Etkinlik";
 $lang['patient_logs_live'] = "Canlı";
 $lang['patient_logs_history'] = "Arşiv";
 $lang['patient_logs_select_patient'] = "Lütfen görüntülemek için bir hasta seçiniz...";
+$lang['patient_logs_select_stream'] = "Lütfen akışı izlemek için bir yayın seçiniz...";
 
 //STREAMS
 $lang['stream_patient'] = "Yayınlayan Hasta";

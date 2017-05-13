@@ -3,12 +3,16 @@
 /**
  * Application utilities Library
  */
-class Apputils {
+class AppUtils {
 
   private static $username;
   private static $name;
   private static $surname;
   private static $sessId;
+  private static $hostIP;
+  private static $userAgent;
+  private static $selectedLangauge;
+
   /**
    * @return Username
    */
@@ -41,7 +45,7 @@ class Apputils {
    * @return Surname
    */
   public static function getSurname() {
-    return $this->surname;
+    return self::$surname;
   }
 
   /**
@@ -63,5 +67,47 @@ class Apputils {
    */
   public static function setSessId($sessId) {
     self::$sessId = $sessId;
+  }
+
+  /**
+   * @return
+   */
+  public static function getUserAgent() {
+    return self::$userAgent;
+  }
+
+  /**
+   * @param  $userAgent
+   */
+  public static function setUserAgent($userAgent) {
+    self::$userAgent = $userAgent;
+  }
+
+  /**
+   * @return
+   */
+  public static function getHostIP() {
+    return self::$hostIP;
+  }
+
+  /**
+   * @param  $hostIP
+   */
+  public static function setHostIP($hostIP) {
+    self::$hostIP = $hostIP;
+  }
+
+  /**
+   * @return
+   */
+  public static function getSelectedLangauge() {
+    return self::$selectedLangauge;
+  }
+
+  /**
+   * @param  $selectedLangauge
+   */
+  public static function setSelectedLangauge($selectedLangauge) {
+    self::$selectedLangauge = $selectedLangauge;
   }
 }

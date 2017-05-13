@@ -7,7 +7,6 @@ class Navbar extends HTS_Controller {
 
   function __construct() {
     parent::__construct('navbar');
-    $this->load->library('session');
   }
 
   public function lang($selectedLangauge, $lastPage) {

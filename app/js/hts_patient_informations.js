@@ -19,6 +19,7 @@ $(document).ready(function() {
     var pi_phone1 = $("tr#" + id + " > .pi_phone1").data("piphone1");
     var pi_phone2 = $("tr#" + id + " > .pi_phone2").data("piphone2");
     var pi_email = $("tr#" + id + " > .pi_email").data("piemail");
+    var pi_username = $("tr#" + id + " > .pi_username").data("piusername");
     var pi_apikey = $("tr#" + id + " > .pi_apikey").data("piapikey");
 
     // AJAX Setup
@@ -38,6 +39,7 @@ $(document).ready(function() {
           $("tr#" + id + " > .pi_phone1").html("<input class='form-control' type='phone' name='pi_phone1' value='" + pi_phone1 + "' required>");
           $("tr#" + id + " > .pi_phone2").html("<input class='form-control' type='phone' name='pi_phone2' value='" + pi_phone2 + "'>");
           $("tr#" + id + " > .pi_email").html("<input class='form-control' type='email' name='pi_email' value='" + pi_email + "' required>");
+          $("tr#" + id + " > .pi_username").html("<input class='form-control' type='text' name='pi_username' value='" + pi_username + "'>");
           $("tr#" + id + " > .pi_apikey").html("<input class='form-control' type='text' name='pi_apikey' value='" + pi_apikey + "' required>");
           btnEditClick(id);
         }
@@ -64,6 +66,7 @@ $(document).ready(function() {
               PATIENT_PHONE: $("input[name='pi_phone1']").val(),
               PATIENT_PHONE2: $("input[name='pi_phone2']").val(),
               PATIENT_EMAIL: $("input[name='pi_email']").val(),
+              PATIENT_USERNAME: $("input[name='pi_username']").val(),
               PATIENT_APIKEY: $("input[name='pi_apikey']").val()
             };
             sendAjaxRequest(dataToSendToServer);
@@ -75,9 +78,10 @@ $(document).ready(function() {
           $("tr#" + id + " > .pi_name").html(pi_name);
           $("tr#" + id + " > .pi_surname").html(pi_surname);
           $("tr#" + id + " > .pi_address").html(pi_address);
-          $("tr#" + id + " > .pi_phone1").html(pi_phone1);
-          $("tr#" + id + " > .pi_phone2").html(pi_phone2);
-          $("tr#" + id + " > .pi_email").html(pi_email);
+          $("tr#" + id + " > .pi_phone1").html("<a href=\"tel:"+pi_phone1+"\">"+pi_phone1+"</a>");
+          $("tr#" + id + " > .pi_phone2").html("<a href=\"tel:"+pi_phone2+"\">"+pi_phone2+"</a>");
+          $("tr#" + id + " > .pi_email").html("<a href=\"mailto:"+pi_email+"\">"+pi_email+"</a>");
+          $("tr#" + id + " > .pi_username").html(pi_username);
           $("tr#" + id + " > .pi_apikey").html(pi_apikey);
           btnCancelClick(id);
         }
@@ -90,6 +94,7 @@ $(document).ready(function() {
           $("tr#" + id + " > .pi_phone1").html("<input class='form-control' type='phone' name='pi_phone1' value='' required>");
           $("tr#" + id + " > .pi_phone2").html("<input class='form-control' type='phone' name='pi_phone2' value='' >");
           $("tr#" + id + " > .pi_email").html("<input class='form-control' type='email' name='pi_email' value='' required>");
+          $("tr#" + id + " > .pi_username").html("<input class='form-control' type='text' name='pi_username' value=''>");
           $("tr#" + id + " > .pi_apikey").html("<input class='form-control' type='text' name='pi_apikey' value='' required>");
           btnAddClick(id);
         }

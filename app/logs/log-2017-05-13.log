@@ -1,0 +1,11 @@
+ERROR - 13-05-2017 00:30:39 --> Severity: Runtime Notice --> Accessing static property Apputils::$hostIP as non static C:\xampp\htdocs\hts\app\libraries\Apputils.php 96
+ERROR - 13-05-2017 00:30:39 --> Severity: Runtime Notice --> Accessing static property Apputils::$userAgent as non static C:\xampp\htdocs\hts\app\libraries\Apputils.php 82
+ERROR - 13-05-2017 11:34:02 --> Severity: Parsing Error --> syntax error, unexpected '::' (T_PAAMAYIM_NEKUDOTAYIM) C:\xampp\htdocs\hts\app\controllers\public\Home.php 14
+ERROR - 13-05-2017 14:16:46 --> Severity: Error --> Call to undefined method Dashboard::fetchLang() C:\xampp\htdocs\hts\app\controllers\doctor\Dashboard.php 211
+ERROR - 13-05-2017 14:16:47 --> Severity: Error --> Call to undefined method Dashboard::fetchLang() C:\xampp\htdocs\hts\app\controllers\doctor\Dashboard.php 221
+ERROR - 13-05-2017 14:26:36 --> Severity: Error --> Call to undefined method Dashboard::fetchLang() C:\xampp\htdocs\hts\app\controllers\doctor\Dashboard.php 211
+ERROR - 13-05-2017 14:26:37 --> Severity: Error --> Call to undefined method Dashboard::fetchLang() C:\xampp\htdocs\hts\app\controllers\doctor\Dashboard.php 221
+ERROR - 13-05-2017 14:26:38 --> Severity: Error --> Call to undefined method Dashboard::fetchLang() C:\xampp\htdocs\hts\app\controllers\doctor\Dashboard.php 233
+ERROR - 13-05-2017 14:26:38 --> Severity: Error --> Call to undefined method Dashboard::fetchLang() C:\xampp\htdocs\hts\app\controllers\doctor\Dashboard.php 251
+ERROR - 13-05-2017 14:26:39 --> Severity: Error --> Call to undefined method Dashboard::fetchLang() C:\xampp\htdocs\hts\app\controllers\doctor\Dashboard.php 242
+ERROR - 13-05-2017 14:28:50 --> Severity: Error --> Call to undefined method Dashboard::fetchLang() C:\xampp\htdocs\hts\app\controllers\doctor\Dashboard.php 211

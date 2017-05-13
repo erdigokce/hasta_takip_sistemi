@@ -9,6 +9,7 @@
 			<th><?php echo get($patient_infos_phone1); ?></th>
 			<th><?php echo get($patient_infos_phone2); ?></th>
 			<th><?php echo get($patient_infos_email); ?></th>
+			<th><?php echo get($patient_infos_username); ?></th>
 			<th><?php echo get($patient_infos_apikey); ?></th>
 		</tr>
 	</thead>
@@ -29,14 +30,17 @@
       <td class="pi_address" data-piaddress="<?php echo get($row->PATIENT_ADDRESS); ?>">
 				<?php echo get($row->PATIENT_ADDRESS); ?>
 			</td>
-      <td class="pi_phone1" data-piphone1="<?php echo get($row->PATIENT_PHONE); ?>">
+      <td class="pi_phone1" data-piphone1='<?php echo get($row->PATIENT_PHONE); ?>'>
 				<a href="tel:<?php echo get($row->PATIENT_PHONE); ?>"><?php echo get($row->PATIENT_PHONE); ?></a>
 			</td>
-      <td class="pi_phone2" data-piphone2="<?php echo get($row->PATIENT_PHONE2); ?>">
+      <td class="pi_phone2" data-piphone2='<?php echo get($row->PATIENT_PHONE2); ?>'>
 				<a href="tel:<?php echo get($row->PATIENT_PHONE2); ?>"><?php echo get($row->PATIENT_PHONE2); ?></a>
 			</td>
-      <td class="pi_email" data-piemail="<?php echo get($row->PATIENT_EMAIL); ?>">
+      <td class="pi_email" data-piemail='<?php echo get($row->PATIENT_EMAIL); ?>'>
 				<a href="mailto:<?php echo get($row->PATIENT_EMAIL); ?>"><?php echo get($row->PATIENT_EMAIL); ?></a>
+			</td>
+      <td class="pi_username" data-piusername="<?php echo get($row->PATIENT_USERNAME); ?>">
+				<?php echo get($row->PATIENT_USERNAME); ?>
 			</td>
       <td class="pi_apikey" data-piapikey="<?php echo get($row->PATIENT_APIKEY); ?>">
 				<?php echo get($row->PATIENT_APIKEY); ?>
@@ -57,6 +61,7 @@
       <td class="pi_phone1" data-piphone1=""></td>
       <td class="pi_phone2" data-piphone2=""></td>
       <td class="pi_email" data-piemail=""></td>
+      <td class="pi_username" data-piusername=""></td>
       <td class="pi_apikey" data-piapikey=""></td>
       <td><button class="btn btn-sm btn-default disabled" type="button" name="btnEditPatient"> <span class='glyphicon glyphicon-pencil'></span> </button></td>
       <td><button class="btn btn-sm btn-danger disabled" type="button" name="btnDeletePatient"> <span class='glyphicon glyphicon-minus-sign'></span> </button></td>

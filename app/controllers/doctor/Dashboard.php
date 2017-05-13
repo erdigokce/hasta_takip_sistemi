@@ -8,7 +8,6 @@ class Dashboard extends HTS_Controller {
     parent::__construct('dashboard');
     $this->load->database('syscore');
     $this->load->model('syscore/user');
-    $this->load->library('session');
   }
 
   /**
@@ -226,6 +225,7 @@ class Dashboard extends HTS_Controller {
      $data['patient_infos_phone1'] = $this->lang->line('patient_infos_phone1');
      $data['patient_infos_phone2'] = $this->lang->line('patient_infos_phone2');
      $data['patient_infos_email'] = $this->lang->line('patient_infos_email');
+     $data['patient_infos_username'] = $this->lang->line('patient_infos_username');
      $data['patient_infos_apikey'] = $this->lang->line('patient_infos_apikey');
    }
 
@@ -257,7 +257,7 @@ class Dashboard extends HTS_Controller {
     * Fetches required lang files.
     */
    private function fetchLang() {
-     $this->lang->load(array('navbar','messages',$this->getPage()), $this->session->langauge);
+     $this->lang->load(array($this->getPage()), $this->session->langauge);
    }
 
 }

@@ -32,6 +32,7 @@ $lang['patient_infos_address'] = "Adres";
 $lang['patient_infos_phone1'] = "Telefon (Birincil)";
 $lang['patient_infos_phone2'] = "Telefon (İkincil)";
 $lang['patient_infos_email'] = "e-posta";
+$lang['patient_infos_username'] = "Kullanıcı Adı";
 $lang['patient_infos_apikey'] = "API Anahtarı";
 
 //LOG SCHEDULES

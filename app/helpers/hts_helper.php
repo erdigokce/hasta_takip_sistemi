@@ -49,3 +49,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     $data['nav_lang_en'] = $obj->lang->line('nav_lang_en');
     $data['nav_lang_tr'] = $obj->lang->line('nav_lang_tr');
   }
+
+  /**
+   * Geçerli konumu verir.
+   * @return Integer  (localewincharset) Örn: TR için 1254
+   */
+  function getCurrentLocale() {
+    $matches = array();
+    preg_match("/\d+/",setlocale(LC_ALL, null), $matches);
+    return $matches[0];
+  }

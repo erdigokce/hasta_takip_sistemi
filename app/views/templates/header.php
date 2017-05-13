@@ -24,7 +24,6 @@
             <ul class="dropdown-menu">
               <li><a href="#"><?php echo get($nav_pro_inbox); ?></a></li>
               <li><a href="#"><?php echo get($nav_pro_settings); ?></a></li>
-              <li><a href="#"><?php echo get($nav_pro_logout); ?></a></li>
             </ul>
           </li>
           <li><a href="#" onclick="location.href='<?php echo base_url()."login/logout/";?>'"> <?php echo get($nav_pro_logout); ?> <span class="glyphicon glyphicon-log-out"></span></a></li>

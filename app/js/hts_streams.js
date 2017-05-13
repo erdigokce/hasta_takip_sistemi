@@ -16,7 +16,10 @@ $(document).ready(function() {
     var id = $(this).parent().parent().attr("id");
 
     var st_patient = $("tr#" + id + " > .st_patient").data("stpatient");
+    var st_name = $("tr#" + id + " > .st_name").data("stname");
     var st_token = $("tr#" + id + " > .st_token").data("sttoken");
+    var st_sharekey = $("tr#" + id + " > .st_sharekey").data("stsharekey");
+    var st_fi̇lenumber = $("tr#" + id + " > .st_fi̇lenumber").data("stfilenumber");
 
     // AJAX Setup
     $.ajaxSetup({
@@ -31,7 +34,10 @@ $(document).ready(function() {
         if (!$("tr#" + id + " > td > button[name='btnEditStream']").hasClass("disabled")) {
           $("tr#" + id + " > .st_patient > span.txtPatient").css("display", "none");
           $("tr#" + id + " > .st_patient > select[name='patient']").css("display", "block");
+          $("tr#" + id + " > .st_name").html("<input class='form-control' type='text' name='st_name' value='" + st_name + "'>");
           $("tr#" + id + " > .st_token").html("<input class='form-control' type='text' name='st_token' value='" + st_token + "' required>");
+          $("tr#" + id + " > .st_sharekey").html("<input class='form-control' type='text' name='st_sharekey' value='" + st_sharekey + "'>");
+          $("tr#" + id + " > .st_fi̇lenumber").html("<input class='form-control' type='number' name='st_fi̇lenumber' value='" + st_fi̇lenumber + "'>");
           btnEditClick(id);
         }
         break;
@@ -52,7 +58,10 @@ $(document).ready(function() {
             var dataToSendToServer = {
               ID: id,
               PATIENT_ID: selectedPatientId,
-              TOKEN: $("input[name='st_token']").val()
+              STREAM_NAME: $("input[name='st_name']").val(),
+              TOKEN: $("input[name='st_token']").val(),
+              SHARE_KEY: $("input[name='st_sharekey']").val(),
+              FILE_NUMBER: $("input[name='st_fi̇lenumber']").val()
             };
             sendAjaxRequest(dataToSendToServer);
           }
@@ -62,7 +71,10 @@ $(document).ready(function() {
         if (!$("tr#" + id + " > td > button[name='btnCancelStream']").hasClass("disabled")) {
           $("tr#" + id + " > .st_patient > span.txtPatient").css("display", "block");
           $("tr#" + id + " > .st_patient > select[name='patient']").css("display", "none");
+          $("tr#" + id + " > .st_name").html(st_name);
           $("tr#" + id + " > .st_token").html(st_token);
+          $("tr#" + id + " > .st_sharekey").html(st_sharekey);
+          $("tr#" + id + " > .st_fi̇lenumber").html(st_fi̇lenumber);
           btnCancelClick(id);
         }
         break;
@@ -70,7 +82,10 @@ $(document).ready(function() {
         if (!$("tr#" + id + " > td > button[name='btnAddPatient']").hasClass("disabled")) {
           $("tr#" + id + " > .st_patient > span.txtPatient").css("display", "none");
           $("tr#" + id + " > .st_patient > select[name='patient']").css("display", "block");
+          $("tr#" + id + " > .st_name").html("<input class='form-control' type='text' name='st_name' value=''>");
           $("tr#" + id + " > .st_token").html("<input class='form-control' type='text' name='st_token' value='' required>");
+          $("tr#" + id + " > .st_sharekey").html("<input class='form-control' type='text' name='st_sharekey' value=''>");
+          $("tr#" + id + " > .st_fi̇lenumber").html("<input class='form-control' type='number' name='st_fi̇lenumber' value=''>");
           btnAddClick(id);
         }
         break;

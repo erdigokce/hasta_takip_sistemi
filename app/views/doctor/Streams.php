@@ -3,7 +3,10 @@
 		<tr>
       <th>#</th>
 			<th><?php echo get($stream_patient); ?></th>
+			<th><?php echo get($stream_name); ?></th>
 			<th><?php echo get($stream_token); ?></th>
+			<th><?php echo get($stream_sharekey); ?></th>
+			<th><?php echo get($stream_filenumber); ?></th>
 		</tr>
 	</thead>
   <tbody>
@@ -22,7 +25,10 @@
 					<?php } ?>
 				</select>
 			</td>
+      <td class="st_name" data-stname="<?php echo get($row->STREAM_NAME); ?>"><?php echo get($row->STREAM_NAME); ?></td>
       <td class="st_token" data-sttoken="<?php echo get($row->TOKEN); ?>"><?php echo get($row->TOKEN); ?></td>
+      <td class="st_sharekey" data-stsharekey="<?php echo get($row->SHARE_KEY); ?>"><?php echo get($row->SHARE_KEY); ?></td>
+      <td class="st_fi̇lenumber" data-stfilenumber="<?php echo get($row->FILE_NUMBER); ?>"><?php echo get($row->FILE_NUMBER); ?></td>
       <td><button class="btn btn-sm btn-default" type="button" name="btnEditStream"> <span class='glyphicon glyphicon-pencil'></span> </button></td>
       <td><button class="btn btn-sm btn-danger" type="button" name="btnDeleteStream"> <span class='glyphicon glyphicon-minus-sign'></span> </button></td>
       <td><button class="btn btn-sm btn-success disabled" type="button" name="btnOkStream"> <span class='glyphicon glyphicon-ok'></span> </button></td>
@@ -41,7 +47,10 @@
 					<?php } ?>
 				</select>
       </td>
+      <td class="st_name" data-stname=""></td>
       <td class="st_token" data-sttoken=""></td>
+      <td class="st_sharekey" data-stsharekey=""></td>
+      <td class="st_fi̇lenumber" data-stfilenumber=""></td>
       <td><button class="btn btn-sm btn-default disabled" type="button" name="btnEditStream"> <span class='glyphicon glyphicon-pencil'></span> </button></td>
       <td><button class="btn btn-sm btn-danger disabled" type="button" name="btnDeleteStream"> <span class='glyphicon glyphicon-minus-sign'></span> </button></td>
       <td><button class="btn btn-sm btn-success disabled" type="button" name="btnOkStream"> <span class='glyphicon glyphicon-ok'></span> </button></td>

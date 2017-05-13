@@ -59,3 +59,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     preg_match("/\d+/",setlocale(LC_ALL, null), $matches);
     return $matches[0];
   }
+
+  function arrangeLangauge() {
+    if(!isset($_SESSION['langauge'])) {
+      $_SESSION['langauge'] = getCurrentLocale() == HTS_LOCALE_TR ? 'turkish' : 'english';
+    }
+  }

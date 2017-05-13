@@ -245,12 +245,16 @@ class Dashboard extends HTS_Controller {
      $data['patient_logs_history'] = $this->lang->line('patient_logs_history');
      $data['patient_logs_select_patient'] = $this->lang->line('patient_logs_select_patient');
      $data['patient_logs_select_stream'] = $this->lang->line('patient_logs_select_stream');
+     $data['patient_logs_select_stream_to_display'] = $this->lang->line('patient_logs_select_stream_to_display');
    }
 
    private function loadStreamLang(&$data) {
      $this->fetchLang();
      $data['stream_patient'] = $this->lang->line('stream_patient');
+     $data['stream_name'] = $this->lang->line('stream_name');
      $data['stream_token'] = $this->lang->line('stream_token');
+     $data['stream_sharekey'] = $this->lang->line('stream_sharekey');
+     $data['stream_filenumber'] = $this->lang->line('stream_filenumber');
    }
 
    /**

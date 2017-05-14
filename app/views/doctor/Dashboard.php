@@ -1,3 +1,6 @@
+
+<?php if ($user_category === "DOCTOR") :?>
+
 <div class="row">
   <div class="col-lg-2">
     <nav class="navbar navbar-default">
@@ -10,7 +13,6 @@
           </button>
         </div>
         <div class="collapse navbar-collapse" id="sideNavbar" style="height: 1px;padding-left: 0px;padding-right: 0px;">
-          <?php if ($user_category === "DOCTOR") :?>
           <ul id="menu_left" class="nav nav-pills nav-stacked">
             <li><?php echo anchor('#', $menu_left_item_1, 'class="list-group-item" data-nav="board"'); ?></li>
             <li><?php echo anchor('#', $menu_left_item_2, 'class="list-group-item" data-nav="deviceInformations"'); ?></li>
@@ -19,7 +21,6 @@
             <li><?php echo anchor('#', $menu_left_item_6, 'class="list-group-item" data-nav="streams"'); ?></li>
             <li><?php echo anchor('#', $menu_left_item_4, 'class="list-group-item" data-nav="patientLogs"'); ?></li>
           </ul>
-          <?php endif; ?>
         </div>
       </div>
     </nav>
@@ -30,6 +31,9 @@
     </div>
   </div>
 </div>
+
+<?php endif; ?>
+
 <div class="row">
   <div class="col-md-offset-4 col-md-4">
     <div class="alert alert-danger alert-dismissable fade in" style="display:none">
@@ -53,7 +57,9 @@
 </div>
 
 <?php if ($user_category === "TEST") : ?>
-<div class="alert alert-warning">
+<div class="container alert alert-warning">
   <p class="text-center"><?php echo "(".$username." - ".$name." ".$surname." / ".$user_category.") ".$dashboard_unauthorized_user; ?></p>
 </div>
 <?php endif; ?>
+
+<script src="app/js/hts_dashboard.js" charset="utf-8"></script>

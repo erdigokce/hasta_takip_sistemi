@@ -24,7 +24,6 @@
             <ul class="dropdown-menu">
               <li><a href="#"><?php echo get($nav_pro_inbox); ?></a></li>
               <li><a href="#"><?php echo get($nav_pro_settings); ?></a></li>
-              <li><a href="#"><?php echo get($nav_pro_logout); ?></a></li>
             </ul>
           </li>
           <li><a href="#" onclick="location.href='<?php echo base_url()."login/logout/";?>'"> <?php echo get($nav_pro_logout); ?> <span class="glyphicon glyphicon-log-out"></span></a></li>
@@ -36,10 +35,16 @@
             <span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li>
-                <a href="#" onclick="location.href='<?php echo base_url()."navbar/lang/english/".get($page_controller)."/";?>'"><?php echo get($nav_lang_en); ?></a>
+                <a href="#" onclick="location.href='<?php echo base_url()."navbar/lang/turkish/".get($page_controller)."/";?>'">
+                  <?php echo get($nav_lang_tr); ?>
+                  <img src="<?php echo getNationalFlag('tr')[0] ?>" style="float:right; width: <?php echo getNationalFlag('tr')[1] ?>; height: <?php echo getNationalFlag('tr')[2] ?>;" alt="<?php echo getNationalFlag('tr')[3] ?>">
+                </a>
               </li>
               <li>
-                <a href="#" onclick="location.href='<?php echo base_url()."navbar/lang/turkish/".get($page_controller)."/";?>'"><?php echo get($nav_lang_tr); ?></a>
+                <a href="#" onclick="location.href='<?php echo base_url()."navbar/lang/english/".get($page_controller)."/";?>'">
+                  <?php echo get($nav_lang_en); ?>
+                  <img src="<?php echo getNationalFlag('en')[0] ?>" style="float:right; width: <?php echo getNationalFlag('en')[1] ?>; height: <?php echo getNationalFlag('en')[2] ?>;" alt="<?php echo getNationalFlag('en')[3] ?>">
+                </a>
               </li>
             </ul>
           </li>

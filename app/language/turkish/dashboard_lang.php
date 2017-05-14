@@ -46,9 +46,13 @@ $lang['schedule_description'] = "Açıklama";
 $lang['patient_logs_last_activity'] = "Son Etkinlik";
 $lang['patient_logs_live'] = "Canlı";
 $lang['patient_logs_history'] = "Arşiv";
-$lang['patient_logs_select_patient'] = "Lütfen görüntülemek için bir hasta seçiniz...";
-$lang['patient_logs_select_stream'] = "Lütfen akışı izlemek için bir yayın seçiniz...";
+$lang['patient_logs_select_patient'] = "Görüntülemek için bir hasta seçiniz...";
+$lang['patient_logs_select_stream'] = "Akışı izlemek için bir yayın seçiniz...";
+$lang['patient_logs_select_stream_to_display'] = "İçeriğe ulaşmak için hasta ve sensör yayını seçiniz.";
 
 //STREAMS
 $lang['stream_patient'] = "Yayınlayan Hasta";
+$lang['stream_name'] = "Yayın İsmi";
 $lang['stream_token'] = "Yayın Jetonu";
+$lang['stream_sharekey'] = "Paylaşım Anahtarı";
+$lang['stream_filenumber'] = "Dosya Numarası";

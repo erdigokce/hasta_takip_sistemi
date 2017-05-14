@@ -7,7 +7,7 @@
  defined('BASEPATH') OR exit('No direct script access allowed');
 
 $lang['dashboard_title'] = "Doctor Portal";
-$lang['dashboard_unauthorized_user'] = " is logged in and its warrants are restricted. An example page is being shown.";
+$lang['dashboard_unauthorized_user'] = " is logged in and his/her warrants are restricted. An example page is being shown.";
 
 //LEFT MENU
 $lang['menu_left_item_1'] = "Dashboard";
@@ -46,9 +46,13 @@ $lang['schedule_description'] = "Description";
 $lang['patient_logs_last_activity'] = "Last Activity";
 $lang['patient_logs_live'] = "Live";
 $lang['patient_logs_history'] = "History";
-$lang['patient_logs_select_patient'] = "Please select a patient to display...";
-$lang['patient_logs_select_stream'] = "Please select a stream to trace...";
+$lang['patient_logs_select_patient'] = "Select a patient to display...";
+$lang['patient_logs_select_stream'] = "Select a stream to trace...";
+$lang['patient_logs_select_stream_to_display'] = "Select a stream of a sensor to display the content.";
 
 //STREAMS
 $lang['stream_patient'] = "Streamer Patient";
+$lang['stream_name'] = "Stream Name";
 $lang['stream_token'] = "Token";
+$lang['stream_sharekey'] = "Share Key";
+$lang['stream_filenumber'] = "File Number";

@@ -3,6 +3,6 @@
     <!-- Bootstrap core JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- HTS Main Javascript -->
-    <script src="app/js/hts.js" charset="utf-8"></script>
+    <script src="<?php echo base_url()."app/js/hts.js"?>" charset="utf-8"></script>
   </body>
 </html>

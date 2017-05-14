@@ -6,7 +6,6 @@ class Login extends HTS_Controller {
 
   function __construct() {
     parent::__construct('login');
-    $this->load->database('syscore');
     $this->load->helper('form');
     $this->load->library(array('form_validation'));
     $this->load->model(array('syscore/user','syscore/userlogs','live/parameters'));

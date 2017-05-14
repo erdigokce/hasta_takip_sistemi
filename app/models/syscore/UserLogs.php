@@ -7,20 +7,21 @@ require_once 'intf.php';
 class UserLogs extends HTS_Model implements IUserLogsModel {
 
   function __construct() {
+    $this->setCurrentDb($this->load->database('syscore', TRUE));
     parent::__construct(HTS_SYSCORE.'.hts_user_logs');
     $this->load->model('syscore/user');
     date_default_timezone_set('Europe/Istanbul');
   }
 
   public function getUserLog($userId) {
-    return $this->db->get_where($this->getTable(), array('USER_ID' => $userId))->row();
+    return $this->getCurrentDb()->get_where($this->getTable(), array('USER_ID' => $userId))->row();
   }
 
   public function createUserLog($userId) {
     $HtsUserLogsDAO['USER_ID'] = $userId;
     $HtsUserLogsDAO['DATE_LAST_LOGIN'] = date(getDefaultTimeFormat());
     $HtsUserLogsDAO['DATE_LAST_LOGOUT'] = date(getDefaultTimeFormat());
-    $this->db->insert($this->getTable(), $HtsUserLogsDAO);
+    $this->getCurrentDb()->insert($this->getTable(), $HtsUserLogsDAO);
   }
 
   public function setUserLoginLog($userId) {
@@ -39,7 +40,7 @@ class UserLogs extends HTS_Model implements IUserLogsModel {
 
   private function executeUpdate(&$HtsUserLogsDAO, $userId) {
     if (is_array($HtsUserLogsDAO)) {
-      $row = $this->db->get_where($this->getTable(), array('USER_ID' => $userId))->row();
+      $row = $this->getCurrentDb()->get_where($this->getTable(), array('USER_ID' => $userId))->row();
       $HtsUserLogsDAO['USER_ID'] = $userId;
       if (!isset($HtsUserLogsDAO['DATE_LAST_LOGIN'])) {
         $HtsUserLogsDAO['DATE_LAST_LOGIN'] = $row->DATE_LAST_LOGIN;
@@ -48,8 +49,8 @@ class UserLogs extends HTS_Model implements IUserLogsModel {
         $HtsUserLogsDAO['DATE_LAST_LOGOUT'] = $row->DATE_LAST_LOGOUT;
       }
       if(isset($row)) {
-        $this->db->where('USER_ID', $userId);
-        $this->db->update($this->getTable(), $HtsUserLogsDAO);
+        $this->getCurrentDb()->where('USER_ID', $userId);
+        $this->getCurrentDb()->update($this->getTable(), $HtsUserLogsDAO);
       }
     }
   }

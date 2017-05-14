@@ -62,4 +62,4 @@
 </div>
 <?php endif; ?>
 
-<script src="app/js/hts_dashboard.js" charset="utf-8"></script>
+<script src="<?php echo base_url()."app/js/hts_dashboard.js"?>" charset="utf-8"></script>

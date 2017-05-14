@@ -2,6 +2,7 @@
 
 class HTS_Model extends CI_Model {
 
+  private $currentDb;
   private $table;
   private $query;
   private $num_rows;
@@ -106,4 +107,17 @@ class HTS_Model extends CI_Model {
     $this->query = $query;
   }
 
+  /**
+   * @return DB                     Geçerli veritabanını verir.
+   */
+  public function getCurrentDb() {
+    return $this->currentDb;
+  }
+
+  /**
+   * @param  $currentDb             Geçerli veritabanını setler
+   */
+  public function setCurrentDb($currentDb) {
+    $this->currentDb = $currentDb;
+  }
 }

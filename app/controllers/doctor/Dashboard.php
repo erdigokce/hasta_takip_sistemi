@@ -6,7 +6,6 @@ class Dashboard extends HTS_Controller {
 
   function __construct() {
     parent::__construct('dashboard');
-    $this->load->database('syscore');
     $this->load->model('syscore/user');
   }
 

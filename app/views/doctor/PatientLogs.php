@@ -70,4 +70,4 @@
   <?php endif; ?>
 </div>
 
-<script src="app/js/hts_patient_logs.js" charset="utf-8"></script>
+<script src="<?php echo base_url()."app/js/hts_patient_logs.js"?>" charset="utf-8"></script>

@@ -61,5 +61,4 @@
   <p class="text-center"><?php echo "(".$username." - ".$name." ".$surname." / ".$user_category.") ".$dashboard_unauthorized_user; ?></p>
 </div>
 <?php endif; ?>
-
-<script src="<?php echo base_url()."app/js/hts_dashboard.js"?>" charset="utf-8"></script>
+<script src="app/js/hts_dashboard.js" charset="utf-8"></script>

@@ -1,5 +1,9 @@
 $(document).ready(function() {
-  var initPage = "board";
+
+  if(typeof initPage === "undefined" || initPage === "" || initPage === null) {
+    var initPage = "board";
+  }
   $("li > a[data-nav='"+initPage+"']").parent().addClass("active");
-  $("#content").load("dashboard/"+initPage+"/");
-}
+  loadPage("dashboard/"+initPage+"/");
+
+});

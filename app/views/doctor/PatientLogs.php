@@ -25,7 +25,7 @@
         <option value="invalid"><?php echo get($patient_logs_select_stream); ?></option>
       <?php foreach ($resultStreams as $row): ?>
           <option value="<?php echo get($row->ID); ?>" data-patient-id="<?php echo get($row->PATIENT_ID);?>" data-stream-name="<?php echo get($row->STREAM_NAME);?>"
-            data-stream-share-key="<?php echo get($row->SHARE_KEY);?>" data-stream-number="<?php echo get($row->FILE_NUMBER);?>" <?php if (get($row->ID) == get($stream_id)) echo 'selected="selected"'; ?>>
+            data-stream-share-key="<?php echo isSetAndNotEmpty($row->SHARE_KEY) ? $row->SHARE_KEY : "undefined";?>" data-stream-number="<?php echo get($row->FILE_NUMBER);?>" <?php if (get($row->ID) == get($stream_id)) echo 'selected="selected"'; ?>>
             <?php echo get($row->STREAM_NAME); ?>
           </option>
       <?php endforeach; ?>
@@ -47,10 +47,21 @@
   <?php if ($isStreamExists): ?>
   <div id="plotly_container" class="container">
     <div>
-      <a href="<?php echo "https://plot.ly/~".get($patientUsername)."/".get($streamNumber)."/?share_key=".get($streamShareKey); ?>" target="_blank" title="<?php echo get($streamName); ?>" style="display: block; text-align: center;">
-        <img src="<?php echo "https://plot.ly/~".get($patientUsername)."/".get($streamNumber).".png?share_key=".get($streamShareKey);?>" alt="<?php echo get($streamName); ?>" style="max-width: 100%;width: 400px;"  width="400" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" />
+      <?php
+      if (get($streamShareKey) != "undefined") { // is a private stream
+        $ahref = "https://plot.ly/~".get($patientUsername)."/".get($streamNumber)."/?share_key=".get($streamShareKey);
+        $imgsrc = "https://plot.ly/~".get($patientUsername)."/".get($streamNumber).".png?share_key=".get($streamShareKey);
+        $plotlyScript = '<script data-plotly="'.get($patientUsername).":".get($streamNumber).'" sharekey-plotly="'.get($streamShareKey).'" src="https://plot.ly/embed.js" async></script>';
+      } else {  // is a public stream
+        $ahref = "https://plot.ly/~".get($patientUsername)."/".get($streamNumber)."/";
+        $imgsrc = "https://plot.ly/~".get($patientUsername)."/".get($streamNumber).".png";
+        $plotlyScript = '<script data-plotly="'.get($patientUsername).":".get($streamNumber).'" src="https://plot.ly/embed.js" async></script>';
+      }
+      ?>
+      <a href="<?php echo $ahref ?>" target="_blank" title="<?php echo get($streamName); ?>" style="display: block; text-align: center;">
+        <img src="<?php echo $imgsrc; ?>" alt="<?php echo get($streamName) ?>"style="max-width: 100%;width: 400px;"  width="400" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" />
       </a>
-      <script data-plotly="<?php echo get($patientUsername).":".get($streamNumber);?>" sharekey-plotly="<?php echo get($streamShareKey);?>" src="https://plot.ly/embed.js" async></script>
+      <?php echo $plotlyScript; ?>
     </div>
   </div>
   <div id="archive_container" class="container" style="display:none">

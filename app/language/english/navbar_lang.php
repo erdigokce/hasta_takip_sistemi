@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Navbar English Langauge File
+ * Navbar English Langugge File
  */
 
  defined('BASEPATH') OR exit('No direct script access allowed');

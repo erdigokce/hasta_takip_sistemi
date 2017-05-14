@@ -260,7 +260,7 @@ class Dashboard extends HTS_Controller {
     * Fetches required lang files.
     */
    private function fetchLang() {
-     $this->lang->load(array($this->getPage()), $this->session->langauge);
+     $this->lang->load(array($this->getPage()), $this->session->language);
    }
 
 }

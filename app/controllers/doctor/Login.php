@@ -12,7 +12,7 @@ class Login extends HTS_Controller {
   }
 
   public function index($status = 'normal') {
-    $this->lang->load(array($this->getPage()), $this->session->langauge);
+    $this->lang->load(array($this->getPage()), $this->session->language);
     loadNavbarLang($this, $data);
     if ($status === 'session_expire') {
       $data['status'] = $status;
@@ -71,7 +71,7 @@ class Login extends HTS_Controller {
       'user_category',
       'name',
       'surname'
-      // 'langauge'
+      // 'language'
     );
   }
 

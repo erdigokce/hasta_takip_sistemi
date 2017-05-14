@@ -61,7 +61,7 @@ function getCurrentLocale() {
 }
 
 function arrangeLangauge() {
-  if(!isset($_SESSION['langauge'])) {
-    $_SESSION['langauge'] = getCurrentLocale() == HTS_LOCALE_TR ? 'turkish' : 'english';
+  if(!isset($_SESSION['language'])) {
+    $_SESSION['language'] = getCurrentLocale() == HTS_LOCALE_TR ? 'turkish' : 'english';
   }
 }

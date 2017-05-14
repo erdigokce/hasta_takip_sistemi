@@ -10,7 +10,7 @@ class Home extends HTS_Controller {
   }
 
   public function index() {
-    $this->lang->load(array($this->getPage()), $this->session->langauge);
+    $this->lang->load(array($this->getPage()), $this->session->language);
     loadNavbarLang($this, $data);
     $data['title'] = $this->lang->line('home_title');
     $data['page_controller'] = $this->getPage();

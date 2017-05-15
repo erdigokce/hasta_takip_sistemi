@@ -1,7 +1,0 @@
-ERROR - 13-05-2017 21:43:42 --> Unable to load the requested class: Apputils
-ERROR - 13-05-2017 21:47:46 --> Severity: Error --> Using $this when not in object context C:\xampp\htdocs\hts\app\helpers\hts_helper.php 64
-ERROR - 13-05-2017 21:49:54 --> Severity: Notice --> Undefined index: langauge C:\xampp\htdocs\hts\app\helpers\hts_helper.php 64
-ERROR - 13-05-2017 21:50:40 --> Severity: Notice --> Undefined index: langauge C:\xampp\htdocs\hts\app\helpers\hts_helper.php 64
-ERROR - 13-05-2017 21:51:36 --> Severity: Notice --> Undefined index: langauge C:\xampp\htdocs\hts\app\helpers\hts_helper.php 64
-ERROR - 13-05-2017 21:51:56 --> Severity: Notice --> Undefined index: langauge C:\xampp\htdocs\hts\app\helpers\hts_helper.php 64
-ERROR - 13-05-2017 21:53:46 --> Severity: Notice --> Undefined index: langauge C:\xampp\htdocs\hts\app\helpers\hts_helper.php 64

@@ -9,7 +9,7 @@ class HTS_Model extends CI_Model {
 
   function __construct($table) {
     parent::__construct();
-    if(isset($this->currentDb)) {
+    if(!isset($this->currentDb)) {
       $this->currentDb = $this->load->database('live', TRUE); //default db
     }
     $this->table = $table;

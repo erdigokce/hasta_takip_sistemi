@@ -54,9 +54,10 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 /**
- * PUBLIC
- */
+* PUBLIC
+*/
 $route['home'] = 'public/home';
+$route['home/(:any)'] = 'public/home/$1';
 $route['navbar/lang/(:any)/(:any)'] = 'public/navbar/lang/$1/$2';
 
 /**

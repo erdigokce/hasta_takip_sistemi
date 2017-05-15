@@ -29,10 +29,9 @@
           <li><a href="#" onclick="location.href='<?php echo base_url()."login/logout/";?>'"> <?php echo get($nav_pro_logout); ?> <span class="glyphicon glyphicon-log-out"></span></a></li>
         </ul>
         <?php endif; ?>
-        <ul class="nav navbar-nav navbar-left">
+        <ul class="nav navbar-nav navbar-right">
           <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><?php echo get($nav_lang); ?>
-            <span class="caret"></span></a>
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><?php echo get($nav_lang); ?> <span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li>
                 <a href="#" onclick="location.href='<?php echo base_url()."navbar/lang/turkish/".get($page_controller)."/";?>'">
@@ -46,6 +45,16 @@
                   <img src="<?php echo getNationalFlag('en')[0] ?>" style="float:right; width: <?php echo getNationalFlag('en')[1] ?>; height: <?php echo getNationalFlag('en')[2] ?>;" alt="<?php echo getNationalFlag('en')[3] ?>">
                 </a>
               </li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-left">
+          <li> <a href="#" onclick="loadPublicPage('home/licence')"><?php echo get($nav_common_licence); ?></a> </li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><?php echo get($nav_common_about); ?> <span class="caret"></span> </a>
+            <ul class="dropdown-menu">
+              <li> <a href="#" onclick="loadPublicPage('home/project')"><?php echo get($nav_common_project); ?></a> </li>
+              <li> <a href="#" onclick="loadPublicPage('home/system')"><?php echo get($nav_common_system); ?></a> </li>
             </ul>
           </li>
         </ul>

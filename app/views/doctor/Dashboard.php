@@ -3,7 +3,7 @@
 
 <div class="row">
   <div class="col-lg-2">
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default" style=" z-index:9;">
       <div class="container-fluid" style="height: 1px;padding-left: 0px;padding-right: 0px;">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#sideNavbar">
@@ -12,7 +12,7 @@
             <span class="icon-bar"></span>
           </button>
         </div>
-        <div class="collapse navbar-collapse" id="sideNavbar" style="height: 1px;padding-left: 0px;padding-right: 0px;">
+        <div class="collapse navbar-collapse" id="sideNavbar" style="height: 1px; padding-left: 0px; padding-right: 0px;">
           <ul id="menu_left" class="nav nav-pills nav-stacked">
             <li><?php echo anchor('#', $menu_left_item_1, 'class="list-group-item" data-nav="board"'); ?></li>
             <li><?php echo anchor('#', $menu_left_item_2, 'class="list-group-item" data-nav="deviceInformations"'); ?></li>

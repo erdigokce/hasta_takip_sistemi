@@ -20,10 +20,10 @@
   <!--Buttons-->
   <div class="row" style="margin-bottom:5px;">
     <div class="col-md-offset-4 col-md-4">
-			<button class="btn btn-default" id="resetLoginForm"><?php echo get($login_reset); ?></button>
-			<button class="btn btn-primary" id="submitLoginForm"><?php echo get($login_submit); ?></button>
+  		<input type="reset" class="btn btn-default" id="resetLoginForm" style="float:right; margin-left:5px;" value="<?php echo get($login_reset); ?>">
+  		<input type="submit" class="btn btn-primary" id="submitLoginForm" style="float:right" value="<?php echo get($login_submit); ?>">
     </div>
-    <div class="col-md-4"></div>
+    <div class="col-md-offset-4"></div>
   </div>
   <!--Footer-->
   <div class="row">
@@ -34,8 +34,8 @@
           </div>
       </div>
     </div>
+    <div class="col-sm-offset-4"></div>
   </div>
-  <div class="col-sm-4"></div>
   <!--Error boxes-->
   <div class="row">
     <br>

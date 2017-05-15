@@ -48,6 +48,10 @@ function loadNavbarLang(&$obj, &$data) {
   $data['nav_lang'] = $obj->lang->line('nav_lang');
   $data['nav_lang_en'] = $obj->lang->line('nav_lang_en');
   $data['nav_lang_tr'] = $obj->lang->line('nav_lang_tr');
+  $data['nav_common_about'] = $obj->lang->line('nav_common_about');
+  $data['nav_common_licence'] = $obj->lang->line('nav_common_licence');
+  $data['nav_common_system'] = $obj->lang->line('nav_common_system');
+  $data['nav_common_project'] = $obj->lang->line('nav_common_project');
 }
 
 /**

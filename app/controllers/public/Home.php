@@ -13,6 +13,7 @@ class Home extends HTS_Controller {
     $this->fetchLang();
     loadNavbarLang($this, $data);
     $data['title'] = $this->lang->line('home_title');
+    $data['home_jumbotron_text'] = $this->lang->line('home_jumbotron_text');
     $data['page_controller'] = $this->getPage();
     $data['footer_text'] = $this->lang->line('footer_text');
 
@@ -37,14 +38,16 @@ class Home extends HTS_Controller {
 
   public function project() {
     $this->fetchLang();
-    $data['home_project'] = $this->lang->line('home_project');
-    $this->load->view("public/project", $data);
+    $data['home_about_project_title'] = $this->lang->line('home_about_project_title');
+    $data['home_about_project_text'] = $this->lang->line('home_about_project_text');
+    $this->load->view("public/about_project", $data);
   }
 
   public function system() {
     $this->fetchLang();
-    $data['home_system'] = $this->lang->line('home_system');
-    $this->load->view("public/system", $data);
+    $data['home_about_system_title'] = $this->lang->line('home_about_system_title');
+    $data['home_about_system_text'] = $this->lang->line('home_about_system_text');
+    $this->load->view("public/about_system", $data);
   }
 
   /*****************************************************************************

@@ -65,12 +65,19 @@ h1, h2, h3, h4, h5, h6, p {
   BOOTSTRAP CLASS OVERRIDES
  */
 
-.row {
-  margin: 0;
+.jumbotron {
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-left: -15px;
+  margin-right: -15px;
 }
 
 .input-group {
   margin-bottom: 5px;
+}
+
+.row {
+  margin: 0;
 }
 
 p#footer_text {

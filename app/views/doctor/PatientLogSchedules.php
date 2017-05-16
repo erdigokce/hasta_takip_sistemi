@@ -21,7 +21,7 @@
 				<span class="txtDevice"><?php echo get($row->DEVICE_HOST).":".get($row->DEVICE_PORT); ?></span>
 				<select class="form-control" name="device" style="display:none;">
 					<?php foreach($result_devices as $device) { ?>
-					<option value="<?php echo get($device->ID); ?>" <?php if($device->ID === $row->DEVICE_ID) echo "selected=\"selected\""; ?>><?php echo get($row->DEVICE_HOST).":".get($row->DEVICE_PORT)." [".get($row->DEVICE_NAME)."]"; ?></option>
+					<option value="<?php echo get($device->ID); ?>" <?php if($device->ID === $row->DEVICE_ID) echo "selected=\"selected\""; ?>><?php echo get($device->DEVICE_HOST).":".get($device->DEVICE_PORT)." [".get($device->DEVICE_NAME)."]"; ?></option>
 					<?php } ?>
 				</select>
 			</td>

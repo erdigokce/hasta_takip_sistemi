@@ -33,3 +33,12 @@ $lang['home_about_project_title'] = "What is the project all about?";
 $lang['home_about_project_text'] = "
 Project lets doctor to see his/her patient's data.
 ";
+
+$lang['home_about_project_future_title'] = "Future Aspects";
+$lang['home_about_project_future_text'] = "
+Goals for the next step are :
+  <ol>
+    <li> Automatized patient device configurations. </li>
+    <li> Fully stable scheduled job tracking system (CRON). </li>
+  </ol>
+";

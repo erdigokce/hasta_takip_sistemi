@@ -40,6 +40,8 @@ class Home extends HTS_Controller {
     $this->fetchLang();
     $data['home_about_project_title'] = $this->lang->line('home_about_project_title');
     $data['home_about_project_text'] = $this->lang->line('home_about_project_text');
+    $data['home_about_project_future_title'] = $this->lang->line('home_about_project_future_title');
+    $data['home_about_project_future_text'] = $this->lang->line('home_about_project_future_text');
     $this->load->view("public/about_project", $data);
   }
 

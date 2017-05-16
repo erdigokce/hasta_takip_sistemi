@@ -29,3 +29,12 @@ $lang['home_about_project_title'] = "Proje Hakkında";
 $lang['home_about_project_text'] = "
 Bu proje doktorun hastasının verisini görmesini sağlar.
 ";
+
+$lang['home_about_project_future_title'] = "Ufuk";
+$lang['home_about_project_future_text'] = "
+Bir sonraki adım için hedefler :
+  <ol>
+    <li> Otomatize edilmiş hasta cihazı ayarları. </li>
+    <li> Tamamen stabil planlanmış izleme sistemi (CRON). </li>
+  </ol>
+";

@@ -55,6 +55,7 @@
             <ul class="dropdown-menu">
               <li> <a href="#" onclick="loadPublicPage('home/project')"><?php echo get($nav_common_project); ?></a> </li>
               <li> <a href="#" onclick="loadPublicPage('home/system')"><?php echo get($nav_common_system); ?></a> </li>
+              <li> <a href="#" onclick="loadPublicPage('home/app')"><?php echo get($nav_common_app); ?></a> </li>
             </ul>
           </li>
         </ul>

@@ -52,6 +52,7 @@ function loadNavbarLang(&$obj, &$data) {
   $data['nav_common_licence'] = $obj->lang->line('nav_common_licence');
   $data['nav_common_system'] = $obj->lang->line('nav_common_system');
   $data['nav_common_project'] = $obj->lang->line('nav_common_project');
+  $data['nav_common_app'] = $obj->lang->line('nav_common_app');
 }
 
 /**

@@ -21,5 +21,6 @@ $lang['nav_common_about'] = 'Hakkında';
 $lang['nav_common_licence'] = 'Lisans';
 $lang['nav_common_system'] = 'Sistem';
 $lang['nav_common_project'] = 'Proje';
+$lang['nav_common_app'] = 'Uygulama';
 
 $lang['footer_text'] = 'Hasta Takip Sistemi <em> <abbr title="Kocaeli Üniversitesi">KOÜ</abbr> - Bilişim Sistemleri Mühendisliği &copy;';

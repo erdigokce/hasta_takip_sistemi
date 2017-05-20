@@ -1,0 +1,12 @@
+ERROR - 16-05-2017 08:07:03 --> Could not find the language line "home_system"
+ERROR - 16-05-2017 13:33:29 --> Could not find the language line "home_project"
+ERROR - 16-05-2017 13:42:04 --> Could not find the language line "home_project"
+ERROR - 16-05-2017 13:42:06 --> Could not find the language line "home_system"
+ERROR - 16-05-2017 16:03:50 --> Could not find the language line "home_project"
+ERROR - 16-05-2017 20:34:33 --> Severity: Error --> Call to undefined function baseurl() C:\xampp\htdocs\hts\app\views\public\home.php 2
+ERROR - 16-05-2017 20:48:10 --> Could not find the language line "home_project"
+ERROR - 16-05-2017 21:11:55 --> Could not find the language line "home_project"
+ERROR - 16-05-2017 21:11:56 --> Could not find the language line "home_system"
+ERROR - 16-05-2017 21:14:43 --> Could not find the language line "home_project"
+ERROR - 16-05-2017 21:14:45 --> Could not find the language line "home_system"
+ERROR - 16-05-2017 22:48:26 --> Login işlemi başarısız oldu! Kullanıcı adı, e-posta veya parola geçersiz!

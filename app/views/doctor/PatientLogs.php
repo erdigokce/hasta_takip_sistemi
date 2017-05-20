@@ -41,7 +41,7 @@
 
 <div id="plotly_application" style="display:<?php echo $displayStatus;?>">
   <ul id="plotly_nav" class="nav nav-tabs">
-    <li class="active" data-target="#plotly_container"><a href="#"><?php echo get($patient_logs_last_activity)."/".get($patient_logs_live); ?></a></li>
+    <li class="active" data-target="#plotly_container"><a href="#"><?php echo get($patient_logs_last_activity)." / ".get($patient_logs_live); ?></a></li>
     <li data-target="#archive_container"><a href="#"><?php echo get($patient_logs_history); ?></a></li>
   </ul>
   <?php if ($isStreamExists): ?>

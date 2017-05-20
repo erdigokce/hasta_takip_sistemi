@@ -9,8 +9,8 @@ class Navbar extends HTS_Controller {
     parent::__construct('navbar');
   }
 
-  public function lang($selectedLangauge, $lastPage) {
-    $this->session->set_userdata('langauge', $selectedLangauge);
+  public function lang($selectedLanguage, $lastPage) {
+    $this->session->set_userdata('language', $selectedLanguage);
     redirect($lastPage, 'refresh');
   }
 }

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Navbar English Langauge File
+ * Navbar English Langugge File
  */
 
  defined('BASEPATH') OR exit('No direct script access allowed');
@@ -16,5 +16,11 @@ $lang['nav_pro_dashboard'] = 'Dashboard';
 $lang['nav_lang'] = 'Langauge';
 $lang['nav_lang_en'] = 'English';
 $lang['nav_lang_tr'] = 'Turkish';
+
+$lang['nav_common_about'] = 'About';
+$lang['nav_common_licence'] = 'Licence';
+$lang['nav_common_system'] = 'System';
+$lang['nav_common_project'] = 'Project';
+$lang['nav_common_app'] = 'Application';
 
 $lang['footer_text'] = 'Patient Tracking System <em> <abbr title="Kocaeli University">KOU</abbr> - Information Systems Engineering &copy;';

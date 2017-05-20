@@ -6,14 +6,13 @@ class Login extends HTS_Controller {
 
   function __construct() {
     parent::__construct('login');
-    $this->load->database('syscore');
     $this->load->helper('form');
     $this->load->library(array('form_validation'));
     $this->load->model(array('syscore/user','syscore/userlogs','live/parameters'));
   }
 
   public function index($status = 'normal') {
-    $this->lang->load(array($this->getPage()), $this->session->langauge);
+    $this->lang->load(array($this->getPage()), $this->session->language);
     loadNavbarLang($this, $data);
     if ($status === 'session_expire') {
       $data['status'] = $status;
@@ -72,7 +71,7 @@ class Login extends HTS_Controller {
       'user_category',
       'name',
       'surname'
-      // 'langauge'
+      // 'language'
     );
   }
 

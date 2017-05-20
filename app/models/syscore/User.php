@@ -7,6 +7,7 @@ require_once 'intf.php';
 class User extends HTS_Model implements IUserModel {
 
   function __construct() {
+    $this->setCurrentDb($this->load->database('syscore', TRUE));
     parent::__construct(HTS_SYSCORE.'.hts_users');
   }
 
@@ -17,9 +18,9 @@ class User extends HTS_Model implements IUserModel {
       }
       elseif (is_string($selector)) {
         if (!(strpos($selector, "@") === FALSE)) { // Is this string an email?
-          $this->setQuery($this->db->get_where($this->getTable(), array('USER_EMAIL' => $selector)));
+          $this->setQuery($this->getCurrentDb()->get_where($this->getTable(), array('USER_EMAIL' => $selector)));
         } else { // Or username?
-          $this->setQuery($this->db->get_where($this->getTable(), array('USERNAME' => $selector)));
+          $this->setQuery($this->getCurrentDb()->get_where($this->getTable(), array('USERNAME' => $selector)));
         }
         $row = $this->getQuery()->row();
         if(isset($row)){

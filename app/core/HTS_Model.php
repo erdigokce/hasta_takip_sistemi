@@ -2,12 +2,16 @@
 
 class HTS_Model extends CI_Model {
 
+  private $currentDb;
   private $table;
   private $query;
   private $num_rows;
 
   function __construct($table) {
     parent::__construct();
+    if(!isset($this->currentDb)) {
+      $this->currentDb = $this->load->database('live', TRUE); //default db
+    }
     $this->table = $table;
   }
 
@@ -17,7 +21,7 @@ class HTS_Model extends CI_Model {
    * @return Object                 Gelen veri. (Eğer boş ise null döner.)
    */
   public function findByPrimaryKey(&$id){
-    $this->query = $this->db->get_where($this->table, array('ID' => $id));
+    $this->query = $this->currentDb->get_where($this->table, array('ID' => $id));
     $row = $this->query->row();
     $this->num_rows = $this->query->num_rows();
     if(isset($row)) {
@@ -32,7 +36,7 @@ class HTS_Model extends CI_Model {
    * @return Object|Array            Gelen veriler. (Eğer boş ise null döner.)
    */
   public function findAll(){
-    $this->query = $this->db->get($this->table);
+    $this->query = $this->currentDb->get($this->table);
     $result = $this->query->result();
     $this->num_rows = $this->query->num_rows();
     if($this->num_rows > 0) {
@@ -49,7 +53,7 @@ class HTS_Model extends CI_Model {
    */
   public function insertData(&$data) {
     if(is_array($data) || is_object($data)) {
-      return $this->db->insert($this->table, $data);
+      return $this->currentDb->insert($this->table, $data);
     }
   }
 
@@ -61,8 +65,8 @@ class HTS_Model extends CI_Model {
    */
   public function updateData(&$id, &$data) {
     if(is_array($data) || is_object($data)) {
-      $this->db->where(array('ID' => $id));
-      return $this->db->update($this->table, $data);
+      $this->currentDb->where(array('ID' => $id));
+      return $this->currentDb->update($this->table, $data);
     }
   }
 
@@ -73,7 +77,7 @@ class HTS_Model extends CI_Model {
    */
   public function deleteData(&$id) {
     if(isset($id)) {
-      return $this->db->delete($this->table, array('ID' => $id));
+      return $this->currentDb->delete($this->table, array('ID' => $id));
     }
   }
 
@@ -106,4 +110,17 @@ class HTS_Model extends CI_Model {
     $this->query = $query;
   }
 
+  /**
+   * @return DB                     Geçerli veritabanını verir.
+   */
+  public function getCurrentDb() {
+    return $this->currentDb;
+  }
+
+  /**
+   * @param  $currentDb             Geçerli veritabanını setler
+   */
+  public function setCurrentDb($currentDb) {
+    $this->currentDb = $currentDb;
+  }
 }

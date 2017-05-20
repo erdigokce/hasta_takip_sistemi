@@ -1,9 +1,7 @@
 $(document).ready(function() {
-
   if(typeof initPage === "undefined" || initPage === "" || initPage === null) {
-    var initPage = "board";
+    var initPage = "project";
   }
   $("li > a[data-nav='"+initPage+"']").parent().addClass("active");
-  loadPage("dashboard/"+initPage+"/");
-
+  loadPublicPage("home/"+initPage+"/");
 });

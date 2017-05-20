@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Dashboard Turkish Langauge File
+ * Dashboard Turkish Language File
  */
 
  defined('BASEPATH') OR exit('No direct script access allowed');

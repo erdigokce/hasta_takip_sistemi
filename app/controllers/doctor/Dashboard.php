@@ -6,7 +6,6 @@ class Dashboard extends HTS_Controller {
 
   function __construct() {
     parent::__construct('dashboard');
-    $this->load->database('syscore');
     $this->load->model('syscore/user');
   }
 
@@ -57,7 +56,7 @@ class Dashboard extends HTS_Controller {
       $data['result_patients'] = $result_patients;
       $data['page_number'] = $page_number;
       $data['records_per_page'] = $records_per_page;
-      $this->load->view("doctor/DeviceInformations", $data); // DEVICE INFORMATIONS VIEW
+      $this->load->view("doctor/deviceinformations", $data); // DEVICE INFORMATIONS VIEW
     } else {
       redirect('login/index/session_expire', 'refresh');
     }
@@ -74,7 +73,7 @@ class Dashboard extends HTS_Controller {
       $data['result'] = $result;
       $data['page_number'] = $page_number;
       $data['records_per_page'] = $records_per_page;
-      $this->load->view("doctor/PatientInformations", $data); // PATIENT INFORMATIONS VIEW
+      $this->load->view("doctor/patientinformations", $data); // PATIENT INFORMATIONS VIEW
     } else {
       redirect('login/index/session_expire', 'refresh');
     }
@@ -102,7 +101,7 @@ class Dashboard extends HTS_Controller {
       }
       $data['displayStatus'] = $displayStatus;
       $data['resultPatients'] = $this->patients->findAll();
-      $this->load->view("doctor/PatientLogs", $data); // PATIENT LOGS BOARD VIEW
+      $this->load->view("doctor/patientlogs", $data); // PATIENT LOGS BOARD VIEW
     } else {
       redirect('login/index/session_expire', 'refresh');
     }
@@ -121,7 +120,7 @@ class Dashboard extends HTS_Controller {
       $data['result_devices'] = $result_devices;
       $data['page_number'] = $page_number;
       $data['records_per_page'] = $records_per_page;
-      $this->load->view("doctor/PatientLogSchedules", $data); // PATIENT LOG SCHEDULES BOARD VIEW
+      $this->load->view("doctor/patientlogschedules", $data); // PATIENT LOG SCHEDULES BOARD VIEW
     } else {
       redirect('login/index/session_expire', 'refresh');
     }
@@ -261,7 +260,7 @@ class Dashboard extends HTS_Controller {
     * Fetches required lang files.
     */
    private function fetchLang() {
-     $this->lang->load(array($this->getPage()), $this->session->langauge);
+     $this->lang->load(array($this->getPage()), $this->session->language);
    }
 
 }

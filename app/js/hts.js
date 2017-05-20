@@ -29,6 +29,10 @@ function loadPage(path) {
   $("#content").load(path);
 }
 
+function loadPublicPage(path) {
+  $("#public_content").load(path);
+}
+
 function paginate(controller, method, page_no) {
   loadPage(controller + "/" + method + "/" + page_no + "/");
 }

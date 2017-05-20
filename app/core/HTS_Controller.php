@@ -9,7 +9,9 @@ class HTS_Controller extends CI_Controller {
     $this->page_controller = $page_controller;
     $this->load->library(array('session'));
     arrangeLangauge();
-    $this->lang->load(array('navbar', 'error', 'messages'), $this->session->langauge);
+    $CI =& get_instance();
+    $CI->config->config['language'] = $this->session->language;
+    $this->lang->load(array('navbar', 'error', 'messages'), $this->session->language);
   }
 
   public function getPage() {

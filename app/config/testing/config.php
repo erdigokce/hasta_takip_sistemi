@@ -24,6 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 $config['base_url'] = 'http://gokcehome.duckdns.org/hts/';
+// $config['base_url'] = 'http://gokcehome.duckdns.org:81/hts/';
 
 /*
 |--------------------------------------------------------------------------

@@ -22,8 +22,11 @@ $lang['menu_left_item_6'] = "Yayın Ayarları";
 $lang['board_last_users'] = "Son Etkin Kullanıcılar";
 $lang['board_last_active_userfullname'] = "Kullanıcı";
 $lang['board_user_last_login_date'] = "Sisteme Giriş Tarihi";
-
+////BOARD LAST ADDED DEVICES
 $lang['board_last_added_devices'] = "Son Eklenen Cihazlar";
+$lang['board_last_added_devicename'] = "Son Eklenen Cihaz Adı";
+$lang['board_device_add_date'] = "Eklenme Tarihi";
+
 $lang['board_last_added_patients'] = "Son Eklenen Hastalar";
 $lang['board_last_reviewed_patients'] = "Son İncelenen Hastalar";
 $lang['board_upcoming_streams'] = "Sıradaki Yayınlar";

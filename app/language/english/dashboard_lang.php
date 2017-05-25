@@ -22,8 +22,11 @@ $lang['menu_left_item_6'] = "Stream Configurations";
 $lang['board_last_users'] = "Last Active Users";
 $lang['board_last_active_userfullname'] = "User";
 $lang['board_user_last_login_date'] = "Last Login Date";
-
+////BOARD LAST ADDED DEVICES
 $lang['board_last_added_devices'] = "Last Added Devices";
+$lang['board_last_added_devicename'] = "Last Added Device Name";
+$lang['board_device_add_date'] = "Addition Date";
+
 $lang['board_last_added_patients'] = "Last Added Patients";
 $lang['board_last_reviewed_patients'] = "Last Reviewed Patients";
 $lang['board_upcoming_streams'] = "Upcoming Streams";

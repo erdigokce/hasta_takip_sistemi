@@ -69,6 +69,14 @@ p, ol > li {
   overflow: hidden;
 }
 
+.info_panel_container > .panel-info {
+  overflow-y: visible;
+}
+
+table.table-condensed {
+  font-size:12px;
+}
+
 .text-h3 {
   color: rgb(56, 142, 62);
 }

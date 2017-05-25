@@ -11,6 +11,7 @@ interface IPatientsModel {
 
 interface IDevicesModel {
   public function findAllWithFullPatientName();
+  public function findLastAddedDevices($limit = '5', $orderBy = 'DATE_CREATE', $orderAs = 'DESC');
 }
 
 interface IPatientLogsModel {

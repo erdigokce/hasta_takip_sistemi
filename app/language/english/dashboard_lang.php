@@ -17,6 +17,17 @@ $lang['menu_left_item_4'] = "Patient Streams";
 $lang['menu_left_item_5'] = "Logging Schedules";
 $lang['menu_left_item_6'] = "Stream Configurations";
 
+//BOARD
+////BOARD LAST ACTIVE USERS
+$lang['board_last_users'] = "Last Active Users";
+$lang['board_last_active_userfullname'] = "User";
+$lang['board_user_last_login_date'] = "Last Login Date";
+
+$lang['board_last_added_devices'] = "Last Added Devices";
+$lang['board_last_added_patients'] = "Last Added Patients";
+$lang['board_last_reviewed_patients'] = "Last Reviewed Patients";
+$lang['board_upcoming_streams'] = "Upcoming Streams";
+
 //DEVICE INFORMATIONS
 $lang['device_infos_patient'] = "Holder Patient";
 $lang['device_infos_device_name'] = "Device Name";

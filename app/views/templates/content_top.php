@@ -15,6 +15,9 @@
     <!-- HTS Stylesheet -->
     <link rel="stylesheet" type="text/css" href="app/css/hts_style.css">
 
+    <script type="text/javascript">
+      var base_url = "<?php echo base_url(); ?>";
+    </script>
     <!-- JQuery -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <!-- Bootstrap core JavaScript -->

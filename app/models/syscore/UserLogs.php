@@ -34,6 +34,22 @@ class UserLogs extends HTS_Model implements IUserLogsModel {
     $this->executeUpdate($HtsUserLogsDAO, $userId);
   }
 
+  public function getLastActiveUsers($limit = '5', $orderBy = 'date_last_login', $orderAs = 'desc') {
+    $subQuery = "select USER_ID from ".HTS_SYSCORE.".HTS_USER_LOGS";
+    $query = "select u.NAME, u.SURNAME, ul.DATE_LAST_LOGIN, ul.DATE_LAST_LOGOUT ";
+    $query .= "from ".HTS_SYSCORE.".HTS_USERS u, ".HTS_SYSCORE.".HTS_USER_LOGS ul ";
+    $query .= "where ul.USER_ID = u.ID and ul.USER_ID in (".$subQuery.") ";
+    $query .= "order by ".$orderBy." ".$orderAs." limit ".$limit.";";
+    $this->setQuery($this->getCurrentDb()->query($query));
+
+    $result = $this->getQuery()->result();
+    if(isset($result)){
+      return $result;
+    } else {
+      return NULL;
+    }
+  }
+
   /**
    * PRIVATE METHODS
    */

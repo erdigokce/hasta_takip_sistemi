@@ -12,15 +12,13 @@
             <span class="icon-bar"></span>
           </button>
         </div>
-        <div class="collapse navbar-collapse" id="sideNavbar" style="height: 1px; padding-left: 0px; padding-right: 0px;">
-          <ul id="menu_left" class="nav nav-pills nav-stacked">
-            <li><?php echo anchor('#', $menu_left_item_1, 'class="list-group-item" data-nav="board"'); ?></li>
-            <li><?php echo anchor('#', $menu_left_item_2, 'class="list-group-item" data-nav="deviceInformations"'); ?></li>
-            <li><?php echo anchor('#', $menu_left_item_3, 'class="list-group-item" data-nav="patientInformations"'); ?></li>
-            <li><?php echo anchor('#', $menu_left_item_5, 'class="list-group-item" data-nav="patientLogSchedules"'); ?></li>
-            <li><?php echo anchor('#', $menu_left_item_6, 'class="list-group-item" data-nav="streams"'); ?></li>
-            <li><?php echo anchor('#', $menu_left_item_4, 'class="list-group-item" data-nav="patientLogs"'); ?></li>
-          </ul>
+        <div id="menu_left" class="list-group">
+          <?php echo anchor('#', '<span class="glyphicon glyphicon-tasks text-info"></span> '.$menu_left_item_1, 'class="list-group-item" data-nav="board"'); ?>
+          <?php echo anchor('#', '<span class="glyphicon glyphicon-info-sign text-info"></span> '.$menu_left_item_2, 'class="list-group-item" data-nav="deviceInformations"'); ?>
+          <?php echo anchor('#', '<span class="glyphicon glyphicon-info-sign text-info"></span> '.$menu_left_item_3, 'class="list-group-item" data-nav="patientInformations"'); ?>
+          <?php echo anchor('#', '<span class="glyphicon glyphicon-calendar text-info"></span> '.$menu_left_item_5, 'class="list-group-item" data-nav="patientLogSchedules"'); ?>
+          <?php echo anchor('#', '<span class="glyphicon glyphicon-bullhorn text-info"></span> '.$menu_left_item_6, 'class="list-group-item" data-nav="streams"'); ?>
+          <?php echo anchor('#', '<span class="glyphicon glyphicon-eye-open text-info"></span> '.$menu_left_item_4, 'class="list-group-item" data-nav="patientLogs"'); ?>
         </div>
       </div>
     </nav>

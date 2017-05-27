@@ -36,7 +36,7 @@
 <br>
 
 <div class="default_content alert alert-info" style="display:<?php if(get($displayStatus) == "block") echo "none"; else echo "block"; ?>">
-  <i class="text-info"> <?php echo $patient_logs_select_stream_to_display; ?> </i>
+  <i> <?php echo $patient_logs_select_stream_to_display; ?> </i>
 </div>
 
 <div id="plotly_application" style="display:<?php echo $displayStatus;?>">

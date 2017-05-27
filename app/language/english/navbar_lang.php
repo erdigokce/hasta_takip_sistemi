@@ -6,6 +6,8 @@
 
  defined('BASEPATH') OR exit('No direct script access allowed');
 
+$lang['nav_brand'] = 'Patient Tracking System';
+
 $lang['nav_pro'] = 'My Profile';
 $lang['nav_pro_inbox'] = 'Inbox';
 $lang['nav_pro_settings'] = 'Account Settings';

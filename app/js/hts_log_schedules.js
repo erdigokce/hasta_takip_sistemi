@@ -100,7 +100,9 @@ $(document).ready(function() {
 
   // Pagination
   $("ul.pagination > li > a").click(function() {
-    paginate(controller, method, $(this).data("pg"));
+    if(!$(this).parent().hasClass("disabled")) {
+      paginate(controller, method, $(this).data("pg"));
+    }
   });
 
   function sendAjaxRequest(dataToSend) {

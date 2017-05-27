@@ -1,5 +1,5 @@
 <header>
-  <nav class="navbar navbar-default">
+  <nav class="navbar navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavbar">
@@ -7,7 +7,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#" onclick="location.href='<?php echo base_url();?>'"> Hasta Takip Sistemi </a>
+        <a class="navbar-brand" href="#" onclick="location.href='<?php echo base_url();?>'"> <?php echo get($nav_brand); ?> </a>
       </div>
       <div class="collapse navbar-collapse" id="topNavbar">
         <?php if(isset($auth) && $auth === FALSE): ?>

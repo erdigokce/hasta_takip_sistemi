@@ -38,7 +38,7 @@
           </thead>
           <tbody>
             <?php foreach($resultLastAddedDevices as $lastAddedDevice) : ?>
-              <tr>
+              <tr data-toggle="tooltip" title="Cihaz Soketi : <?php echo $lastAddedDevice->DEVICE_HOST.":".$lastAddedDevice->DEVICE_PORT;?>">
                 <td><?php echo $lastAddedDevice->DEVICE_NAME; ?></td>
                 <td><?php echo (new DateTime($lastAddedDevice->DATE_CREATE))->format('d M Y, G:i'); ?></td>
               </tr>
@@ -62,7 +62,7 @@
           </thead>
           <tbody>
             <?php foreach($resultLastAddedPatients as $lastAddedPatient) : ?>
-              <tr>
+              <tr data-toggle="tooltip" title="Hasta Telefonu : <?php echo $lastAddedPatient->PATIENT_PHONE;?>">
                 <td><?php echo $lastAddedPatient->PATIENT_NAME." ".$lastAddedPatient->PATIENT_SURNAME; ?></td>
                 <td><?php echo (new DateTime($lastAddedPatient->DATE_CREATE))->format('d M Y, G:i'); ?></td>
               </tr>

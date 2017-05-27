@@ -1,5 +1,8 @@
 $(document).ready(function() {
 
+  //Enabling all tooltips in the document
+  $('[data-toggle="tooltip"]').tooltip();
+
   // Navigation bussiness
   $("#menu_left > li > a").click(function(e) {
     e.preventDefault();

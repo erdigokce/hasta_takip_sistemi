@@ -28,7 +28,7 @@ class Devices extends HTS_Model implements IDevicesModel {
   }
 
   public function findLastAddedDevices($limit = '5', $offset = '0', $orderBy = 'DATE_CREATE', $orderAs = 'DESC') {
-    $query = "SELECT DEVICE_NAME, DATE_CREATE ";
+    $query = "SELECT DEVICE_NAME, DEVICE_HOST, DEVICE_PORT, DATE_CREATE ";
     $query .= "FROM ".$this->getTable()." ";
     $query .= "ORDER BY ".$orderBy." ".$orderAs." LIMIT ".$limit." OFFSET ".$offset.";";
     $this->setQuery($this->getCurrentDb()->query($query));

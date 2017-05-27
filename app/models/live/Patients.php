@@ -12,7 +12,7 @@ class Patients extends HTS_Model implements IPatientsModel {
   }
 
   public function findLastAddedPatients($limit = '5', $offset = '0', $orderBy = 'DATE_CREATE', $orderAs = 'DESC') {
-    $query = "SELECT PATIENT_NAME, PATIENT_SURNAME, DATE_CREATE ";
+    $query = "SELECT PATIENT_NAME, PATIENT_SURNAME, PATIENT_PHONE, DATE_CREATE ";
     $query .= "FROM ".$this->getTable()." ";
     $query .= "ORDER BY ".$orderBy." ".$orderAs." LIMIT ".$limit." OFFSET ".$offset.";";
     $this->setQuery($this->getCurrentDb()->query($query));

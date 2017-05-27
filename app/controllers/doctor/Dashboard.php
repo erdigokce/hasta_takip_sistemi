@@ -227,6 +227,8 @@ class Dashboard extends HTS_Controller {
      $data['board_upcoming_streams'] = $this->lang->line('board_upcoming_streams');
      $data['board_last_added_patientfullname'] = $this->lang->line('board_last_added_patientfullname');
      $data['board_patient_add_date'] = $this->lang->line('board_patient_add_date');
+     $data['patient_infos_phone1'] = $this->lang->line('patient_infos_phone1');
+     $data['schedule_device_socket'] = $this->lang->line('schedule_device_socket');
    }
 
    private function loadDeviceInformationsLang(&$data) {

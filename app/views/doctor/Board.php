@@ -53,7 +53,22 @@
     <div class="panel panel-info">
       <div class="panel-heading"><?php echo get($board_last_added_patients); ?></div>
       <div class="panel-body">
-
+        <table class="table table-hover table-condensed">
+          <thead>
+            <tr>
+              <th><?php echo get($board_last_added_patientfullname); ?></th>
+              <th><?php echo get($board_patient_add_date); ?></th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php foreach($resultLastAddedPatients as $lastAddedPatient) : ?>
+              <tr>
+                <td><?php echo $lastAddedPatient->PATIENT_NAME." ".$lastAddedPatient->PATIENT_SURNAME; ?></td>
+                <td><?php echo (new DateTime($lastAddedPatient->DATE_CREATE))->format('d M Y, G:i'); ?></td>
+              </tr>
+            <?php endforeach; ?>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>

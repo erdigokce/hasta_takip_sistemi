@@ -38,11 +38,13 @@ class Dashboard extends HTS_Controller {
   public function board() {
     if(isSessionValid($this)){
       $this->loadBoardLang($data);
-      $this->load->model(array('syscore/userlogs', 'live/devices'));
+      $this->load->model(array('syscore/userlogs', 'live/devices', 'live/patients'));
       $resultLastActiveUsers = $this->userlogs->getLastActiveUsers();
       $resultLastAddedDevices = $this->devices->findLastAddedDevices();
+      $resultLastAddedPatients = $this->patients->findLastAddedPatients();
       $data['resultLastActiveUsers'] = $resultLastActiveUsers;
       $data['resultLastAddedDevices'] = $resultLastAddedDevices;
+      $data['resultLastAddedPatients'] = $resultLastAddedPatients;
       $this->load->view("doctor/board", $data); // BOARD VIEW
     } else {
       redirect('login/index/session_expire', 'refresh');
@@ -223,6 +225,8 @@ class Dashboard extends HTS_Controller {
      $data['board_last_added_patients'] = $this->lang->line('board_last_added_patients');
      $data['board_last_reviewed_patients'] = $this->lang->line('board_last_reviewed_patients');
      $data['board_upcoming_streams'] = $this->lang->line('board_upcoming_streams');
+     $data['board_last_added_patientfullname'] = $this->lang->line('board_last_added_patientfullname');
+     $data['board_patient_add_date'] = $this->lang->line('board_patient_add_date');
    }
 
    private function loadDeviceInformationsLang(&$data) {

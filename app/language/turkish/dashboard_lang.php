@@ -26,8 +26,11 @@ $lang['board_user_last_login_date'] = "Sisteme Giriş Tarihi";
 $lang['board_last_added_devices'] = "Son Eklenen Cihazlar";
 $lang['board_last_added_devicename'] = "Son Eklenen Cihaz Adı";
 $lang['board_device_add_date'] = "Eklenme Tarihi";
-
+////BOARD LAST ADDED PATIENTS
 $lang['board_last_added_patients'] = "Son Eklenen Hastalar";
+$lang['board_last_added_patientfullname'] = "Hasta";
+$lang['board_patient_add_date'] = "Eklenme Tarihi";
+
 $lang['board_last_reviewed_patients'] = "Son İncelenen Hastalar";
 $lang['board_upcoming_streams'] = "Sıradaki Yayınlar";
 

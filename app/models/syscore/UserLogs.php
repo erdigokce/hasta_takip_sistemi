@@ -35,9 +35,9 @@ class UserLogs extends HTS_Model implements IUserLogsModel {
   }
 
   public function getLastActiveUsers($limit = '5', $orderBy = 'date_last_login', $orderAs = 'desc') {
-    $subQuery = "select USER_ID from ".HTS_SYSCORE.".HTS_USER_LOGS";
+    $subQuery = "select USER_ID from ".HTS_SYSCORE.".hts_user_logs";
     $query = "select u.NAME, u.SURNAME, ul.DATE_LAST_LOGIN, ul.DATE_LAST_LOGOUT ";
-    $query .= "from ".HTS_SYSCORE.".HTS_USERS u, ".HTS_SYSCORE.".HTS_USER_LOGS ul ";
+    $query .= "from ".HTS_SYSCORE.".hts_users u, ".HTS_SYSCORE.".hts_user_logs ul ";
     $query .= "where ul.USER_ID = u.ID and ul.USER_ID in (".$subQuery.") ";
     $query .= "order by ".$orderBy." ".$orderAs." limit ".$limit.";";
     $this->setQuery($this->getCurrentDb()->query($query));

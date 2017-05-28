@@ -30,7 +30,7 @@
     <div class="col-sm-offset-4 col-sm-4">
       <div class="modal-footer">
           <div class="options">
-              <p><?php echo anchor('#', get($login_lost_password)); ?></p>
+              <a href="#"> <?php echo get($login_lost_password); ?></a>
           </div>
       </div>
     </div>

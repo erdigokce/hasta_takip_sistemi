@@ -13,15 +13,11 @@ class Login extends HTS_Controller {
 
   public function index($status = 'normal') {
     $this->lang->load(array($this->getPage()), $this->session->language);
-    loadNavbarLang($this, $data);
     if ($status === 'session_expire') {
       $data['status'] = $status;
       $data['err_session_expire'] = $this->lang->line('err_session_expire');
     }
-    $data['title'] = $this->lang->line('login_title');
     $data['page_controller'] = $this->getPage();
-    $data['footer_text'] = $this->lang->line('footer_text');
-    $this->populatePageLangData($data);
     if($this->session->has_userdata('auth') && $this->session->auth === TRUE){
       $this->resumeSession($data);
     } else {
@@ -43,6 +39,8 @@ class Login extends HTS_Controller {
   /** PRIVATE FUNCTIONS **/
 
   private function loadLogin(&$data) {
+    loadNavbarLang($this, $data);
+    $this->populatePageLangData($data);
     $this->load->view("templates/content_top", $data);
     $this->load->view("templates/header", $data);
     $this->load->view("doctor/login", $data); // MAIN LOGIN VIEW
@@ -158,7 +156,7 @@ class Login extends HTS_Controller {
   }
 
   private function tryLogin(&$row) {
-    if (isset($row) && $row->PASSWORD === md5($this->input->post('password'))) {
+    if (isset($row) && $row->PASSWORD == md5($this->input->post('password'))) {
       $session_data = $this->giveArrayOfUserSessionData($row);
       $this->session->set_userdata($session_data);
       $data['name'] = $row->NAME;
@@ -171,11 +169,14 @@ class Login extends HTS_Controller {
       $this->session->auth = FALSE;
       $data['auth'] = $this->session->auth;
       log_error("Login işlemi başarısız oldu! Kullanıcı adı, e-posta veya parola geçersiz!");
+      $data['auth_fail'] = TRUE;
       $this->loadLogin($data);
     }
   }
 
   private function populatePageLangData(&$data) {
+    $data['title'] = $this->lang->line('login_title');
+    $data['footer_text'] = $this->lang->line('footer_text');
     $data['login_username'] = $this->lang->line('login_username');
     $data['login_password'] = $this->lang->line('login_password');
     $data['login_submit'] = $this->lang->line('login_submit');

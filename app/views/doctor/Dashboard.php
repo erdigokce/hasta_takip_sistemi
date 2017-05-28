@@ -13,12 +13,24 @@
           </button>
         </div>
         <div id="menu_left" class="list-group">
-          <?php echo anchor('#', '<span class="glyphicon glyphicon-tasks text-info"></span> '.$menu_left_item_1, 'class="list-group-item" data-nav="board"'); ?>
-          <?php echo anchor('#', '<span class="glyphicon glyphicon-info-sign text-info"></span> '.$menu_left_item_2, 'class="list-group-item" data-nav="deviceInformations"'); ?>
-          <?php echo anchor('#', '<span class="glyphicon glyphicon-info-sign text-info"></span> '.$menu_left_item_3, 'class="list-group-item" data-nav="patientInformations"'); ?>
-          <?php echo anchor('#', '<span class="glyphicon glyphicon-calendar text-info"></span> '.$menu_left_item_5, 'class="list-group-item" data-nav="patientLogSchedules"'); ?>
-          <?php echo anchor('#', '<span class="glyphicon glyphicon-bullhorn text-info"></span> '.$menu_left_item_6, 'class="list-group-item" data-nav="streams"'); ?>
-          <?php echo anchor('#', '<span class="glyphicon glyphicon-eye-open text-info"></span> '.$menu_left_item_4, 'class="list-group-item" data-nav="patientLogs"'); ?>
+          <a href="#" class="list-group-item" data-nav="board">
+            <span class="glyphicon glyphicon-tasks text-info"></span> <?php echo $menu_left_item_1; ?>
+          </a>
+          <a href="#" class="list-group-item" data-nav="deviceInformations">
+            <span class="glyphicon glyphicon-info-sign text-info"></span> <?php echo $menu_left_item_2; ?>
+          </a>
+          <a href="#" class="list-group-item" data-nav="patientInformations">
+            <span class="glyphicon glyphicon-info-sign text-info"></span> <?php echo $menu_left_item_3; ?>
+          </a>
+          <a href="#" class="list-group-item" data-nav="patientLogSchedules">
+            <span class="glyphicon glyphicon-calendar text-info"></span> <?php echo $menu_left_item_5; ?>
+          </a>
+          <a href="#" class="list-group-item" data-nav="streams">
+            <span class="glyphicon glyphicon-bullhorn text-info"></span> <?php echo $menu_left_item_6; ?>
+          </a>
+          <a href="#" class="list-group-item" data-nav="patientLogs">
+            <span class="glyphicon glyphicon-eye-open text-info"></span> <?php echo $menu_left_item_4; ?>
+          </a>
         </div>
       </div>
     </nav>

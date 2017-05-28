@@ -17,7 +17,7 @@ class Home extends HTS_Controller {
     $data['page_controller'] = $this->getPage();
     $data['footer_text'] = $this->lang->line('footer_text');
 
-    if($this->session->has_userdata('auth') && $this->session->auth === TRUE){
+    if(isSessionValid($this)){
       $data['auth'] = $this->session->auth;
       $data['name'] = $this->session->name;
       $data['surname'] = $this->session->surname;

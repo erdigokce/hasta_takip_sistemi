@@ -1,6 +1,8 @@
 <?php
 
-class HTS_Controller extends CI_Controller {
+include 'IHTS_Controller.php';
+
+class HTS_Controller extends CI_Controller implements IHTS_Controller {
 
   private $page_controller;
 

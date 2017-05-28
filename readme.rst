@@ -1,70 +1,53 @@
 ###################
-What is CodeIgniter
+Hasta Takip Sistemi
 ###################
 
-CodeIgniter is an Application Development Framework - a toolkit - for people
-who build web sites using PHP. Its goal is to enable you to develop projects
-much faster than you could if you were writing code from scratch, by providing
-a rich set of libraries for commonly needed tasks, as well as a simple
-interface and logical structure to access these libraries. CodeIgniter lets
-you creatively focus on your project by minimizing the amount of code needed
-for a given task.
-
-*******************
-Release Information
-*******************
-
-This repo contains in-development code for future releases. To download the
-latest stable release please visit the `CodeIgniter Downloads
-<https://codeigniter.com/download>`_ page.
-
-**************************
-Changelog and New Features
-**************************
-
-You can find a list of all changes for each release in the `user
-guide change log <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/changelog.rst>`_.
-
-*******************
-Server Requirements
-*******************
-
-PHP version 5.6 or newer is recommended.
-
-It should work on 5.3.7 as well, but we strongly advise you NOT to run
-such old versions of PHP, because of potential security and performance
-issues, as well as missing features.
+Her sektörde olduğu gibi sağlık sektöründe de bilgi teknolojilerine ihtiyaç sürekli olarak duyulmaktadır.
+Hasta ve doktor ilişkilerinden beklenen verim, hasta-doktor ikili görüşmelerinde kısıtlı zaman ve imkanlar nedeniyle yeterince alınamamaktadır.
+Bu projede bir hasta takip sistemi yapılmıştır.
+Bu sistem doktorların ilgilendikleri hastaları, hastalara tahsis edilen cihazlar aracılığıyla interaktif bir biçimde gözlemleyebilmesini hedeflemiştir.
 
 ************
-Installation
+Uygulama Hakkında
 ************
 
-Please see the `installation section <https://codeigniter.com/user_guide/installation/index.html>`_
-of the CodeIgniter User Guide.
+Proje kapsamında bir web sunucu üzerine kurulu olan dinemik bir web site, bir veritabanı sunucusu üzerinde çalışan bir VTYS ve veri toplamak için hastalara tahsis edilmiş Linux tabanlı cihazlar vardır.
+Bu kapsamın oluşturulması için kurulum adımları bu bölümde açıklanmıştır.
 
-*******
-License
-*******
+*******************
+Codeigniter
+*******************
 
-Please see the `license
-agreement <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/license.rst>`_.
+CodeIgniter, PHP ile dinamik uygulamalar geliştirmek için geliştirilmiş bir web uygulama geliştirme çatısı. MVC mimari deseni temeline göre geliştirilmiş olup günümüzde hızla yaygınlaşmaktadır.
 
-*********
-Resources
-*********
+Ayrıca CI, içeriğinde geliştirme sırasında kolaylık sağlayacak kütüphaneler, yardımcı sınıflar, eklentiler vb. barındırır.
 
--  `User Guide <https://codeigniter.com/docs>`_
--  `Language File Translations <https://github.com/bcit-ci/codeigniter3-translations>`_
--  `Community Forums <http://forum.codeigniter.com/>`_
--  `Community Wiki <https://github.com/bcit-ci/CodeIgniter/wiki>`_
--  `Community IRC <https://webchat.freenode.net/?channels=%23codeigniter>`_
+**************************
+Raspberry PI
+**************************
 
-Report security issues to our `Security Panel <mailto:security@codeigniter.com>`_
-or via our `page on HackerOne <https://hackerone.com/codeigniter>`_, thank you.
+İngiltere’deki Raspberry Pi vakfı tarafından geliştirilen, aslın amacı okullarda bilgisayar temelli eğitimi geliştirmek ve çocuklara bilgisayarı öğretmek olan, kredi kartı büyüklüğünde, içinde çeşitli Linux ve Android dağıtımları kurulabilen ARM mimarisine sahip fansız bir mini bilgisayardır.
+
+Proje kapsamında bu bilgisayarlardan hasta başına bir adet tahsis edilerek, üzerine bağlı sensörler aracılığıyla hastanın biyolojik verileri sistemden canlı olarak izlenmesi sağlanmıştır.
+
+Cihaz belirlenmiş zaman periyotlarında, cihazların üzerinde hastaya hazır verilen yazılımı tetiklemektedir.
+Bu yazılım ise veri tabanına erişerek konfigürasyon ayarlarını kaydeder ve yayını başlatır.
+
+*******************
+Plotly API
+*******************
+
+Plotly bir veri görselleştirme uygulamasıdır.
+Ücretli ve ücretsiz sunduğu hizmetler mevcuttur. Bir çok platform için API’ler sağlar.
+
+Bu projede Python üzerinde Plotly API, sensör verilerini çizgi grafik olarak görsellemek için kullanılmıştır.
+Bu grafik web uygulaması üzerinde gösterilmektedir.
 
 ***************
-Acknowledgement
+İleriki Adımlar
 ***************
 
-The CodeIgniter team would like to thank EllisLab, all the
-contributors to the CodeIgniter project and you, the CodeIgniter user.
+Bir sonraki adım için hedefler :
+
+- Otomatize edilmiş hasta cihazı ayarları.
+- Tamamen stabil planlanmış izleme sistemi (CRON).

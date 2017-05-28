@@ -91,3 +91,4 @@ defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest auto
 defined('HTS_SYSCORE')         OR define('HTS_SYSCORE', 'hts_syscore');
 defined('HTS_LIVE')            OR define('HTS_LIVE', 'hts_live');
 defined('HTS_LOCALE_TR')       OR define('HTS_LOCALE_TR', '1254');
+defined('HTS_SYSTEM_GENERATED') OR define('HTS_SYSTEM_GENERATED', 'SYSTEM-GEN');

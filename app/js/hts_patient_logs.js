@@ -38,7 +38,9 @@ $(document).ready(function() {
 
 	// Pagination
 	$("ul.pagination > li > a").click(function() {
-		paginate(controller, method, $(this).data("pg"));
-	});
-
+    if(!$(this).hasClass("disabled")) {
+      paginate(controller, method, $(this).data("pg"));
+    }
+  });
+	
 });

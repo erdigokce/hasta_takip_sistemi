@@ -6,6 +6,8 @@
 
  defined('BASEPATH') OR exit('No direct script access allowed');
 
+$lang['nav_brand'] = 'Hasta Takip Sistemi';
+
 $lang['nav_pro'] = 'Profilim';
 $lang['nav_pro_inbox'] = 'Gelen Kutusu';
 $lang['nav_pro_settings'] = 'Hesap Ayarları';

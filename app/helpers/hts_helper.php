@@ -38,7 +38,13 @@ function getDefaultTimeFormat() {
   return "Y-m-d H:i:s";
 }
 
+/**
+ * Navbar dil metinlerini setler.
+ * @param  Object $obj  Include eden ekran
+ * @param  Array $data Ekran datası
+ */
 function loadNavbarLang(&$obj, &$data) {
+  $data['nav_brand'] = $obj->lang->line('nav_brand');
   $data['nav_pro'] = $obj->lang->line('nav_pro');
   $data['nav_pro_inbox'] = $obj->lang->line('nav_pro_inbox');
   $data['nav_pro_settings'] = $obj->lang->line('nav_pro_settings');
@@ -65,8 +71,20 @@ function getCurrentLocale() {
   return $matches[0];
 }
 
+/**
+ * Öntanımlı dili belirler. Session datasını setler.
+ */
 function arrangeLangauge() {
   if(!isset($_SESSION['language'])) {
     $_SESSION['language'] = getCurrentLocale() == HTS_LOCALE_TR ? 'turkish' : 'english';
   }
+}
+
+/**
+ * Detects session validation and authorization status.
+ * @param  Object  $obj Controller object.
+ * @return boolean      Returns true is session valid and authorized.
+ */
+function isSessionValid(&$obj) {
+  return $obj->session->has_userdata('auth') && $obj->session->auth === TRUE;
 }

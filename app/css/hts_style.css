@@ -18,10 +18,6 @@ h1, h2, h3, h4, h5, h6 {
   cursor: inherit;
 }
 
-body {
-  background-color: rgba(244, 245, 252, 0.1);
-}
-
 /* Start by setting display:none to make this hidden.
    Then we position it in relation to the viewport window
    with position:fixed. Width, height, top and left speak
@@ -53,7 +49,7 @@ body.loading .wait {
    display: block;
 }
 
-a:hover {
+a, a:hover, a:active, a:focus {
   text-decoration: none;
 }
 
@@ -69,10 +65,21 @@ p, ol > li {
   overflow: hidden;
 }
 
+.info_panel_container > .panel-info {
+  overflow-y: visible;
+}
+
+table.table-condensed {
+  font-size:12px;
+}
+
 .text-h3 {
   color: rgb(56, 142, 62);
 }
 
+#menu_left > a.active {
+  color: white;
+}
 /*
   BOOTSTRAP CLASS OVERRIDES
  */

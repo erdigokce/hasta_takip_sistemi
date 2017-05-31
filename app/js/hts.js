@@ -51,6 +51,29 @@ function redirectAsSessionExpire() {
   window.location = base_url + "login/index/session_expire";
 }
 
+function toggleChevron() {
+  var chevron = $(".menu_left_chevron");
+  if(chevron.hasClass("glyphicon-triangle-left")) {
+    /* Hide Left Menu */
+    $("#menu_left").parent().hide(500, function() {
+      /* Wrap Content */
+      $("#content").parent().removeClass("col-lg-9");
+      $("#content").parent().addClass("col-lg-11");
+      chevron.removeClass("glyphicon-triangle-left");
+      chevron.addClass("glyphicon-triangle-right");
+    });
+  } else {
+    /* Show Left Menu */
+    $("#menu_left").parent().show(500, function() {
+      chevron.removeClass("glyphicon-triangle-right");
+      chevron.addClass("glyphicon-triangle-left");
+    });
+    /* Unwrap Content */
+    $("#content").parent().removeClass("col-lg-11");
+    $("#content").parent().addClass("col-lg-9");
+  }
+}
+
 /*******************************************************************************
 *************************** Datagrid button actions ****************************
 *******************************************************************************/

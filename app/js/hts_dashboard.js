@@ -6,4 +6,13 @@ $(document).ready(function() {
   $("#menu_left > a[data-nav='"+initPage+"']").addClass("active");
   loadPage("dashboard/"+initPage+"/");
 
+  var leftMenuHeight = windowHeight - $("header").height() - $("footer").height();
+  $("#menu_left").css("height", leftMenuHeight);
+  $("#container_menu_left_chevron").css({
+    "height": leftMenuHeight
+  });
+  $("#container_menu_left_chevron > span").css({
+    "top": leftMenuHeight/2 - $("#container_menu_left_chevron > span").height()/2
+  });
+
 });

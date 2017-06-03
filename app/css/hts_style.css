@@ -7,6 +7,14 @@
   background-color: rgb(138, 176, 224);
 }
 
+a, a:hover, a:active, a:focus {
+  text-decoration: none;
+}
+
+p, ol > li {
+  font-size: 16px;
+}
+
 .table > *,
 .panel > *,
 p, span, i, ol > li,
@@ -38,23 +46,15 @@ h1, h2, h3, h4, h5, h6 {
 /* When the body has the loading class, we turn
   the scrollbar off with overflow:hidden */
 
-body.loading {
+.loading {
    overflow: hidden;
 }
 
 /* Anytime the body has the loading class, our
   modal element will be visible */
 
-body.loading .wait {
+.loading .wait {
    display: block;
-}
-
-a, a:hover, a:active, a:focus {
-  text-decoration: none;
-}
-
-p, ol > li {
-  font-size: 16px;
 }
 
 .panel-dashboard,
@@ -77,9 +77,27 @@ table.table-condensed {
   color: rgb(56, 142, 62);
 }
 
+#menu_left > a.list-group-item {
+  border-radius: 0;
+}
+
 #menu_left > a.active {
   color: white;
 }
+
+#container_menu_left_chevron {
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  width: 15px;
+  background-color: #f8f8f8;
+  border-color: #e7e7e7;
+}
+
+#container_menu_left_chevron > span {
+  margin: auto;
+}
+
 /*
   BOOTSTRAP CLASS OVERRIDES
  */

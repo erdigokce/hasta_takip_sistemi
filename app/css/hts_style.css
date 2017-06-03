@@ -102,6 +102,16 @@ table.table-condensed {
   margin: auto;
 }
 
+#plotly_application > .container {
+  padding: 0;
+  max-width: 1000px;
+  max-height: 1000px;
+}
+
+#plotly_container {
+  margin: 0;
+}
+
 /*
   BOOTSTRAP CLASS OVERRIDES
  */

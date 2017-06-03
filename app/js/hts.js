@@ -22,6 +22,10 @@ $(document).ready(function() {
     }
   });
 
+  $(window).bind('resize', function() {
+    arrangeFooterPosition();
+  });
+
 });
 
 /*******************************************************************************
@@ -71,6 +75,16 @@ function toggleChevron() {
     /* Unwrap Content */
     $("#content").parent().removeClass("col-lg-11");
     $("#content").parent().addClass("col-lg-9");
+  }
+}
+
+function arrangeFooterPosition() {
+  if(screen.width > 1200) {
+    if(!$("footer").hasClass("navbar-fixed-bottom")) {
+      $("footer").addClass("navbar-fixed-bottom");
+    }
+  } else {
+    $("footer").removeClass("navbar-fixed-bottom");
   }
 }
 

@@ -5,5 +5,4 @@ $(document).ready(function() {
   $("li > a[data-nav='"+initPage+"']").parent().addClass("active");
   loadPublicPage("home/"+initPage+"/");
 
-  arrangeFooterPosition();
 });

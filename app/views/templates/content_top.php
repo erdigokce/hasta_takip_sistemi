@@ -13,9 +13,9 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- Bootswatch Lumen Theme CSS -->
-    <link rel="stylesheet" href="app/css/bootstrap-theme-lumen.css">
+    <link rel="stylesheet" href="<?php echo base_url()."app/css/bootstrap-theme-lumen.css";?>">
     <!-- HTS Stylesheet -->
-    <link rel="stylesheet" type="text/css" href="app/css/hts_style.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url()."app/css/hts_style.css";?>">
 
     <script type="text/javascript">
       var base_url = "<?php echo base_url(); ?>";
@@ -25,7 +25,7 @@
     <!-- Bootstrap core JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- HTS Main Javascript -->
-    <script src="app/js/hts.js" charset="utf-8"></script>
+    <script src="<?php echo base_url()."app/js/hts.js";?>" charset="utf-8"></script>
   </head>
 
   <body>

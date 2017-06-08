@@ -41,7 +41,8 @@ function loadPage(path) {
 }
 
 function loadPublicPage(path) {
-  if(location.href.search("home") == -1) {  // If current location is not home
+  if(location.href.search("/home") == -1) {  // If current location is not home
+    document.cookie = "redirectTo="+path+"; path=/";
     location.href = base_url + "home"; // Then locate home section
   }
   $("#public_content").load(path);

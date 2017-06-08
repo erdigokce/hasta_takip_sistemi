@@ -5,22 +5,22 @@
   <div class="col-lg-2" style="padding:0px; background-color:#ededed;">
     <div id="menu_left" class="list-group">
       <a href="#" class="list-group-item" data-nav="board">
-        <span class="glyphicon glyphicon-tasks text-info"></span> <?php echo $menu_left_item_1; ?>
+        <span class="glyphicon glyphicon-tasks text-default"></span> <?php echo $menu_left_item_1; ?>
       </a>
       <a href="#" class="list-group-item" data-nav="deviceInformations">
-        <span class="glyphicon glyphicon-info-sign text-info"></span> <?php echo $menu_left_item_2; ?>
+        <span class="glyphicon glyphicon-info-sign text-default"></span> <?php echo $menu_left_item_2; ?>
       </a>
       <a href="#" class="list-group-item" data-nav="patientInformations">
-        <span class="glyphicon glyphicon-info-sign text-info"></span> <?php echo $menu_left_item_3; ?>
+        <span class="glyphicon glyphicon-info-sign text-default"></span> <?php echo $menu_left_item_3; ?>
       </a>
       <a href="#" class="list-group-item" data-nav="patientLogSchedules">
-        <span class="glyphicon glyphicon-calendar text-info"></span> <?php echo $menu_left_item_5; ?>
+        <span class="glyphicon glyphicon-calendar text-default"></span> <?php echo $menu_left_item_5; ?>
       </a>
       <a href="#" class="list-group-item" data-nav="streams">
-        <span class="glyphicon glyphicon-bullhorn text-info"></span> <?php echo $menu_left_item_6; ?>
+        <span class="glyphicon glyphicon-bullhorn text-default"></span> <?php echo $menu_left_item_6; ?>
       </a>
       <a href="#" class="list-group-item" data-nav="patientLogs">
-        <span class="glyphicon glyphicon-eye-open text-info"></span> <?php echo $menu_left_item_4; ?>
+        <span class="glyphicon glyphicon-eye-open text-default"></span> <?php echo $menu_left_item_4; ?>
       </a>
     </div>
   </div>
@@ -63,4 +63,4 @@
   <p class="text-center"><?php echo "(".$username." - ".$name." ".$surname." / ".$user_category.") ".$dashboard_unauthorized_user; ?></p>
 </div>
 <?php endif; ?>
-<script src="app/js/hts_dashboard.js" charset="utf-8"></script>
+<script src="<?php echo base_url()."app/js/hts_dashboard.js"?>" charset="utf-8"></script>

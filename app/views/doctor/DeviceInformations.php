@@ -62,7 +62,7 @@
   </tbody>
 </table>
 
-<script src="app/js/hts_device_informations.js" charset="utf-8"></script>
+<script src="<?php echo base_url()."app/js/hts_device_informations.js"?>" charset="utf-8"></script>
 
 <?php
   $data['page_count'] = ceil(count($result) / $records_per_page);

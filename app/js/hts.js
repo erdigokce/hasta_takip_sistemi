@@ -86,9 +86,8 @@ function isNullOrEmptyArray(array) {
 
 function getCookieValuesAsArray() {
   var cookies = document.cookie.split(";");
-  cookies = cookies[0] == "" ? null : cookies[0];
   var cookiesKeyValue = [];
-  if(!isNullOrEmptyArray(cookies)) {
+  if(cookies[0] !== "" && !isNullOrEmptyArray(cookies)) {
     for (var i = 0; i < cookies.length; i++) {
       cookiesKeyValue[i] = cookies[i].split("=");
     }

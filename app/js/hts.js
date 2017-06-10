@@ -22,10 +22,18 @@ $(document).ready(function() {
     }
   });
 
+  // Window resize event
+  $(window).bind('resize', function() {
+    arrangeFooterPosition();
+  });
+
+  /* Initial efforts */
+  arrangeFooterPosition();
+
 });
 
 /*******************************************************************************
-********************************* AJAX Methods *********************************
+******************************** AJAX Functions ********************************
 *******************************************************************************/
 
 function loadPage(path) {
@@ -33,7 +41,8 @@ function loadPage(path) {
 }
 
 function loadPublicPage(path) {
-  if(location.href.search("home") == -1) {  // If current location is not home
+  if(location.href.search("/home") == -1) {  // If current location is not home
+    document.cookie = "redirectTo="+path+"; path=/";
     location.href = base_url + "home"; // Then locate home section
   }
   $("#public_content").load(path);
@@ -51,27 +60,37 @@ function redirectAsSessionExpire() {
   window.location = base_url + "login/index/session_expire";
 }
 
-function toggleChevron() {
-  var chevron = $(".menu_left_chevron");
-  if(chevron.hasClass("glyphicon-triangle-left")) {
-    /* Hide Left Menu */
-    $("#menu_left").parent().hide(500, function() {
-      /* Wrap Content */
-      $("#content").parent().removeClass("col-lg-9");
-      $("#content").parent().addClass("col-lg-11");
-      chevron.removeClass("glyphicon-triangle-left");
-      chevron.addClass("glyphicon-triangle-right");
-    });
+function arrangeFooterPosition() {
+  if($(window).width() >= 1200) {
+    if(!$("footer").hasClass("navbar-fixed-bottom")) {
+      $("footer").addClass("navbar-fixed-bottom");
+    }
   } else {
-    /* Show Left Menu */
-    $("#menu_left").parent().show(500, function() {
-      chevron.removeClass("glyphicon-triangle-right");
-      chevron.addClass("glyphicon-triangle-left");
-    });
-    /* Unwrap Content */
-    $("#content").parent().removeClass("col-lg-11");
-    $("#content").parent().addClass("col-lg-9");
+    $("footer").removeClass("navbar-fixed-bottom");
   }
+}
+
+/*******************************************************************************
+****************************** Application Utils *******************************
+*******************************************************************************/
+
+function isNullOrEmptyArray(array) {
+  return
+  typeof array != "undefined"
+  && array != null
+  && array.length != null
+  && array.length > 0;
+}
+
+function getCookieValuesAsArray() {
+  var cookies = document.cookie.split(";");
+  var cookiesKeyValue = [];
+  if(!isNullOrEmptyArray(cookies)) {
+    for (var i = 0; i < cookies.length; i++) {
+      cookiesKeyValue[i] = cookies[i].split("=");
+    }
+  }
+  return cookiesKeyValue;
 }
 
 /*******************************************************************************

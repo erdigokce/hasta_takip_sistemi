@@ -16,6 +16,7 @@ class Login extends HTS_Controller {
     if ($status === 'session_expire') {
       $data['status'] = $status;
       $data['err_session_expire'] = $this->lang->line('err_session_expire');
+      $this->userlogs->setUserLogoutLog($this->session->user_id);
     }
     $data['page_controller'] = $this->getPage();
     if($this->session->has_userdata('auth') && $this->session->auth === TRUE){

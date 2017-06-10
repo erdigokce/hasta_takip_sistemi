@@ -77,6 +77,10 @@ table.table-condensed {
   color: rgb(56, 142, 62);
 }
 
+#menu_left {
+  margin: 0;
+}
+
 #menu_left > a.list-group-item {
   border-radius: 0;
 }
@@ -96,6 +100,16 @@ table.table-condensed {
 
 #container_menu_left_chevron > span {
   margin: auto;
+}
+
+#plotly_application > .container {
+  padding: 0;
+  max-width: 1000px;
+  max-height: 1000px;
+}
+
+#plotly_container {
+  margin: 0;
 }
 
 /*

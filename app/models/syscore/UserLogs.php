@@ -14,7 +14,9 @@ class UserLogs extends HTS_Model implements IUserLogsModel {
   }
 
   public function getUserLog($userId) {
-    return $this->getCurrentDb()->get_where($this->getTable(), array('USER_ID' => $userId))->row();
+    $HtsUserLogsDAO = array(); // Clear if there is an existing array
+    $HtsUserLogsDAO['USER_ID'] = $userId;
+    return $this->getCurrentDb()->get_where($this->getTable(), $HtsUserLogsDAO)->row();
   }
 
   public function createUserLog($userId) {

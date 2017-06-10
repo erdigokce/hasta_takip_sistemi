@@ -8,6 +8,8 @@ interface IUserModel {
 }
 
 interface IUserLogsModel {
+  public function getUserLog($userId);
+  public function createUserLog($userId);
   public function setUserLoginLog($id);
   public function setUserLogoutLog($id);
   public function getLastActiveUsers($limit = '5', $orderBy = 'date_last_login', $orderAs = 'desc');

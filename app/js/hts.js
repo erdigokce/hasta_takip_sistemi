@@ -75,15 +75,18 @@ function arrangeFooterPosition() {
 *******************************************************************************/
 
 function isNullOrEmptyArray(array) {
-  return
-  typeof array != "undefined"
-  && array != null
-  && array.length != null
-  && array.length > 0;
+  if (
+    typeof array != "undefined"
+    && array != null
+    && array.length != null
+    && array.length > 0
+  ) { return false; }
+  else { return true; }
 }
 
 function getCookieValuesAsArray() {
   var cookies = document.cookie.split(";");
+  cookies = cookies[0] == "" ? null : cookies[0];
   var cookiesKeyValue = [];
   if(!isNullOrEmptyArray(cookies)) {
     for (var i = 0; i < cookies.length; i++) {

@@ -33,7 +33,7 @@ $(document).ready(function() {
 });
 
 /*******************************************************************************
-********************************* AJAX Methods *********************************
+******************************** AJAX Functions ********************************
 *******************************************************************************/
 
 function loadPage(path) {
@@ -68,6 +68,29 @@ function arrangeFooterPosition() {
   } else {
     $("footer").removeClass("navbar-fixed-bottom");
   }
+}
+
+/*******************************************************************************
+****************************** Application Utils *******************************
+*******************************************************************************/
+
+function isNullOrEmptyArray(array) {
+  return
+  typeof array != "undefined"
+  && array != null
+  && array.length != null
+  && array.length > 0;
+}
+
+function getCookieValuesAsArray() {
+  var cookies = document.cookie.split(";");
+  var cookiesKeyValue = [];
+  if(!isNullOrEmptyArray(cookies)) {
+    for (var i = 0; i < cookies.length; i++) {
+      cookiesKeyValue[i] = cookies[i].split("=");
+    }
+  }
+  return cookiesKeyValue;
 }
 
 /*******************************************************************************

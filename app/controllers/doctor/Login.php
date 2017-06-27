@@ -49,31 +49,6 @@ class Login extends HTS_Controller {
     $this->load->view("templates/content_bottom");
   }
 
-  private function giveArrayOfUserSessionData(&$row) {
-    return array(
-      'auth' => TRUE ,
-      'user_id' => $row->ID,
-      'username' => $row->USERNAME,
-      'user_email' => $row->USER_EMAIL,
-      'user_category' => $row->USER_CATEGORY,
-      'name' => $row->NAME,
-      'surname' => $row->SURNAME
-    );
-  }
-
-  private function wipeArrayOfUserSessionData() {
-    return array(
-      // 'auth',
-      'user_id',
-      'username',
-      'user_email',
-      'user_category',
-      'name',
-      'surname'
-      // 'language'
-    );
-  }
-
   private function generateSession(&$data) {
     $this->initData($data);
     if ($this->form_validation->run('signin') === FALSE) { // Form validation level
@@ -185,5 +160,39 @@ class Login extends HTS_Controller {
     $data['login_lost_password'] = $this->lang->line('login_lost_password');
     $data['err_user_online'] = $this->lang->line('err_user_online');
     $data['err_auth_fail'] = $this->lang->line('err_auth_fail');
+  }
+
+  /**
+   * Gives an array to set session's user data
+   * @param mixed $row A mixed array that sets session's user data.
+   * @return Array Returns a string array.
+   */
+  private function giveArrayOfUserSessionData(&$row) {
+    return array(
+      'auth' => TRUE ,
+      'user_id' => $row->ID,
+      'username' => $row->USERNAME,
+      'user_email' => $row->USER_EMAIL,
+      'user_category' => $row->USER_CATEGORY,
+      'name' => $row->NAME,
+      'surname' => $row->SURNAME
+    );
+  }
+
+  /**
+   * Gives an array to wipe session's user data away
+   * @return Array Returns a string array.
+   */
+  private function wipeArrayOfUserSessionData() {
+    return array(
+      // 'auth',
+      'user_id',
+      'username',
+      'user_email',
+      'user_category',
+      'name',
+      'surname'
+      // 'language'
+    );
   }
 }

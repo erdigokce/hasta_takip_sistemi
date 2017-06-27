@@ -10,7 +10,7 @@
         <a class="navbar-brand" href="#" onclick="location.href='<?php echo base_url();?>'"> <?php echo get($nav_brand); ?> </a>
       </div>
       <div class="collapse navbar-collapse" id="topNavbar">
-        <?php if(isset($auth) && $auth === FALSE): ?>
+        <?php if(isset($auth) && $auth === FALSE || isNullOrEmpty(get($auth))): ?>
         <ul class="nav navbar-nav navbar-right">
           <li><a href="#" onclick="location.href='<?php echo base_url()."login";?>'"><span class="glyphicon glyphicon-log-in"></span> <?php echo get($nav_pro_login); ?> </a></li>
         </ul>

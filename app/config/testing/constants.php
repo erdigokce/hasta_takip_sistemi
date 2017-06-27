@@ -92,3 +92,4 @@ defined('HTS_SYSCORE')         OR define('HTS_SYSCORE', 'hts_syscore');
 defined('HTS_LIVE')            OR define('HTS_LIVE', 'hts_live');
 defined('HTS_LOCALE_TR')       OR define('HTS_LOCALE_TR', '1254');
 defined('HTS_SYSTEM_GENERATED') OR define('HTS_SYSTEM_GENERATED', 'SYSTEM-GEN');
+defined('HTS_504_BIT_WPA_KEY') OR define('HTS_504_BIT_WPA_KEY', 'rYCw4^j39HuC9-GJ|0-1K_xKS`w##bh&kPW0^!MXxzwbxb}}D}Y5rV)G\'YKYYbd');

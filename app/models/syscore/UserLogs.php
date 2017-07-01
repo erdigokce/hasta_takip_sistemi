@@ -61,10 +61,10 @@ class UserLogs extends HTS_Model implements IUserLogsModel {
       $row = $this->getCurrentDb()->get_where($this->getTable(), array('USER_ID' => $userId))->row();
       $HtsUserLogsDAO['USER_ID'] = $userId;
       if (!isset($HtsUserLogsDAO['DATE_LAST_LOGIN'])) {
-        $HtsUserLogsDAO['DATE_LAST_LOGIN'] = $row->DATE_LAST_LOGIN;
+        $HtsUserLogsDAO['DATE_LAST_LOGIN'] = get($row->DATE_LAST_LOGIN);
       }
       elseif (!isset($HtsUserLogsDAO['DATE_LAST_LOGOUT'])) {
-        $HtsUserLogsDAO['DATE_LAST_LOGOUT'] = $row->DATE_LAST_LOGOUT;
+        $HtsUserLogsDAO['DATE_LAST_LOGOUT'] = get($row->DATE_LAST_LOGOUT);
       }
       if(isset($row)) {
         $this->getCurrentDb()->where('USER_ID', $userId);

@@ -110,6 +110,16 @@ $(document).ready(function() {
     }
   });
 
+  $("#formPatientInquire").submit(function(e) {
+    e.preventDefault();
+    var inquirePatient = $("input[name='inquirePatient']").val();
+    if(inquirePatient != '') {
+      loadPage(controller + "/" + method + "/" + page_no + "/" + records_per_page + "/" + inquirePatient.replace(' ', '_'));
+    } else {
+      loadPage(controller + "/" + method + "/" + page_no + "/" + records_per_page + "/");
+    }
+  });
+
   function sendAjaxRequest(dataToSend) {
     var request = $.ajax({
       data : dataToSend
@@ -120,4 +130,5 @@ $(document).ready(function() {
       loadPage(controller + "/" + method + "/");
     });
   }
+
 });

@@ -1,3 +1,25 @@
+<?php echo form_open($page_controller.'/deviceInformations',
+                     array('class' => 'form-inline',
+                     'name' => 'formDeviceInquire',
+									 	 'id' => 'formDeviceInquire')); ?>
+		<label class="control-label" for="inquireDevice">
+			<?php echo get($device_infos_inquire); ?>
+		</label>
+		<input type="text"
+					 name="inquireDevice"
+					 class="form-control"
+					 id="inquireDevice"
+					 placeholder="<?php echo get($device_infos_inquire_placeholder); ?>">
+	</div>
+	<div class="form-group">
+    <input class="btn btn-success"
+           type="submit"
+           name="submitInquireDevice"
+           value="<?php echo get($device_infos_inquire_button); ?>"
+           style="float:right;">
+	</div>
+</form>
+<hr>
 <table class="table table-hover">
 	<thead>
 		<tr>
@@ -11,6 +33,7 @@
 		</tr>
 	</thead>
   <tbody>
+	<?php if (isSetAndNotEmpty($result)): ?>
 		<?php $offset = ($page_number - 1) * $records_per_page; ?>
 		<?php $limit = $offset + $records_per_page; ?>
 		<?php $i = 0; ?>
@@ -39,6 +62,7 @@
     	<?php } //if ?>
     	<?php $i = $i + 1; ?>
     <?php } //foreach ?>
+	<?php endif; //result?>
     <tr id="temp">
       <td><button class="btn btn-sm btn-primary" type="button" name="btnAddDevice"> <span class='glyphicon glyphicon-plus-sign'></span> </button></td>
       <td class="di_patient" data-dipatient="">

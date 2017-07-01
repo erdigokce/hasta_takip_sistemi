@@ -41,4 +41,18 @@ class Devices extends HTS_Model implements IDevicesModel {
     }
   }
 
+  public function findDeviceByName($param = null, $limit = '5', $offset = '0', $orderBy = 'DATE_CREATE', $orderAs = 'DESC') {
+    $query = "SELECT * FROM ".$this->getTable()." ";
+    $query .= "WHERE DEVICE_NAME LIKE '%".$param."%' ";
+    $query .= "ORDER BY ".$orderBy." ".$orderAs." LIMIT ".$limit." OFFSET ".$offset.";";
+    $this->setQuery($this->getCurrentDb()->query($query));
+    $result = $this->getQuery()->result();
+    $this->num_rows = $this->getQuery()->num_rows();
+    if($this->num_rows > 0) {
+      return $result;
+    } else {
+      return NULL;
+    }
+  }
+
 }

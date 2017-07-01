@@ -35,6 +35,9 @@ $lang['board_last_reviewed_patients'] = "Last Reviewed Patients";
 $lang['board_upcoming_streams'] = "Upcoming Streams";
 
 //DEVICE INFORMATIONS
+$lang['device_infos_inquire'] = "Device To Inquire";
+$lang['device_infos_inquire_button'] = "Search";
+$lang['device_infos_inquire_placeholder'] = "Device No / Device Name / MAC / Host / Port";
 $lang['device_infos_patient'] = "Holder Patient";
 $lang['device_infos_device_name'] = "Device Name";
 $lang['device_infos_device_desc'] = "Device Desription";
@@ -43,6 +46,9 @@ $lang['device_infos_device_host'] = "Device Host";
 $lang['device_infos_device_port'] = "Device Port";
 
 //PATIENT INFORMATIONS
+$lang['patient_infos_inquire'] = "Patient To Inquire";
+$lang['patient_infos_inquire_button'] = "Search";
+$lang['patient_infos_inquire_placeholder'] = "Patient No / Patient Name / Username";
 $lang['patient_infos_name'] = "Name";
 $lang['patient_infos_surname'] = "Surname";
 $lang['patient_infos_address'] = "Address";

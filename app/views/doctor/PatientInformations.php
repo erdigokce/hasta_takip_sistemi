@@ -1,23 +1,27 @@
 <?php echo form_open($page_controller.'/patientInformations',
-                     array('class' => 'form-inline',
+                     array('class' => 'form-horizontal',
                      'name' => 'formPatientInquire',
 									 	 'id' => 'formPatientInquire')); ?>
-		<label class="control-label" for="inquirePatient">
-			<?php echo get($patient_infos_inquire); ?>
-		</label>
-		<input type="text"
-					 name="inquirePatient"
-					 class="form-control"
-					 id="inquirePatient"
-					 placeholder="<?php echo get($patient_infos_inquire_placeholder); ?>">
-	</div>
-	<div class="form-group">
-    <input class="btn btn-success"
-           type="submit"
-           name="submitInquirePatient"
-           value="<?php echo get($patient_infos_inquire_button); ?>"
-           style="float:right;">
-	</div>
+  <div class="row">
+      <div class="form-group col-sm-8">
+  		<label class="control-label col-sm-3" for="inquirePatient">
+  			<?php echo get($patient_infos_inquire); ?>
+  		</label>
+      <div class="col-sm-9">
+    		<input type="text"
+    					 name="inquirePatient"
+    					 class="form-control"
+    					 id="inquirePatient"
+    					 placeholder="<?php echo get($patient_infos_inquire_placeholder); ?>">
+  	  </div>
+  	</div>
+  	<div class="form-group col-sm-4">
+      <input class="btn btn-success"
+             type="submit"
+             name="submitInquirePatient"
+             value="<?php echo get($patient_infos_inquire_button); ?>">
+  	</div>
+  </div>
 </form>
 <hr>
 <table class="table table-hover">

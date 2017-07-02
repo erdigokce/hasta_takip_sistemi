@@ -110,6 +110,7 @@ $(document).ready(function() {
     }
   });
 
+  // Patient search
   $("#formPatientInquire").submit(function(e) {
     e.preventDefault();
     var inquirePatient = $("input[name='inquirePatient']").val();

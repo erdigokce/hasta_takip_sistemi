@@ -95,3 +95,5 @@ defined('HTS_SYSTEM_GENERATED') OR define('HTS_SYSTEM_GENERATED', 'SYSTEM-GEN');
 defined('HTS_504_BIT_WPA_KEY') OR define('HTS_504_BIT_WPA_KEY', 'rYCw4^j39HuC9-GJ|0-1K_xKS`w##bh&kPW0^!MXxzwbxb}}D}Y5rV)G\'YKYYbd');
 defined('HTS_PAGE_NO')         OR define('HTS_PAGE_NO', 1);
 defined('HTS_RECORDS_PER_PAGE') OR define('HTS_RECORDS_PER_PAGE', 5);
+defined('HTS_RECORD_LIMIT')    OR define('HTS_RECORD_LIMIT', 5);
+defined('HTS_RECORD_OFFSET')   OR define('HTS_RECORD_OFFSET', 0);

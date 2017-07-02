@@ -11,6 +11,7 @@ interface IPatientsModel {
 }
 
 interface IDevicesModel {
+  public function findByPrimaryKeyWithFullPatientName($primaryKey = null);
   public function findAllWithFullPatientName();
   public function findLastAddedDevices($limit = '5', $offset = '0', $orderBy = 'DATE_CREATE', $orderAs = 'DESC');
   public function findDeviceByName($param = null, $limit = '5', $offset = '0', $orderBy = 'DATE_CREATE', $orderAs = 'DESC');

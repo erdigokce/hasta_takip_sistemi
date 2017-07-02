@@ -64,7 +64,7 @@ class Dashboard extends HTS_Controller {
       $inquireDevice = str_replace('_',' ',$inquireDevice);
       if(!isNullOrEmpty($inquireDevice)) {
         if(is_numeric($inquireDevice)) {
-          $result = $this->devices->findByPrimaryKey($inquireDevice, FALSE);
+          $result = $this->devices->findByPrimaryKeyWithFullPatientName($inquireDevice);
         } else {
           $result = $this->devices->findDeviceByName($inquireDevice);
         }

@@ -109,6 +109,17 @@ $(document).ready(function() {
     }
   });
 
+  // Device search
+  $("#formDeviceInquire").submit(function(e) {
+    e.preventDefault();
+    var inquireDevice = $("input[name='inquireDevice']").val();
+    if(inquireDevice != '') {
+      loadPage(controller + "/" + method + "/" + page_no + "/" + records_per_page + "/" + inquireDevice.replace(' ', '_'));
+    } else {
+      loadPage(controller + "/" + method + "/" + page_no + "/" + records_per_page + "/");
+    }
+  });
+
   function sendAjaxRequest(dataToSend) {
     var request = $.ajax({
       data : dataToSend

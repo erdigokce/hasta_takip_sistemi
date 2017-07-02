@@ -22,10 +22,18 @@ $(document).ready(function() {
     }
   });
 
+  // Window resize event
+  $(window).bind('resize', function() {
+    arrangeFooterPosition();
+  });
+
+  /* Initial efforts */
+  arrangeFooterPosition();
+
 });
 
 /*******************************************************************************
-********************************* AJAX Methods *********************************
+******************************** AJAX Functions ********************************
 *******************************************************************************/
 
 function loadPage(path) {
@@ -33,7 +41,8 @@ function loadPage(path) {
 }
 
 function loadPublicPage(path) {
-  if(location.href.search("home") == -1) {  // If current location is not home
+  if(location.href.search("/home") == -1) {  // If current location is not home
+    document.cookie = "redirectTo="+path+"; path=/";
     location.href = base_url + "home"; // Then locate home section
   }
   $("#public_content").load(path);
@@ -49,6 +58,41 @@ function paginate(controller, method, page_no) {
 
 function redirectAsSessionExpire() {
   window.location = base_url + "login/index/session_expire";
+}
+
+function arrangeFooterPosition() {
+  if($(window).width() >= 1200) {
+    if(!$("footer").hasClass("navbar-fixed-bottom")) {
+      $("footer").addClass("navbar-fixed-bottom");
+    }
+  } else {
+    $("footer").removeClass("navbar-fixed-bottom");
+  }
+}
+
+/*******************************************************************************
+****************************** Application Utils *******************************
+*******************************************************************************/
+
+function isNullOrEmptyArray(array) {
+  if (
+    typeof array != "undefined"
+    && array != null
+    && array.length != null
+    && array.length > 0
+  ) { return false; }
+  else { return true; }
+}
+
+function getCookieValuesAsArray() {
+  var cookies = document.cookie.split(";");
+  var cookiesKeyValue = [];
+  if(cookies[0] !== "" && !isNullOrEmptyArray(cookies)) {
+    for (var i = 0; i < cookies.length; i++) {
+      cookiesKeyValue[i] = cookies[i].split("=");
+    }
+  }
+  return cookiesKeyValue;
 }
 
 /*******************************************************************************

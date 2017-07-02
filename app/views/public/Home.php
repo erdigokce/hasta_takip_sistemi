@@ -7,4 +7,4 @@
   </div>
 </div>
 
-<script src="app/js/hts_home.js" charset="utf-8"></script>
+<script src="<?php echo base_url()."app/js/hts_home.js"?>" charset="utf-8"></script>

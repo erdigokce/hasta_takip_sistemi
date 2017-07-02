@@ -25,4 +25,18 @@ class Patients extends HTS_Model implements IPatientsModel {
     }
   }
 
+  public function findPatientByUsernameOrName($param = null, $limit = '5', $offset = '0', $orderBy = 'DATE_CREATE', $orderAs = 'DESC') {
+    $query = "SELECT * FROM ".$this->getTable()." ";
+    $query .= "WHERE PATIENT_NAME LIKE '%".$param."%' OR PATIENT_USERNAME = '".$param."' ";
+    $query .= "ORDER BY ".$orderBy." ".$orderAs." LIMIT ".$limit." OFFSET ".$offset.";";
+    $this->setQuery($this->getCurrentDb()->query($query));
+    $result = $this->getQuery()->result();
+    $this->num_rows = $this->getQuery()->num_rows();
+    if($this->num_rows > 0) {
+      return $result;
+    } else {
+      return NULL;
+    }
+  }
+
 }

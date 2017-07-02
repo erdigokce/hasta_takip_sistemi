@@ -1,23 +1,27 @@
 <?php echo form_open($page_controller.'/deviceInformations',
-                     array('class' => 'form-inline',
+                     array('class' => 'form-horizontal',
                      'name' => 'formDeviceInquire',
 									 	 'id' => 'formDeviceInquire')); ?>
-		<label class="control-label" for="inquireDevice">
-			<?php echo get($device_infos_inquire); ?>
-		</label>
-		<input type="text"
-					 name="inquireDevice"
-					 class="form-control"
-					 id="inquireDevice"
-					 placeholder="<?php echo get($device_infos_inquire_placeholder); ?>">
-	</div>
-	<div class="form-group">
-    <input class="btn btn-success"
-           type="submit"
-           name="submitInquireDevice"
-           value="<?php echo get($device_infos_inquire_button); ?>"
-           style="float:right;">
-	</div>
+  <div class="row">
+    <div class="form-group col-sm-8">
+      <label class="control-label col-sm-3" for="inquireDevice">
+        <?php echo get($device_infos_inquire); ?>
+      </label>
+      <div class="col-sm-9">
+        <input type="text"
+               name="inquireDevice"
+               class="form-control"
+               id="inquireDevice"
+               placeholder="<?php echo get($device_infos_inquire_placeholder); ?>">
+      </div>
+    </div>
+    <div class="form-group col-sm-4">
+      <input class="btn btn-success"
+             type="submit"
+             name="submitInquireDevice"
+             value="<?php echo get($device_infos_inquire_button); ?>">
+    </div>
+  </div>
 </form>
 <hr>
 <table class="table table-hover">

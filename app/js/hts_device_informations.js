@@ -109,6 +109,7 @@ $(document).ready(function() {
     }
   });
 
+  // Device search
   $("#formDeviceInquire").submit(function(e) {
     e.preventDefault();
     var inquireDevice = $("input[name='inquireDevice']").val();

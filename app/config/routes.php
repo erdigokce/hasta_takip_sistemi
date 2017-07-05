@@ -59,6 +59,10 @@ $route['translate_uri_dashes'] = FALSE;
 $route['home'] = 'public/home';
 $route['home/(:any)'] = 'public/home/$1';
 $route['navbar/lang/(:any)/(:any)'] = 'public/navbar/lang/$1/$2';
+$route['lostpassword'] = 'public/lostpassword';
+$route['lostpassword/(:any)'] = 'public/lostpassword/$1';
+$route['lostpassword/(:any)/(:any)'] = 'public/lostpassword/$1/$2';
+$route['lostpassword/(:any)/(:any)/(:any)'] = 'public/lostpassword/$1/$2/$3';
 
 /**
  * DOCTOR

@@ -24,7 +24,7 @@ function isNullOrEmpty($var) {
   return $var == NULL || empty($var);
 }
 
-function console_log(&$data) {
+function console_log($data) {
   echo '<script>';
   echo 'console.log('. json_encode( $data ) .')';
   echo '</script>';
@@ -87,4 +87,8 @@ function arrangeLangauge() {
  */
 function isSessionValid(&$obj) {
   return $obj->session->has_userdata('auth') && $obj->session->auth === TRUE;
+}
+
+function replaceSpaces($param, $replaceWith = '+') {
+  return str_replace(' ',$replaceWith,$param);
 }

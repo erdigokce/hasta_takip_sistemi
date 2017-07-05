@@ -7,7 +7,7 @@ interface IHTS_Model {
    * @param  Integer(12)    $id     Seçici birincil anahtar
    * @return Object                 Gelen veri. (Eğer boş ise null döner.)
    */
-  public function findByPrimaryKey(&$id);
+  public function findByPrimaryKey(&$id, $return_row = TRUE);
 
   /**
    * Bütün kayıtları döner.

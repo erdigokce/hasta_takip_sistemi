@@ -1,4 +1,29 @@
-
+<?php echo form_open($page_controller.'/patientInformations',
+                     array('class' => 'form-horizontal',
+                     'name' => 'formPatientInquire',
+									 	 'id' => 'formPatientInquire')); ?>
+  <div class="row">
+      <div class="form-group col-sm-8">
+  		<label class="control-label col-sm-3" for="inquirePatient">
+  			<?php echo get($patient_infos_inquire); ?>
+  		</label>
+      <div class="col-sm-9">
+    		<input type="text"
+    					 name="inquirePatient"
+    					 class="form-control"
+    					 id="inquirePatient"
+    					 placeholder="<?php echo get($patient_infos_inquire_placeholder); ?>">
+  	  </div>
+  	</div>
+  	<div class="form-group col-sm-4">
+      <input class="btn btn-success"
+             type="submit"
+             name="submitInquirePatient"
+             value="<?php echo get($patient_infos_inquire_button); ?>">
+  	</div>
+  </div>
+</form>
+<hr>
 <table class="table table-hover">
 	<thead>
 		<tr>
@@ -14,6 +39,7 @@
 		</tr>
 	</thead>
   <tbody>
+	<?php if (isSetAndNotEmpty($result)): ?>
 		<?php $offset = ($page_number - 1) * $records_per_page; ?>
 		<?php $limit = $offset + $records_per_page; ?>
 		<?php $i = 0; ?>
@@ -53,6 +79,7 @@
       <?php } //if ?>
 			<?php $i = $i + 1; ?>
     <?php } //foreach ?>
+	<?php endif; //result?>
     <tr id="temp">
       <td><button class="btn btn-sm btn-primary" type="button" name="btnAddPatient"> <span class='glyphicon glyphicon-plus-sign'></span> </button></td>
       <td class="pi_name" data-piname=""></td>

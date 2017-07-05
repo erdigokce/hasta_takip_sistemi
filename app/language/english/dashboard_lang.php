@@ -35,6 +35,9 @@ $lang['board_last_reviewed_patients'] = "Last Reviewed Patients";
 $lang['board_upcoming_streams'] = "Upcoming Streams";
 
 //DEVICE INFORMATIONS
+$lang['device_infos_inquire'] = "Device To Inquire";
+$lang['device_infos_inquire_button'] = "Search";
+$lang['device_infos_inquire_placeholder'] = "Device No / Device Name / MAC / Host / Port";
 $lang['device_infos_patient'] = "Holder Patient";
 $lang['device_infos_device_name'] = "Device Name";
 $lang['device_infos_device_desc'] = "Device Desription";
@@ -43,6 +46,9 @@ $lang['device_infos_device_host'] = "Device Host";
 $lang['device_infos_device_port'] = "Device Port";
 
 //PATIENT INFORMATIONS
+$lang['patient_infos_inquire'] = "Patient To Inquire";
+$lang['patient_infos_inquire_button'] = "Search";
+$lang['patient_infos_inquire_placeholder'] = "Patient No / Patient Name / Username";
 $lang['patient_infos_name'] = "Name";
 $lang['patient_infos_surname'] = "Surname";
 $lang['patient_infos_address'] = "Address";
@@ -53,6 +59,9 @@ $lang['patient_infos_username'] = "Username";
 $lang['patient_infos_apikey'] = "API Key";
 
 //LOG SCHEDULES
+$lang['schedule_inquire'] = "Patient Log Schedule";
+$lang['schedule_inquire_button'] = "Search";
+$lang['schedule_inquire_placeholder'] = "Schedule No / Schedule Type";
 $lang['schedule_device_socket'] = "Device Socket";
 $lang['schedule_pattern'] = "Pattern";
 $lang['schedule_type'] = "Type";
@@ -68,6 +77,9 @@ $lang['patient_logs_select_stream'] = "Select a stream to trace...";
 $lang['patient_logs_select_stream_to_display'] = "Select a stream of a sensor to display the content.";
 
 //STREAMS
+$lang['stream_inquire'] = "Stream To Inquire";
+$lang['stream_inquire_button'] = "Search";
+$lang['stream_inquire_placeholder'] = "Stream Name / Token / Share Key";
 $lang['stream_patient'] = "Streamer Patient";
 $lang['stream_name'] = "Stream Name";
 $lang['stream_token'] = "Token";

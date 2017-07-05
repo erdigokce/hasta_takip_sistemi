@@ -11,7 +11,7 @@ class Patients extends HTS_Model implements IPatientsModel {
     parent::__construct(HTS_LIVE.'.hts_patients');
   }
 
-  public function findLastAddedPatients($limit = '5', $offset = '0', $orderBy = 'DATE_CREATE', $orderAs = 'DESC') {
+  public function findLastAddedPatients($limit = HTS_RECORD_LIMIT, $offset = HTS_RECORD_OFFSET, $orderBy = 'DATE_CREATE', $orderAs = 'DESC') {
     $query = "SELECT PATIENT_NAME, PATIENT_SURNAME, PATIENT_PHONE, DATE_CREATE ";
     $query .= "FROM ".$this->getTable()." ";
     $query .= "ORDER BY ".$orderBy." ".$orderAs." LIMIT ".$limit." OFFSET ".$offset.";";
@@ -20,9 +20,23 @@ class Patients extends HTS_Model implements IPatientsModel {
     $this->num_rows = $this->getQuery()->num_rows();
     if($this->num_rows > 0) {
       return $result;
-    } else {
-      return NULL;
     }
+    return NULL;
+  }
+
+  public function findPatientByUsernameOrName($param = NULL, $orderBy = 'DATE_CREATE', $orderAs = 'DESC') {
+    if (!isNullOrEmpty($param)) {
+      $query = "SELECT * FROM ".$this->getTable()." ";
+      $query .= "WHERE PATIENT_NAME LIKE '%".$param."%' OR PATIENT_USERNAME = '".$param."' ";
+      $query .= "ORDER BY ".$orderBy." ".$orderAs.";";
+      $this->setQuery($this->getCurrentDb()->query($query));
+      $result = $this->getQuery()->result();
+      $this->num_rows = $this->getQuery()->num_rows();
+      if($this->num_rows > 0) {
+        return $result;
+      }
+    }
+    return NULL;
   }
 
 }

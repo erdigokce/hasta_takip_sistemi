@@ -6,6 +6,8 @@ class Dashboard extends HTS_Controller {
 
   function __construct() {
     parent::__construct('dashboard');
+    $this->load->helper('form');
+    $this->load->library(array('form_validation'));
     $this->load->model('syscore/user');
   }
 
@@ -16,9 +18,7 @@ class Dashboard extends HTS_Controller {
     $this->fetchLang();
     loadNavbarLang($this, $data);
     $this->loadMenuLeftLang($data);
-    $data['title'] = $this->lang->line('dashboard_title');
-    $data['page_controller'] = $this->getPage();
-    $data['footer_text'] = $this->lang->line('footer_text');
+    $this->loadPageData($data);
 
     if(isSessionValid($this)){
       $data['username'] = $this->session->username;
@@ -38,6 +38,7 @@ class Dashboard extends HTS_Controller {
   public function board() {
     if(isSessionValid($this)){
       $this->loadBoardLang($data);
+      $this->loadPageData($data);
       $this->load->model(array('syscore/userlogs', 'live/devices', 'live/patients'));
       $resultLastActiveUsers = $this->userlogs->getLastActiveUsers();
       $resultLastAddedDevices = $this->devices->findLastAddedDevices();
@@ -54,11 +55,22 @@ class Dashboard extends HTS_Controller {
   /**
    * Device Informatıons
    */
-  public function deviceInformations($page_number = '1', $records_per_page = '5') {
+  public function deviceInformations($page_number = HTS_PAGE_NO, $records_per_page = HTS_RECORDS_PER_PAGE, $inquireDevice = NULL) {
     if(isSessionValid($this)){
       $this->loadDeviceInformationsLang($data);
+      $this->loadPageData($data);
       $this->load->model(array('live/devices', 'live/patients'));
-      $result = $this->devices->findAllWithFullPatientName();
+      $result = NULL;
+      $inquireDevice = str_replace('~',' ',$inquireDevice);
+      if(!isNullOrEmpty($inquireDevice)) {
+        if(is_numeric($inquireDevice)) {
+          $result = $this->devices->findByPrimaryKeyWithFullPatientName($inquireDevice);
+        } else {
+          $result = $this->devices->findDeviceByName($inquireDevice);
+        }
+      } else {
+        $result = $this->devices->findAllWithFullPatientName();
+      }
       $result_patients = $this->patients->findAll();
       $data['result'] = $result;
       $data['result_patients'] = $result_patients;
@@ -73,11 +85,22 @@ class Dashboard extends HTS_Controller {
   /**
    * Patient Informations
    */
-  public function patientInformations($page_number = '1', $records_per_page = '5') {
+  public function patientInformations($page_number = HTS_PAGE_NO, $records_per_page = HTS_RECORDS_PER_PAGE, $inquirePatient = NULL) {
     if(isSessionValid($this)){
       $this->load->model('live/patients');
-      $result = $this->patients->findAll();
       $this->loadPatientInformationsLang($data);
+      $this->loadPageData($data);
+      $result = NULL;
+      $inquirePatient = str_replace('~',' ',$inquirePatient);
+      if(!isNullOrEmpty($inquirePatient)) {
+        if(is_numeric($inquirePatient)) {
+          $result = $this->patients->findByPrimaryKey($inquirePatient, FALSE);
+        } else {
+          $result = $this->patients->findPatientByUsernameOrName($inquirePatient);
+        }
+      } else {
+        $result = $this->patients->findAll();
+      }
       $data['result'] = $result;
       $data['page_number'] = $page_number;
       $data['records_per_page'] = $records_per_page;
@@ -94,6 +117,7 @@ class Dashboard extends HTS_Controller {
     if(isSessionValid($this)){
       $this->load->model(array('live/patientlogs', 'live/patients', 'live/streams'));
       $this->loadPatientLogsLang($data);
+      $this->loadPageData($data);
       if(!isNullOrEmpty($patientId)) {
         $data['patient_selected'] = TRUE;
         $data['patient_id'] = $patientId;
@@ -118,12 +142,23 @@ class Dashboard extends HTS_Controller {
   /**
    * Patient Log Schedules
    */
-  public function patientLogSchedules($page_number = '1', $records_per_page = '5') {
+  public function patientLogSchedules($page_number = HTS_PAGE_NO, $records_per_page = HTS_RECORDS_PER_PAGE, $inquirePatientLogSchedule = NULL) {
     if(isSessionValid($this)){
       $this->load->model(array('live/devices','live/patientlogschedules'));
-      $result = $this->patientlogschedules->findAllWithFullDeviceSocket();
       $result_devices = $this->devices->findAll();
       $this->loadPatientLogSchedulesLang($data);
+      $this->loadPageData($data);
+      $result = NULL;
+      $inquirePatientLogSchedule = str_replace('~',' ',$inquirePatientLogSchedule);
+      if(!isNullOrEmpty($inquirePatientLogSchedule)) {
+        if(is_numeric($inquirePatientLogSchedule)) {
+          $result = $this->patientlogschedules->findByPrimaryKeyWithFullDeviceSocket($inquirePatientLogSchedule);
+        } else {
+          $result = $this->patientlogschedules->findSchedulesByTypeOrDescription($inquirePatientLogSchedule);
+        }
+      } else {
+        $result = $this->patientlogschedules->findAllWithFullDeviceSocket();
+      }
       $data['result'] = $result;
       $data['result_devices'] = $result_devices;
       $data['page_number'] = $page_number;
@@ -137,12 +172,23 @@ class Dashboard extends HTS_Controller {
   /**
    * Streams
    */
-  public function streams($page_number = '1', $records_per_page = '5') {
+  public function streams($page_number = HTS_PAGE_NO, $records_per_page = HTS_RECORDS_PER_PAGE, $inquireStream = NULL) {
     if(isSessionValid($this)) {
       $this->load->model(array('live/streams','live/patients'));
-      $result = $this->streams->findAllWithFullPatientName();
       $result_patients = $this->patients->findAll();
       $this->loadStreamLang($data);
+      $this->loadPageData($data);
+      $result = NULL;
+      $inquireStream = str_replace('~',' ',$inquireStream);
+      if(!isNullOrEmpty($inquireStream)) {
+        if(is_numeric($inquireStream)) {
+          $result = $this->streams->findByPrimaryKey($inquireStream);
+        } else {
+          $result = $this->streams->findStreamsByNameOrTokenOrShareKey($inquireStream);
+        }
+      } else {
+        $result = $this->streams->findAllWithFullPatientName();
+      }
       $data['result'] = $result;
       $data['result_patients'] = $result_patients;
       $data['page_number'] = $page_number;
@@ -196,6 +242,15 @@ class Dashboard extends HTS_Controller {
    ***************************** PRIVATE FUNCTIONS *****************************
    ****************************************************************************/
 
+   /**
+   * @param Array $data
+   */
+   private function loadPageData(&$data) {
+     $data['title'] = $this->lang->line('dashboard_title');
+     $data['page_controller'] = $this->getPage();
+     $data['footer_text'] = $this->lang->line('footer_text');
+   }
+
    private function loadDashboard(&$data) {
      $this->load->view("templates/content_top", $data);
      $this->load->view("templates/header", $data);
@@ -233,6 +288,9 @@ class Dashboard extends HTS_Controller {
 
    private function loadDeviceInformationsLang(&$data) {
      $this->fetchLang();
+     $data['device_infos_inquire'] = $this->lang->line('device_infos_inquire');
+     $data['device_infos_inquire_button'] = $this->lang->line('device_infos_inquire_button');
+     $data['device_infos_inquire_placeholder'] = $this->lang->line('device_infos_inquire_placeholder');
      $data['device_infos_patient'] = $this->lang->line('device_infos_patient');
      $data['device_infos_device_name'] = $this->lang->line('device_infos_device_name');
      $data['device_infos_device_desc'] = $this->lang->line('device_infos_device_desc');
@@ -243,6 +301,9 @@ class Dashboard extends HTS_Controller {
 
    private function loadPatientInformationsLang(&$data) {
      $this->fetchLang();
+     $data['patient_infos_inquire'] = $this->lang->line('patient_infos_inquire');
+     $data['patient_infos_inquire_button'] = $this->lang->line('patient_infos_inquire_button');
+     $data['patient_infos_inquire_placeholder'] = $this->lang->line('patient_infos_inquire_placeholder');
      $data['patient_infos_name'] = $this->lang->line('patient_infos_name');
      $data['patient_infos_surname'] = $this->lang->line('patient_infos_surname');
      $data['patient_infos_address'] = $this->lang->line('patient_infos_address');
@@ -255,6 +316,9 @@ class Dashboard extends HTS_Controller {
 
    private function loadPatientLogSchedulesLang(&$data) {
      $this->fetchLang();
+     $data['schedule_inquire'] = $this->lang->line('schedule_inquire');
+     $data['schedule_inquire_button'] = $this->lang->line('schedule_inquire_button');
+     $data['schedule_inquire_placeholder'] = $this->lang->line('schedule_inquire_placeholder');
      $data['schedule_device_socket'] = $this->lang->line('schedule_device_socket');
      $data['schedule_pattern'] = $this->lang->line('schedule_pattern');
      $data['schedule_type'] = $this->lang->line('schedule_type');
@@ -274,6 +338,9 @@ class Dashboard extends HTS_Controller {
 
    private function loadStreamLang(&$data) {
      $this->fetchLang();
+     $data['stream_inquire'] = $this->lang->line('stream_inquire');
+     $data['stream_inquire_button'] = $this->lang->line('stream_inquire_button');
+     $data['stream_inquire_placeholder'] = $this->lang->line('stream_inquire_placeholder');
      $data['stream_patient'] = $this->lang->line('stream_patient');
      $data['stream_name'] = $this->lang->line('stream_name');
      $data['stream_token'] = $this->lang->line('stream_token');

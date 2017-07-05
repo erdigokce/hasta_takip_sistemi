@@ -35,6 +35,9 @@ $lang['board_last_reviewed_patients'] = "Son İncelenen Hastalar";
 $lang['board_upcoming_streams'] = "Sıradaki Yayınlar";
 
 //DEVICE INFORMATIONS
+$lang['device_infos_inquire'] = "Sorgulanacak Cihaz";
+$lang['device_infos_inquire_button'] = "Ara";
+$lang['device_infos_inquire_placeholder'] = "Cihaz No / Cihaz Adı / MAC / Ana Makina Adresi / Port";
 $lang['device_infos_patient'] = "Kullanan Hasta";
 $lang['device_infos_device_name'] = "Cihaz Adı";
 $lang['device_infos_device_desc'] = "Cihaz Açıklaması";
@@ -43,6 +46,9 @@ $lang['device_infos_device_host'] = "Cihaz Ana Makinesi";
 $lang['device_infos_device_port'] = "Cihaz Portu";
 
 //PATIENT INFORMATIONS
+$lang['patient_infos_inquire'] = "Sorgulanacak Hasta";
+$lang['patient_infos_inquire_button'] = "Ara";
+$lang['patient_infos_inquire_placeholder'] = "Hasta No / Hasta Adı / Kullanıcı Adı";
 $lang['patient_infos_name'] = "İsim";
 $lang['patient_infos_surname'] = "Soyisim";
 $lang['patient_infos_address'] = "Adres";
@@ -53,6 +59,9 @@ $lang['patient_infos_username'] = "Kullanıcı Adı";
 $lang['patient_infos_apikey'] = "API Anahtarı";
 
 //LOG SCHEDULES
+$lang['schedule_inquire'] = "Hasta Günlük Planı";
+$lang['schedule_inquire_button'] = "Ara";
+$lang['schedule_inquire_placeholder'] = "Plan No / Plan Tipi";
 $lang['schedule_device_socket'] = "Aygıt Soketi";
 $lang['schedule_pattern'] = "Desen";
 $lang['schedule_type'] = "Plan Tipi";
@@ -68,6 +77,9 @@ $lang['patient_logs_select_stream'] = "Akışı izlemek için bir yayın seçini
 $lang['patient_logs_select_stream_to_display'] = "İçeriğe ulaşmak için hasta ve sensör yayını seçiniz.";
 
 //STREAMS
+$lang['stream_inquire'] = "Sorgulanacak Yayın";
+$lang['stream_inquire_button'] = "Ara";
+$lang['stream_inquire_placeholder'] = "Yayın Adı / Jeton / Paylaşım Anahtarı";
 $lang['stream_patient'] = "Yayınlayan Hasta";
 $lang['stream_name'] = "Yayın İsmi";
 $lang['stream_token'] = "Yayın Jetonu";

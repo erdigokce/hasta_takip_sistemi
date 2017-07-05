@@ -19,9 +19,13 @@ class HTS_Model extends CI_Model implements IHTS_Model {
     $this->setFields($table);
   }
 
-  public function findByPrimaryKey(&$id) {
+  public function findByPrimaryKey(&$id, $return_row = TRUE) {
     $this->query = $this->currentDb->get_where($this->table, array('ID' => $id));
-    $row = $this->query->row();
+    if($return_row) {
+      $row = $this->query->row();
+    } else {
+      $row = $this->query->result();
+    }
     $this->num_rows = $this->query->num_rows();
     if(isset($row)) {
       return $row;

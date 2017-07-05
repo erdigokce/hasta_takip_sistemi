@@ -56,5 +56,5 @@ class Patientlogschedules extends HTS_Model implements IPatientLogSchedulesModel
     }
     return NULL;
   }
-
+ 
 }

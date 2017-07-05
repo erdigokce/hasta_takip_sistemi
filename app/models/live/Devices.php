@@ -13,7 +13,7 @@ class Devices extends HTS_Model implements IDevicesModel {
     parent::__construct(HTS_LIVE.'.hts_patient_tracking_devices');
   }
 
-  public function findByPrimaryKeyWithFullPatientName($primaryKey = null) {
+  public function findByPrimaryKeyWithFullPatientName($primaryKey = NULL) {
     $query = "SELECT d.*, p.ID as PATIENT_ID, p.PATIENT_NAME, p.PATIENT_SURNAME ";
     $query .= "FROM ".$this->getTable()." d, ".$this->tablePatients." p ";
     $query .= "WHERE d.PATIENT_ID = p.ID AND d.ID = ".$primaryKey." ";
@@ -23,9 +23,8 @@ class Devices extends HTS_Model implements IDevicesModel {
     $this->num_rows = $this->getQuery()->num_rows();
     if($this->num_rows > 0) {
       return $result;
-    } else {
-      return NULL;
     }
+    return NULL;
   }
 
   public function findAllWithFullPatientName() {
@@ -38,9 +37,8 @@ class Devices extends HTS_Model implements IDevicesModel {
     $this->num_rows = $this->getQuery()->num_rows();
     if($this->num_rows > 0) {
       return $result;
-    } else {
-      return NULL;
     }
+    return NULL;
   }
 
   public function findLastAddedDevices($limit = HTS_RECORD_LIMIT, $offset = HTS_RECORD_OFFSET, $orderBy = 'DATE_CREATE', $orderAs = 'DESC') {
@@ -52,28 +50,28 @@ class Devices extends HTS_Model implements IDevicesModel {
     $this->num_rows = $this->getQuery()->num_rows();
     if($this->num_rows > 0) {
       return $result;
-    } else {
-      return NULL;
     }
+    return NULL;
   }
 
-  public function findDeviceByName($param = null, $limit = HTS_RECORD_LIMIT, $offset = HTS_RECORD_OFFSET, $orderBy = 'DATE_CREATE', $orderAs = 'DESC') {
-    $query = "SELECT d.*, p.ID as PATIENT_ID, p.PATIENT_NAME, p.PATIENT_SURNAME ";
-    $query .= "FROM ".$this->getTable()." d, ".$this->tablePatients." p ";
-    $query .= "WHERE d.PATIENT_ID = p.ID
-                AND (d.DEVICE_NAME LIKE '%".$param."%'
-                OR d.DEVICE_MAC = '".$param."'
-                OR d.DEVICE_HOST = '".$param."'
-                OR d.DEVICE_PORT = '".$param."') ";
-    $query .= "ORDER BY d.".$orderBy." ".$orderAs." LIMIT ".$limit." OFFSET ".$offset.";";
-    $this->setQuery($this->getCurrentDb()->query($query));
-    $result = $this->getQuery()->result();
-    $this->num_rows = $this->getQuery()->num_rows();
-    if($this->num_rows > 0) {
-      return $result;
-    } else {
-      return NULL;
+  public function findDeviceByName($param = NULL, $orderBy = 'DATE_CREATE', $orderAs = 'DESC') {
+    if(!isNullOrEmpty($param)) {
+      $query = "SELECT d.*, p.ID as PATIENT_ID, p.PATIENT_NAME, p.PATIENT_SURNAME ";
+      $query .= "FROM ".$this->getTable()." d, ".$this->tablePatients." p ";
+      $query .= "WHERE d.PATIENT_ID = p.ID
+                  AND (d.DEVICE_NAME LIKE '%".$param."%'
+                  OR d.DEVICE_MAC = '".$param."'
+                  OR d.DEVICE_HOST = '".$param."'
+                  OR d.DEVICE_PORT = '".$param."') ";
+      $query .= "ORDER BY d.".$orderBy." ".$orderAs.";";
+      $this->setQuery($this->getCurrentDb()->query($query));
+      $result = $this->getQuery()->result();
+      $this->num_rows = $this->getQuery()->num_rows();
+      if($this->num_rows > 0) {
+        return $result;
+      }
     }
+    return NULL;
   }
 
 }

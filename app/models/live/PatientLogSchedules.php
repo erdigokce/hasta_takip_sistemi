@@ -11,15 +11,50 @@ class Patientlogschedules extends HTS_Model implements IPatientLogSchedulesModel
     parent::__construct(HTS_LIVE.'.hts_log_schedules');
   }
 
-  public function findAllWithFullDeviceSocket() {
-    $this->setQuery($this->getCurrentDb()->query("SELECT d.DEVICE_HOST, d.DEVICE_PORT, l.* FROM ".HTS_LIVE.".hts_patient_tracking_devices d, ".HTS_LIVE.".hts_log_schedules l WHERE d.ID = l.DEVICE_ID ORDER BY d.DEVICE_HOST;"));
+  public function findAllWithFullDeviceSocket($orderBy = 'DEVICE_HOST', $orderAs = 'ASC') {
+    $query = "SELECT d.DEVICE_HOST, d.DEVICE_PORT, l.* ";
+    $query .= "FROM ".HTS_LIVE.".hts_patient_tracking_devices d, ".$this->getTable()." l ";
+    $query .= "WHERE d.ID = l.DEVICE_ID ";
+    $query .= "ORDER BY ".$orderBy." ".$orderAs.";";
+    $this->setQuery($this->getCurrentDb()->query($query));
     $result = $this->getQuery()->result();
     $this->num_rows = $this->getQuery()->num_rows();
     if($this->num_rows > 0) {
       return $result;
-    } else {
-      return NULL;
     }
+    return NULL;
+  }
+
+  public function findByPrimaryKeyWithFullDeviceSocket(&$param = NULL) {
+    if(!isNullOrEmpty($param)) {
+      $query = "SELECT d.DEVICE_HOST, d.DEVICE_PORT, l.* ";
+      $query .= "FROM ".HTS_LIVE.".hts_patient_tracking_devices d, ".$this->getTable()." l ";
+      $query .= "WHERE d.ID = l.DEVICE_ID AND d.ID = ".$param." ";
+      $query .= "ORDER BY ".$orderBy." ".$orderAs.";";
+      $this->setQuery($this->getCurrentDb()->query($query));
+      $result = $this->getQuery()->result();
+      $this->num_rows = $this->getQuery()->num_rows();
+      if($this->num_rows > 0) {
+        return $result;
+      }
+    }
+    return NULL;
+  }
+
+  public function findSchedulesByTypeOrDescription(&$param = NULL, $orderBy = 'DATE_CREATE', $orderAs = 'DESC') {
+    if (!isNullOrEmpty($param)) {
+      $query = "SELECT d.DEVICE_HOST, d.DEVICE_PORT, l.* ";
+      $query .= "FROM ".HTS_LIVE.".hts_patient_tracking_devices d, ".$this->getTable()." l ";
+      $query .= "WHERE d.ID = l.DEVICE_ID AND (l.SCHEDULE_TYPE LIKE '%".$param."%' OR l.DESCRIPTION LIKE '%".$param."%') ";
+      $query .= "ORDER BY ".$orderBy." ".$orderAs.";";
+      $this->setQuery($this->getCurrentDb()->query($query));
+      $result = $this->getQuery()->result();
+      $this->num_rows = $this->getQuery()->num_rows();
+      if($this->num_rows > 0) {
+        return $result;
+      }
+    }
+    return NULL;
   }
 
 }

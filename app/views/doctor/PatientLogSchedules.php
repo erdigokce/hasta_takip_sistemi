@@ -1,3 +1,29 @@
+<?php echo form_open($page_controller.'/patientLogSchedules',
+                     array('class' => 'form-horizontal',
+                     'name' => 'formPatientLogScheduleInquire',
+									 	 'id' => 'formPatientLogScheduleInquire')); ?>
+  <div class="row">
+      <div class="form-group col-sm-8">
+  		<label class="control-label col-sm-3" for="inquirePatientLogSchedule">
+  			<?php echo get($schedule_inquire); ?>
+  		</label>
+      <div class="col-sm-9">
+    		<input type="text"
+    					 name="inquirePatientLogSchedule"
+    					 class="form-control"
+    					 id="inquirePatientLogSchedule"
+    					 placeholder="<?php echo get($schedule_inquire_placeholder); ?>">
+  	  </div>
+  	</div>
+  	<div class="form-group col-sm-4">
+      <input class="btn btn-success"
+             type="submit"
+             name="submitInquirePatientLogSchedule"
+             value="<?php echo get($schedule_inquire_button); ?>">
+  	</div>
+  </div>
+</form>
+<hr>
 <table class="table table-hover">
 	<thead>
 		<tr>

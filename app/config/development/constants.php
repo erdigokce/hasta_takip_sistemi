@@ -97,3 +97,5 @@ defined('HTS_PAGE_NO')         OR define('HTS_PAGE_NO', 1);
 defined('HTS_RECORDS_PER_PAGE') OR define('HTS_RECORDS_PER_PAGE', 5);
 defined('HTS_RECORD_LIMIT')    OR define('HTS_RECORD_LIMIT', 5);
 defined('HTS_RECORD_OFFSET')   OR define('HTS_RECORD_OFFSET', 0);
+defined('HTS_ORDER_BY')        OR define('HTS_ORDER_BY', 'DATE_CREATE');
+defined('HTS_ORDER_AS')        OR define('HTS_ORDER_AS', 'DESC');

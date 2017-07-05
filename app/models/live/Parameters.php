@@ -17,9 +17,8 @@ class Parameters extends HTS_Model implements IParametersModel {
     }
     if(isSetAndNotEmpty($this->getQuery())) {
       return $this->getQuery()->result();
-    } else {
-      return NULL;
     }
+    return NULL;
   }
 
   public function findParameterValue($screenName, $fieldName, $parameterKey) {
@@ -30,8 +29,7 @@ class Parameters extends HTS_Model implements IParametersModel {
     }
     if(isSetAndNotEmpty($this->getQuery())) {
       return $this->getQuery()->row();
-    } else {
-      return NULL;
     }
+    return NULL;
   }
 }

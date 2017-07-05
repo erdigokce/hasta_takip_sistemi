@@ -13,15 +13,18 @@ class Streams extends HTS_Model implements IStreamsModel {
     parent::__construct(HTS_LIVE.'.hts_streams');
   }
 
-  public function findAllWithFullPatientName() {
-    $this->setQuery($this->getCurrentDb()->query("SELECT d.*, p.PATIENT_NAME, p.PATIENT_SURNAME FROM ".$this->getTable()." d, ".$this->tablePatients." p WHERE d.PATIENT_ID = p.ID ORDER BY p.PATIENT_NAME;"));
+  public function findAllWithFullPatientName($orderBy = 'PATIENT_NAME', $orderAs = 'ASC') {
+    $query = "SELECT d.*, p.PATIENT_NAME, p.PATIENT_SURNAME ";
+    $query .= "FROM ".$this->getTable()." d, ".$this->tablePatients." p ";
+    $query .= "WHERE d.PATIENT_ID = p.ID ";
+    $query .= "ORDER BY p.".$orderBy." ".$orderAs.";";
+    $this->setQuery($this->getCurrentDb()->query($query));
     $result = $this->getQuery()->result();
     $this->num_rows = $this->getQuery()->num_rows();
     if($this->num_rows > 0) {
       return $result;
-    } else {
-      return NULL;
     }
+    return NULL;
   }
 
   public function findListByPatientId($patientId) {
@@ -32,9 +35,24 @@ class Streams extends HTS_Model implements IStreamsModel {
     }
     if(isSetAndNotEmpty($this->getQuery())) {
       return $this->getQuery()->result();
-    } else {
-      return NULL;
     }
+    return NULL;
+  }
+
+  public function findStreamsByNameOrTokenOrShareKey(&$param = NULL, $orderBy = HTS_ORDER_BY, $orderAs = HTS_ORDER_AS) {
+    if(!isNullOrEmpty($param)) {
+      $query = "SELECT d.*, p.PATIENT_NAME, p.PATIENT_SURNAME ";
+      $query .= "FROM ".$this->getTable()." d, ".$this->tablePatients." p ";
+      $query .= "WHERE d.PATIENT_ID = p.ID AND (d.STREAM_NAME LIKE '%".$param."%' OR d.TOKEN = '".$param."' OR d.SHARE_KEY = '".$param."') ";
+      $query .= "ORDER BY p.".$orderBy." ".$orderAs.";";
+      $this->setQuery($this->getCurrentDb()->query($query));
+      $result = $this->getQuery()->result();
+      $this->num_rows = $this->getQuery()->num_rows();
+      if($this->num_rows > 0) {
+        return $result;
+      }
+    }
+    return NULL;
   }
 
 }

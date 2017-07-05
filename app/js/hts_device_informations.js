@@ -114,7 +114,7 @@ $(document).ready(function() {
     e.preventDefault();
     var inquireDevice = $("input[name='inquireDevice']").val();
     if(inquireDevice != '') {
-      loadPage(controller + "/" + method + "/" + page_no + "/" + records_per_page + "/" + inquireDevice.replace(' ', '_'));
+      loadPage(controller + "/" + method + "/" + page_no + "/" + records_per_page + "/" + $.trim(inquireDevice.replace(' ', '~')));
     } else {
       loadPage(controller + "/" + method + "/" + page_no + "/" + records_per_page + "/");
     }

@@ -59,6 +59,9 @@ $lang['patient_infos_username'] = "Username";
 $lang['patient_infos_apikey'] = "API Key";
 
 //LOG SCHEDULES
+$lang['schedule_inquire'] = "Patient Log Schedule";
+$lang['schedule_inquire_button'] = "Search";
+$lang['schedule_inquire_placeholder'] = "Schedule No / Schedule Type";
 $lang['schedule_device_socket'] = "Device Socket";
 $lang['schedule_pattern'] = "Pattern";
 $lang['schedule_type'] = "Type";
@@ -74,6 +77,9 @@ $lang['patient_logs_select_stream'] = "Select a stream to trace...";
 $lang['patient_logs_select_stream_to_display'] = "Select a stream of a sensor to display the content.";
 
 //STREAMS
+$lang['stream_inquire'] = "Stream To Inquire";
+$lang['stream_inquire_button'] = "Search";
+$lang['stream_inquire_placeholder'] = "Stream Name / Token / Share Key";
 $lang['stream_patient'] = "Streamer Patient";
 $lang['stream_name'] = "Stream Name";
 $lang['stream_token'] = "Token";

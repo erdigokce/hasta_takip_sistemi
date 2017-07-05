@@ -17,9 +17,8 @@ class Patientlogs extends HTS_Model implements IPatientLogsModel {
     }
     if(isSetAndNotEmpty($this->getQuery())) {
       return $this->getQuery()->result();
-    } else {
-      return NULL;
     }
+    return NULL;
   }
 
 }

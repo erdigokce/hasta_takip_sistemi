@@ -104,6 +104,17 @@ $(document).ready(function() {
     }
   });
 
+  // Stream search
+  $("#formStreamInquire").submit(function(e) {
+    e.preventDefault();
+    var inquireStream = $("input[name='inquireStream']").val();
+    if(inquireStream != '') {
+      loadPage(controller + "/" + method + "/" + page_no + "/" + records_per_page + "/" + $.trim(inquireStream.replace(' ', '~')));
+    } else {
+      loadPage(controller + "/" + method + "/" + page_no + "/" + records_per_page + "/");
+    }
+  });
+
   function sendAjaxRequest(dataToSend) {
     var request = $.ajax({
       data : dataToSend

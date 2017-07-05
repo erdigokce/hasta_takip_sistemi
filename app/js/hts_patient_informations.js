@@ -115,7 +115,7 @@ $(document).ready(function() {
     e.preventDefault();
     var inquirePatient = $("input[name='inquirePatient']").val();
     if(inquirePatient != '') {
-      loadPage(controller + "/" + method + "/" + page_no + "/" + records_per_page + "/" + inquirePatient.replace(' ', '_'));
+      loadPage(controller + "/" + method + "/" + page_no + "/" + records_per_page + "/" + $.trim(inquirePatient.replace(' ', '~')));
     } else {
       loadPage(controller + "/" + method + "/" + page_no + "/" + records_per_page + "/");
     }

@@ -1,3 +1,29 @@
+<?php echo form_open($page_controller.'/streams',
+                     array('class' => 'form-horizontal',
+                     'name' => 'formStreamInquire',
+									 	 'id' => 'formStreamInquire')); ?>
+  <div class="row">
+      <div class="form-group col-sm-8">
+  		<label class="control-label col-sm-3" for="inquireStream">
+  			<?php echo get($stream_inquire); ?>
+  		</label>
+      <div class="col-sm-9">
+    		<input type="text"
+    					 name="inquireStream"
+    					 class="form-control"
+    					 id="inquireStream"
+    					 placeholder="<?php echo get($stream_inquire_placeholder); ?>">
+  	  </div>
+  	</div>
+  	<div class="form-group col-sm-4">
+      <input class="btn btn-success"
+             type="submit"
+             name="submitInquireStream"
+             value="<?php echo get($stream_inquire_button); ?>">
+  	</div>
+  </div>
+</form>
+<hr>
 <table class="table table-hover">
 	<thead>
 		<tr>

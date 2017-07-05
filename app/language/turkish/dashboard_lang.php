@@ -59,6 +59,9 @@ $lang['patient_infos_username'] = "Kullanıcı Adı";
 $lang['patient_infos_apikey'] = "API Anahtarı";
 
 //LOG SCHEDULES
+$lang['schedule_inquire'] = "Hasta Günlük Planı";
+$lang['schedule_inquire_button'] = "Ara";
+$lang['schedule_inquire_placeholder'] = "Plan No / Plan Tipi";
 $lang['schedule_device_socket'] = "Aygıt Soketi";
 $lang['schedule_pattern'] = "Desen";
 $lang['schedule_type'] = "Plan Tipi";
@@ -74,6 +77,9 @@ $lang['patient_logs_select_stream'] = "Akışı izlemek için bir yayın seçini
 $lang['patient_logs_select_stream_to_display'] = "İçeriğe ulaşmak için hasta ve sensör yayını seçiniz.";
 
 //STREAMS
+$lang['stream_inquire'] = "Sorgulanacak Yayın";
+$lang['stream_inquire_button'] = "Ara";
+$lang['stream_inquire_placeholder'] = "Yayın Adı / Jeton / Paylaşım Anahtarı";
 $lang['stream_patient'] = "Yayınlayan Hasta";
 $lang['stream_name'] = "Yayın İsmi";
 $lang['stream_token'] = "Yayın Jetonu";

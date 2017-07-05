@@ -105,6 +105,17 @@ $(document).ready(function() {
     }
   });
 
+  // Device search
+  $("#formPatientLogScheduleInquire").submit(function(e) {
+    e.preventDefault();
+    var inquirePatientLogSchedule = $("input[name='inquirePatientLogSchedule']").val();
+    if(inquirePatientLogSchedule != '') {
+      loadPage(controller + "/" + method + "/" + page_no + "/" + records_per_page + "/" + $.trim(inquirePatientLogSchedule.replace(' ', '~')));
+    } else {
+      loadPage(controller + "/" + method + "/" + page_no + "/" + records_per_page + "/");
+    }
+  });
+
   function sendAjaxRequest(dataToSend) {
     var request = $.ajax({
       data : dataToSend

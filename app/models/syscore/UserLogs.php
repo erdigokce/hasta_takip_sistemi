@@ -4,7 +4,7 @@ require_once 'intf.php';
 /**
  * UserLog
  */
-class UserLogs extends HTS_Model implements IUserLogsModel {
+class Userlogs extends HTS_Model implements IUserLogsModel {
 
   function __construct() {
     $this->setCurrentDb($this->load->database('syscore', TRUE));

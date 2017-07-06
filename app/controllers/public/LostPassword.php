@@ -3,7 +3,7 @@
 /**
  * LostPassword Controller Page
  */
-class LostPassword extends HTS_Controller {
+class Lostpassword extends HTS_Controller {
 
   function __construct() {
     parent::__construct('lostpassword');

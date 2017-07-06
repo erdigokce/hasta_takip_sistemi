@@ -15,5 +15,5 @@ class Welcomer extends CI_Controller {
   public function index() {
     redirect('home','refresh');
   }
-
+ 
 }
